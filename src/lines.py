@@ -110,12 +110,13 @@ def parse_event(ev: dict, ix: dict):
     return {"home": h, "away": a, "start": ev["commence_time"], "spread": sp_h, "total": tot, "ml_h": ml_h, "ml_a": ml_a}
 
 
-def evaluate(g: dict, ln: dict, sigma: float, tsigma: float, w: float = MODEL_WEIGHT) -> dict:
+def evaluate(g: dict, ln: dict, sigma: float, tsigma: float, w: float = MODEL_WEIGHT, total_bias: float = 0.0) -> dict:
     """g: a prediction row (home, away, pred_margin, pred_total); ln: parsed odds for the same game."""
     mk_margin = _med([-pt for _, pt, _, _ in ln["spread"]])       # home margin implied by the market
     mk_total = _med([pt for _, pt, _, _ in ln["total"]])
     m_adj = w * g["pred_margin"] + (1 - w) * mk_margin if mk_margin is not None else g["pred_margin"]
-    t_adj = w * g["pred_total"] + (1 - w) * mk_total if mk_total is not None else g["pred_total"]
+    pt_cal = g["pred_total"] - total_bias                           # model total after removing its average gap to the market
+    t_adj = w * pt_cal + (1 - w) * mk_total if mk_total is not None else pt_cal
     h, a = g["home"], g["away"]
     cands = []
     # drop outlier quotes (stale / mistaken lines) so "best price" means shopping, not chasing errors
@@ -171,6 +172,7 @@ def attach_lines(games_out: list, events: list, idmap: dict, model: dict, status
     by = {}
     for p in parsed:
         by.setdefault((p["home"], p["away"]), []).append(p)
+    matched = []
     for g in games_out:
         if g.get("done"):
             continue
@@ -188,7 +190,15 @@ def attach_lines(games_out: list, events: list, idmap: dict, model: dict, status
                   "ml_h": p["ml_a"], "ml_a": p["ml_h"]}
         if ln is None:
             continue
-        g["market"] = evaluate(g, ln, model["sigma"], model["total_sigma"])
+        matched.append((g, ln))
+    # the model's totals can sit systematically above/below the market (early season especially). Measure that gap across
+    # every matched game and remove it, so only game-to-game differences count as edges instead of a blanket Over/Under.
+    gaps = [g["pred_total"] - _med([pt for _, pt, _, _ in ln["total"]]) for g, ln in matched if ln["total"]]
+    bias = float(np.median(gaps)) if len(gaps) >= 8 else 0.0
+    status["totals_bias"] = round(bias, 2)
+    for g, ln in matched:
+        g["market"] = evaluate(g, ln, model["sigma"], model["total_sigma"], total_bias=bias)
+        g["market"]["total_bias"] = round(bias, 1)
         status["lines_matched"] += 1
     return games_out
 

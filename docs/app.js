@@ -205,7 +205,7 @@ async function load() {
   if (hasLines) {
     $("#gsort").insertAdjacentHTML("afterbegin", '<option value="ev">Best EV</option>');
     $("#gsort").value = "ev";
-    $("#legend").innerHTML = `<b>Take</b> is the single best bet on the game (spread, moneyline or total) after comparing the model with the best price across sportsbooks. <b>EV</b> is expected profit per $1 staked; 5% means about 5 cents. The model is shrunk toward the market because it is not as sharp as the closing line, so treat EV as a ranking, not a promise. Lines as of ${new Date(S.status.lines_at || S.status.run_at).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" })}; check the book before betting.`;
+    $("#legend").innerHTML = `<b>Take</b> is the single best bet on the game (spread, moneyline or total) after comparing the model with the best price across sportsbooks. <b>EV</b> is expected profit per $1 staked; 5% means about 5 cents. The model is shrunk toward the market because it is not as sharp as the closing line, so treat EV as a ranking, not a promise. Lines as of ${new Date(S.status.lines_at || S.status.run_at).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" })}; check the book before betting.${S.status.totals_bias ? ` The model's totals run ${Math.abs(S.status.totals_bias).toFixed(1)} points ${S.status.totals_bias < 0 ? "below" : "above"} the market on average today; that gap is removed before totals are compared, so Over/Under picks reflect game-to-game differences only.` : ""}`;
   }
   const confs = [...new Set(S.teams.map(t => t.conf))].sort();
   $("#rconf").innerHTML = `<option value="">All</option>` + confs.map(c => `<option>${esc(c)}</option>`).join("");
