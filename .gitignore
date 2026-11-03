@@ -7,3 +7,4 @@ data/*.log
 data/params_run1.json
 __pycache__/
 *.pyc
+.venv/
