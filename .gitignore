@@ -1,0 +1,9 @@
+# raw downloads are re-fetched by the daily job; the repo keeps only derived data
+data/raw/
+data/probe/
+probe/
+data/cache_frame.pkl
+data/*.log
+data/params_run1.json
+__pycache__/
+*.pyc

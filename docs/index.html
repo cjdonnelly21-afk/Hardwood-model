@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardwood Model – college basketball predictions</title>
+<meta name="description" content="Daily college basketball predictions built from 15 seasons of data and Torvik ratings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>Hardwood Model</h1>
+    <p id="updated" class="sub">Loading…</p>
+  </div>
+  <nav role="tablist" aria-label="Sections">
+    <button role="tab" aria-selected="true" data-tab="today">Today</button>
+    <button role="tab" aria-selected="false" data-tab="rankings">Rankings</button>
+    <button role="tab" aria-selected="false" data-tab="matchup">Matchup</button>
+    <button role="tab" aria-selected="false" data-tab="model">Model report</button>
+  </nav>
+</header>
+<div id="warn" class="warn" hidden></div>
+
+<main>
+  <section id="today" class="panel">
+    <div class="bar">
+      <div id="days" class="chips" role="group" aria-label="Day"></div>
+      <input id="gsearch" type="search" placeholder="Filter by team" aria-label="Filter games by team">
+      <label class="sel"><span>Sort</span>
+        <select id="gsort"><option value="time">Tip time</option><option value="conf">Most confident</option><option value="close">Closest games</option></select>
+      </label>
+    </div>
+    <ol id="games" class="games"></ol>
+    <p id="gempty" class="empty" hidden>No games with predictions on this day. Games between non-Division I teams are skipped.</p>
+  </section>
+
+  <section id="rankings" class="panel" hidden>
+    <div class="bar">
+      <input id="rsearch" type="search" placeholder="Find a team" aria-label="Find a team">
+      <label class="sel"><span>Conference</span><select id="rconf"><option value="">All</option></select></label>
+    </div>
+    <div class="tablewrap"><table id="rtable">
+      <thead><tr>
+        <th data-k="rank" class="num">#</th><th data-k="team">Team</th><th data-k="conf">Conf</th>
+        <th data-k="record">Record</th>
+        <th data-k="power" class="num">Rating</th><th data-k="net" class="num">Own net</th><th data-k="o" class="num">Off</th><th data-k="d" class="num">Def</th>
+        <th data-k="t" class="num">Tempo</th><th data-k="tor_rank" class="num">Torvik #</th>
+      </tr></thead><tbody></tbody></table></div>
+    <p class="note">Rating is the model's projected margin against an average Division I team on a neutral court, blending this project's ratings with Torvik's. Own net, Off and Def are points per 100 possessions above average from this project's own ratings alone. Click a column to sort.</p>
+  </section>
+
+  <section id="matchup" class="panel" hidden>
+    <form id="mform" class="mform" autocomplete="off">
+      <label>Home team<input id="mh" list="tlist" placeholder="Start typing…"></label>
+      <label>Away team<input id="ma" list="tlist" placeholder="Start typing…"></label>
+      <label class="sel"><span>Venue</span><select id="mv"><option value="home">Home team's court</option><option value="neutral">Neutral site</option></select></label>
+      <datalist id="tlist"></datalist>
+    </form>
+    <div id="mout" class="mout"><p class="empty">Pick two teams to see the projected score, spread and win chance.</p></div>
+  </section>
+
+  <section id="model" class="panel" hidden>
+    <div id="live" class="stats"></div>
+    <h2>Backtest by season</h2>
+    <p class="note">Each season is predicted using only models fit on earlier seasons and ratings known the morning of each game. Error is average points off the final margin.</p>
+    <div class="tablewrap"><table id="btable"><thead><tr>
+      <th>Season</th><th class="num">Games</th><th class="num">This model</th><th class="num">Own ratings only</th><th class="num">Torvik only</th><th class="num">Winner picked</th><th class="num">Total error</th>
+    </tr></thead><tbody></tbody></table></div>
+    <h2>Is the win chance honest?</h2>
+    <p class="note">When the model says 70%, the home team should win about 70% of the time. Dots on the line mean it is calibrated.</p>
+    <p id="calnote" class="note"></p>
+    <div id="cal" class="cal"></div>
+    <h2>What it learned</h2>
+    <div id="weights" class="weights"></div>
+  </section>
+</main>
+<footer>
+  <p>Ratings from <a href="https://barttorvik.com">Bart Torvik</a> and this project's own walk-forward ratings. Schedules from ESPN. For information and entertainment; no betting lines are used, so this does not claim an edge over the market.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

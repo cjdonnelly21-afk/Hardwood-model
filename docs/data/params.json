@@ -1,0 +1,12 @@
+{
+  "params": {
+    "carry": 0.95,
+    "lam": 4.0,
+    "half_life": 250.0,
+    "tempo_carry": 0.8,
+    "tempo_lam": 10.0,
+    "cap_margin": 30.0
+  },
+  "tune_mae": 8.628316483023939,
+  "tune_end": 2022
+}
