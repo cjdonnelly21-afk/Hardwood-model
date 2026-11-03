@@ -36,3 +36,4 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401928811,2026-11-03T19:03Z,spread,South Dakota +1,home,1.0,-101,LowVig.ag,0.5029,0.0008,,
 401917513,2026-11-03T19:03Z,spread,Santa Clara -18,home,-18.0,-106,LowVig.ag,0.5421,0.0536,,
 401917512,2026-11-03T19:03Z,spread,Saint Mary's -12,home,-12.0,-106,LowVig.ag,0.542,0.0534,,
+401906757,2026-11-03T19:07Z,moneyline,Alabama to win,home,,-8000,DraftKings,0.9891,0.0015,,
