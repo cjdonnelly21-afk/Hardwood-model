@@ -38,14 +38,24 @@ def current_season(today: dt.date) -> int:
     return today.year + 1 if today.month >= 10 else today.year
 
 
+FETCH_LOG = {}
+
+
 def fetch(url: str, dest: Path, min_bytes=500) -> bool:
+    import os
     dest.parent.mkdir(parents=True, exist_ok=True)
+    if os.environ.get("CBB_FORCE_FETCH_FAIL"):          # test hook: simulate Torvik blocking us
+        FETCH_LOG[url.split("barttorvik.com/")[-1]] = "forced failure (test)"
+        return False
     tmp = dest.with_suffix(dest.suffix + ".tmp")
     r = subprocess.run(["curl", "-sS", "-m", "90", "-A", UA, "-L", "-o", str(tmp), "-w", "%{http_code}", url],
                        capture_output=True, text=True)
     time.sleep(1)
-    ok = r.stdout.strip() == "200" and tmp.exists() and tmp.stat().st_size >= min_bytes
-    if ok and tmp.read_bytes()[:200].lstrip().lower().startswith((b"<!doctype", b"<html")):
+    code = r.stdout.strip()
+    head = tmp.read_bytes()[:160] if tmp.exists() else b""
+    FETCH_LOG[url.split("barttorvik.com/")[-1]] = f"http {code}, {tmp.stat().st_size if tmp.exists() else 0} bytes, {r.stderr.strip()[:80]} {head[:120]!r}"
+    ok = code == "200" and tmp.exists() and tmp.stat().st_size >= min_bytes
+    if ok and head.lstrip().lower().startswith((b"<!doctype", b"<html")):
         ok = False  # Torvik's "Verifying Browser" gate, not data
     if ok:
         tmp.replace(dest)
@@ -54,18 +64,34 @@ def fetch(url: str, dest: Path, min_bytes=500) -> bool:
     return ok
 
 
+LATEST = ROOT / "data" / "torvik_latest.csv"
+LATEST_DATE = ROOT / "data" / "torvik_latest.date"
+
+
 def refresh_torvik(season: int, today: dt.date, status: dict):
-    ok1 = fetch(f"https://barttorvik.com/{season}_team_results.csv", RAW / "team_results" / f"{season}.csv")
+    dest = RAW / "team_results" / f"{season}.csv"
+    ok1 = fetch(f"https://barttorvik.com/{season}_team_results.csv", dest)
     ok2 = fetch(f"https://barttorvik.com/getgamestats.php?year={season}&csv=1", RAW / "gamestats" / f"{season}.csv", 200)
     status["torvik_ratings_ok"], status["torvik_games_ok"] = ok1, ok2
-    if ok1:  # keep our own point-in-time snapshot, same layout as Torvik's time machine
-        df = pd.read_csv(RAW / "team_results" / f"{season}.csv")
+    status["fetch_log"] = dict(FETCH_LOG)
+    if ok1:   # remember the last good download, and keep our own point-in-time snapshot (same layout as Torvik's time machine)
+        LATEST.write_bytes(dest.read_bytes())
+        LATEST_DATE.write_text(today.isoformat())
+        df = pd.read_csv(dest)
         rows = df.astype(object).where(df.notna(), None).values.tolist()
         snap = RAW / "timemachine" / f"{today:%Y%m%d}.json.gz"
         snap.parent.mkdir(parents=True, exist_ok=True)
         if not snap.exists():
             with gzip.open(snap, "wt") as f:
                 json.dump(rows, f)
+    elif LATEST.exists():
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(LATEST.read_bytes())
+        status["warnings"].append(f"Torvik blocked today's download; showing Torvik ratings from {LATEST_DATE.read_text().strip()}.")
+    else:
+        raise SystemExit("No Torvik ratings available (download failed and no saved copy).")
+    if not ok2:
+        status["warnings"].append("Torvik game results unavailable today, so ratings were not updated with the newest games.")
 
 
 def espn_day(d: dt.date):
@@ -205,8 +231,6 @@ def main():
 
     if not args.no_fetch:
         refresh_torvik(season, today, status)
-        if not status["torvik_ratings_ok"]:
-            status["warnings"].append("Torvik ratings unreachable today; using last downloaded ratings.")
     build_games.main()
     games = load_games()
 
