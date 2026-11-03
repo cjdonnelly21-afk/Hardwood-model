@@ -37,3 +37,6 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401917513,2026-11-03T19:03Z,spread,Santa Clara -18,home,-18.0,-106,LowVig.ag,0.5421,0.0536,,
 401917512,2026-11-03T19:03Z,spread,Saint Mary's -12,home,-12.0,-106,LowVig.ag,0.542,0.0534,,
 401906757,2026-11-03T19:07Z,moneyline,Alabama to win,home,,-8000,DraftKings,0.9891,0.0015,,
+401921819,2026-11-03T19:13Z,total,Over 148.5,over,148.5,-110,FanDuel,0.5351,0.0215,,
+401917513,2026-11-03T19:13Z,total,Over 157.5,over,157.5,-108,LowVig.ag,0.5248,0.0107,,
+401917512,2026-11-03T19:13Z,total,Over 145.5,over,145.5,-108,LowVig.ag,0.5216,0.0046,,
