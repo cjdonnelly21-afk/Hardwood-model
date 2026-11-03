@@ -22,6 +22,7 @@ import requests
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_games  # noqa: E402
 from names import load_map  # noqa: E402
+from lines import attach_lines, fetch_odds, grade_bets, log_bets, roi_summary  # noqa: E402
 from build_games import load_games  # noqa: E402
 from ratings import Params, run_all  # noqa: E402
 from train import fit, load_params, make_features, predict, walk_forward, build_frame, calibration_bins  # noqa: E402
@@ -289,10 +290,19 @@ def main():
         r["rank"] = i
     cols = ["game_id", "start", "home", "away", "neutral", "state", "done", "hpts", "apts", "pred_margin", "pred_total", "win_prob_home"]
     games_out = pred[cols].replace({np.nan: None}).to_dict(orient="records") if len(pred) else []
+    # ---- betting lines -> EV (optional: needs ODDS_API_KEY; the site works without it)
+    now_s = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
+    odds = None if args.no_fetch else fetch_odds(status)
+    if odds:
+        games_out = attach_lines(games_out, odds, idmap, model, status)
+        status["lines_at"] = now_s
+    bet_log = log_bets(games_out, now_s)
+    bet_log = grade_bets(bet_log, {str(f["game_id"]): (f["home"], f["away"], f["hpts"], f["apts"]) for f in finished})
+    bet_log.to_csv(ROOT / "data" / "bets_log.csv", index=False)
     (SITE / "teams.json").write_text(json.dumps({"season": season, "mu": fin["mu"], "mu_p": fin["mu_p"], "hca": fin["h"], "teams": teams}))
     (SITE / "games.json").write_text(json.dumps(games_out))
     (SITE / "model.json").write_text(json.dumps({k: model[k] for k in ("margin", "total", "sigma", "total_sigma", "n_train", "backtest", "calibration")}))
-    (SITE / "accuracy.json").write_text(json.dumps(live_accuracy(log)))
+    (SITE / "accuracy.json").write_text(json.dumps({**live_accuracy(log), "bets": roi_summary(bet_log)}))
     (SITE / "params.json").write_text((ROOT / "data" / "params.json").read_text() if (ROOT / "data" / "params.json").exists() else "{}")
     status["games_listed"], status["teams"] = len(games_out), len(teams)
     (SITE / "status.json").write_text(json.dumps(status))

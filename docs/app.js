@@ -39,6 +39,30 @@ function spreadText(g) {
   return `${fav} ${fmt(-Math.abs(g.pred_margin), 1)}`;
 }
 
+function tier(p) { return p >= .9 ? ["Strong", "t3"] : p >= .75 ? ["Solid", "t2"] : p >= .6 ? ["Lean", "t1"] : ["Toss-up", "t0"]; }
+
+function pct(x) { return (x >= 0 ? "+" : "") + (x * 100).toFixed(1) + "%"; }
+function price(n) { return (n > 0 ? "+" : "") + n; }
+
+// the card on the right of each game: the bet to take (when we have lines) or the plain model pick
+function betCard(g, fav, favP, tierName, tierCls) {
+  const m = g.market, b = m && m.best;
+  if (b && b.ev > 0) {
+    const cls = b.ev >= .06 ? "e3" : b.ev >= .03 ? "e2" : "e1";
+    const others = m.bets.filter(x => !(x.market === b.market && x.label === b.label) && x.ev > 0).map(x => `${esc(x.label)} (${pct(x.ev)})`).join(" · ");
+    return `<div class="pick bet ${cls}"><div class="tag">Take</div><div class="favname">${esc(b.label)}</div>
+      <div class="spread">${pct(b.ev)}</div><div class="tier">EV per $1 · ${price(b.price)} ${esc(b.book)}</div>
+      <div class="tot">Model ${fmt(-Math.abs(g.pred_margin), 1)} ${esc(fav)} · market ${m.market_margin === null ? "n/a" : fmt(-Math.abs(m.market_margin), 1)} · total ${fmt(g.pred_total, 0)}/${m.market_total ?? "n/a"}</div>
+      ${others ? `<div class="tot">Also: ${others}</div>` : ""}</div>`;
+  }
+  if (b) {
+    return `<div class="pick t0"><div class="tag">No edge vs market</div><div class="favname">${esc(fav)}</div>
+      <div class="spread">${fmt(-Math.abs(g.pred_margin), 1)}</div><div class="tier">Pass · best EV ${pct(b.ev)}</div>
+      <div class="tot">Market ${m.market_margin === null ? "n/a" : fmt(-Math.abs(m.market_margin), 1)} · total ${fmt(g.pred_total, 0)}/${m.market_total ?? "n/a"}</div></div>`;
+  }
+  return `<div class="pick ${tierCls}"><div class="tag">Model pick</div><div class="favname">${esc(fav)}</div><div class="spread">${fmt(-Math.abs(g.pred_margin), 1)}</div><div class="tier">${tierName} · ${Math.round(favP * 100)}%</div><div class="tot">Proj. total ${fmt(g.pred_total, 0)}</div></div>`;
+}
+
 function dayKey(iso) { const d = new Date(iso); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; }
 function dayLabel(k) { const [y, m, d] = k.split("-").map(Number); return new Date(y, m - 1, d).toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" }); }
 
@@ -46,7 +70,9 @@ function renderGames() {
   const q = $("#gsearch").value.trim().toLowerCase();
   let list = S.games.filter(g => dayKey(g.start) === S.day && (!q || (g.home + " " + g.away).toLowerCase().includes(q)));
   const mode = $("#gsort").value;
-  if (mode === "conf") list.sort((a, b) => Math.abs(b.win_prob_home - .5) - Math.abs(a.win_prob_home - .5));
+  const evOf = g => (g.market && g.market.best) ? g.market.best.ev : -9;
+  if (mode === "ev") list.sort((a, b) => evOf(b) - evOf(a));
+  else if (mode === "conf") list.sort((a, b) => Math.abs(b.win_prob_home - .5) - Math.abs(a.win_prob_home - .5));
   else if (mode === "close") list.sort((a, b) => Math.abs(a.pred_margin) - Math.abs(b.pred_margin));
   else list.sort((a, b) => a.start.localeCompare(b.start));
   const ol = $("#games"); ol.innerHTML = "";
@@ -58,17 +84,19 @@ function renderGames() {
     const time = new Date(g.start).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
     const result = g.done ? `<div class="final">Final ${fmt(g.hpts, 0)}–${fmt(g.apts, 0)}${(g.hpts - g.apts > 0) === favHome ? " · model had the winner" : " · upset"}</div>` : "";
     const fav = favHome ? g.home : g.away, favP = favHome ? hp : 1 - hp;
+    const [tierName, tierCls] = tier(favP);
+    const badge = `<b class="chk" title="The team the model projects to win">${S.hasLines ? "MODEL" : "PICK"}</b>`;
     li.innerHTML = `
       <div class="teams">
-        <div class="tm ${favHome ? "fav" : ""}"><span>${esc(g.home)}</span><span class="rk">${h ? "#" + h.rank : ""}</span></div>
-        <div class="tm ${!favHome ? "fav" : ""}"><span>${esc(g.away)}${g.neutral ? " <em>neutral</em>" : ""}</span><span class="rk">${a ? "#" + a.rank : ""}</span></div>
+        <div class="tm ${favHome ? "fav" : ""}"><span>${esc(g.home)}${favHome ? badge : ""}</span><span class="rk">${h ? "#" + h.rank : ""}</span></div>
+        <div class="tm ${!favHome ? "fav" : ""}"><span>${esc(g.away)}${g.neutral ? " <em>neutral</em>" : ""}${!favHome ? badge : ""}</span><span class="rk">${a ? "#" + a.rank : ""}</span></div>
         <div class="when">${g.done ? "" : time}</div>${result}
       </div>
       <div class="probwrap">
         <div class="prob" role="img" aria-label="${esc(fav)} ${Math.round(favP * 100)} percent to win"><i style="width:${(favP * 100).toFixed(1)}%"></i></div>
         <div class="probcap">${Math.round(favP * 100)}% to win</div>
       </div>
-      <div class="pick"><div class="favname">${esc(fav)}</div><div class="spread">${fmt(-Math.abs(g.pred_margin), 1)}</div><div class="tot">Total ${fmt(g.pred_total, 0)}</div></div>`;
+      ${betCard(g, fav, favP, tierName, tierCls)}`;
     ol.appendChild(li);
   }
 }
@@ -172,6 +200,12 @@ async function load() {
   const when = new Date(S.status.run_at);
   $("#updated").textContent = `${S.meta.season - 1}–${String(S.meta.season).slice(2)} season · updated ${when.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })}`;
   if (S.status.warnings && S.status.warnings.length) { const w = $("#warn"); w.hidden = false; w.textContent = S.status.warnings.join(" "); }
+  const hasLines = S.hasLines = S.games.some(g => g.market);
+  if (hasLines) {
+    $("#gsort").insertAdjacentHTML("afterbegin", '<option value="ev">Best EV</option>');
+    $("#gsort").value = "ev";
+    $("#legend").innerHTML = `<b>Take</b> is the single best bet on the game (spread, moneyline or total) after comparing the model with the best price across sportsbooks. <b>EV</b> is expected profit per $1 staked; 5% means about 5 cents. The model is shrunk toward the market because it is not as sharp as the closing line, so treat EV as a ranking, not a promise. Lines as of ${new Date(S.status.lines_at || S.status.run_at).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" })}; check the book before betting.`;
+  }
   const confs = [...new Set(S.teams.map(t => t.conf))].sort();
   $("#rconf").innerHTML = `<option value="">All</option>` + confs.map(c => `<option>${esc(c)}</option>`).join("");
   $("#tlist").innerHTML = S.teams.map(t => `<option value="${esc(t.team)}">`).join("");

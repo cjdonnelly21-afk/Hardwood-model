@@ -40,10 +40,22 @@ input[type=search]{flex:1 1 200px;max-width:320px}
 .prob i{display:block;height:100%;background:var(--paint)}
 .probcap{font:600 16px var(--num);margin-top:4px;color:var(--ink-soft)}
 .tm em{font:500 13px var(--txt);font-style:normal;color:var(--ink-soft);margin-left:6px}
-.pick{text-align:right}
-.pick .favname{font:600 17px/1.1 var(--num);color:var(--ink)}
+.pick{text-align:right;padding:10px 14px;border:2px solid var(--ink);border-left:8px solid var(--paint);background:var(--card)}
+.pick .tag{font:700 12px/1 var(--txt);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.pick .favname{font:700 20px/1.1 var(--num);color:var(--ink);margin-top:4px}
 .pick .spread{font:700 38px/1 var(--num);color:var(--paint)}
+.pick .tier{font:700 15px/1.2 var(--num);letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
+.pick.t3,.pick.t2{border-left-color:var(--good)}.pick.t3 .tier,.pick.t2 .tier{color:var(--good)}
+.pick.t1 .tier{color:var(--paint)}
+.pick.t0{border-left-color:var(--line);border-style:dashed}.pick.t0 .tier,.pick.t0 .spread{color:var(--ink-soft)}
+.pick.bet{background:var(--ink);color:var(--floor);border-color:var(--ink)}
+.pick.bet .tag,.pick.bet .tot,.pick.bet .tier{color:var(--floor);opacity:.85}
+.pick.bet .favname{color:var(--floor)}.pick.bet .spread{color:var(--floor)}
+.pick.bet.e3{border-left-color:var(--good)}.pick.bet.e2{border-left-color:var(--paint)}
+.pick.bet.e1{border-left-color:var(--line)}
 .pick .tot{font-size:13px;color:var(--ink-soft)}
+.chk{display:inline-block;font:700 11px/1 var(--txt);letter-spacing:.1em;background:var(--paint);color:var(--paint-ink);padding:3px 6px;margin-left:8px;vertical-align:middle}
+.legend{font-size:14px;color:var(--ink-soft);max-width:80ch;margin:0 0 14px}
 .final{font:600 15px var(--num);color:var(--good)}
 .tablewrap{overflow-x:auto;border-top:2px solid var(--ink)}
 table{border-collapse:collapse;width:100%;font-size:15px}
@@ -77,8 +89,8 @@ tr:hover td{background:var(--floor-2)}
 .weights dl{margin:0}.weights dt{font-weight:600;float:left;clear:left;width:60%}.weights dd{margin:0 0 4px;text-align:right}
 footer{padding-bottom:40px;color:var(--ink-soft);font-size:13px}
 @media (max-width:760px){
-  .game{grid-template-columns:1fr auto;grid-template-areas:"t t" "b p";align-items:end}
-  .teams{grid-area:t}.pick{grid-area:p}.probwrap{grid-area:b}
+  .game{grid-template-columns:1fr;grid-template-areas:"t" "b" "p";align-items:stretch}
+  .teams{grid-area:t}.pick{grid-area:p;text-align:left}.probwrap{grid-area:b}
   .tm span:first-child{white-space:normal}
   .mform{grid-template-columns:1fr}
   h1{font-size:34px}
