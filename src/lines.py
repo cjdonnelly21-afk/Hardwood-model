@@ -30,7 +30,10 @@ ROOT = Path(__file__).resolve().parent.parent
 REF = ROOT / "data" / "ref"
 BETS_LOG = ROOT / "data" / "bets_log.csv"
 URL = "https://api.the-odds-api.com/v4/sports/basketball_ncaab/odds"
-MODEL_WEIGHT = 0.5      # share of the model vs the market when estimating the "true" margin / total
+MODEL_WEIGHT = 0.3      # share of the model vs the market when estimating the "true" margin / total
+MAX_POINT_GAP = 2.0     # a spread/total more than this far from the median across books is treated as stale or erroneous
+MAX_PROB_GAP = 0.04     # a moneyline price whose implied chance is this far "too good" vs the median is treated as an outlier
+MAX_ML_DECIMAL = 4.0    # no moneyline longshots beyond +300: normal-curve tails are least trustworthy there
 MIN_EV = 0.0            # only bets above this are called plays
 SPREAD_BONUS_NOTE = "Win probability uses the same normal model as the rest of the site."
 
@@ -115,23 +118,32 @@ def evaluate(g: dict, ln: dict, sigma: float, tsigma: float, w: float = MODEL_WE
     t_adj = w * g["pred_total"] + (1 - w) * mk_total if mk_total is not None else g["pred_total"]
     h, a = g["home"], g["away"]
     cands = []
+    # drop outlier quotes (stale / mistaken lines) so "best price" means shopping, not chasing errors
+    sp_ok = [x for x in ln["spread"] if mk_margin is None or abs(-x[1] - mk_margin) <= MAX_POINT_GAP]
+    tot_ok = [x for x in ln["total"] if mk_total is None or abs(x[1] - mk_total) <= MAX_POINT_GAP]
+
+    def ml_ok(rows):
+        ips = [1 / dec(pr) for _, pr in rows]
+        med = _med(ips)
+        return [r for r, ip in zip(rows, ips) if ip >= med - MAX_PROB_GAP and dec(r[1]) <= MAX_ML_DECIMAL] if med else []
+    mlh_ok, mla_ok = ml_ok(ln["ml_h"]), ml_ok(ln["ml_a"])
 
     def add(market, side, label, book, price, p, line):
         cands.append({"market": market, "side": side, "label": label, "book": book, "price": int(price), "line": line,
                       "p": round(float(p), 4), "ev": round(ev_of(float(p), price), 4)})
 
-    for book, pt, ph, pa in ln["spread"]:
+    for book, pt, ph, pa in sp_ok:
         pc = norm.cdf((m_adj + pt) / sigma)                       # home covers if margin + point > 0
         add("spread", "home", f"{h} {pt:+g}", book, ph, pc, pt)
         add("spread", "away", f"{a} {-pt:+g}", book, pa, 1 - pc, -pt)
-    for book, pt, po, pu in ln["total"]:
+    for book, pt, po, pu in tot_ok:
         po_p = norm.cdf((t_adj - pt) / tsigma)
         add("total", "over", f"Over {pt:g}", book, po, po_p, pt)
         add("total", "under", f"Under {pt:g}", book, pu, 1 - po_p, pt)
     ph_win = norm.cdf(m_adj / sigma)
-    for book, pr in ln["ml_h"]:
+    for book, pr in mlh_ok:
         add("moneyline", "home", f"{h} to win", book, pr, ph_win, None)
-    for book, pr in ln["ml_a"]:
+    for book, pr in mla_ok:
         add("moneyline", "away", f"{a} to win", book, pr, 1 - ph_win, None)
 
     # best price per distinct bet (market, side, line): that is the "shop the line" step

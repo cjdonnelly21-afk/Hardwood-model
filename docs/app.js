@@ -53,6 +53,7 @@ function betCard(g, fav, favP, tierName, tierCls) {
     return `<div class="pick bet ${cls}"><div class="tag">Take</div><div class="favname">${esc(b.label)}</div>
       <div class="spread">${pct(b.ev)}</div><div class="tier">EV per $1 · ${price(b.price)} ${esc(b.book)}</div>
       <div class="tot">Model ${fmt(-Math.abs(g.pred_margin), 1)} ${esc(fav)} · market ${m.market_margin === null ? "n/a" : fmt(-Math.abs(m.market_margin), 1)} · total ${fmt(g.pred_total, 0)}/${m.market_total ?? "n/a"}</div>
+      ${b.ev >= .10 ? '<div class="tot"><b>Big gap to the market: check injuries and the book\'s line before trusting it.</b></div>' : ""}
       ${others ? `<div class="tot">Also: ${others}</div>` : ""}</div>`;
   }
   if (b) {
