@@ -16,6 +16,7 @@ import json
 import os
 import statistics
 import sys
+import time
 from pathlib import Path
 
 import numpy as np
@@ -75,12 +76,18 @@ def fetch_odds(status: dict):
     if not key:
         status["lines"] = "off: no ODDS_API_KEY set"
         return None
-    try:
-        r = requests.get(URL, params={"regions": "us", "markets": "h2h,spreads,totals", "oddsFormat": "american",
-                                      "dateFormat": "iso", "apiKey": key}, timeout=40)
-    except Exception as ex:  # never put the URL (it holds the key) in a message
-        status["warnings"].append(f"Odds API request failed: {type(ex).__name__}")
-        return None
+    r = None
+    for wait in (0, 3, 8, 20):                      # the free plan rate-limits bursts (HTTP 429): back off and retry
+        if wait:
+            time.sleep(wait)
+        try:
+            r = requests.get(URL, params={"regions": "us", "markets": "h2h,spreads,totals", "oddsFormat": "american",
+                                          "dateFormat": "iso", "apiKey": key}, timeout=40)
+        except Exception as ex:  # never put the URL (it holds the key) in a message
+            status["warnings"].append(f"Odds API request failed: {type(ex).__name__}")
+            return None
+        if r.status_code != 429:
+            break
     if r.status_code != 200:
         status["warnings"].append(f"Odds API returned HTTP {r.status_code}")
         return None
