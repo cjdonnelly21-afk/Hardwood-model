@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardwood Model – NBA picks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><h1>Hardwood Model · NBA</h1><p id="updated" class="sub">Loading…</p></div>
+  <nav aria-label="Sections"><a href="index.html" class="navlink">College</a></nav>
+</header>
+<main>
+  <section class="panel">
+    <div class="bar">
+      <div id="days" class="chips" role="group" aria-label="Day"></div>
+      <label class="sel"><span>Sort</span><select id="gsort"><option value="ev">Best EV</option><option value="time">Tip time</option></select></label>
+    </div>
+    <p class="legend" id="legend"></p>
+    <ol id="games" class="games"></ol>
+    <p id="gempty" class="empty" hidden>No games on this day.</p>
+    <h2>Track record</h2>
+    <div id="roi" class="stats"></div>
+    <h2>Power ratings</h2>
+    <p class="note">Points better than an average NBA team on a neutral court, from game results this season and last (recent games count more).</p>
+    <div class="tablewrap"><table id="rt"><thead><tr><th class="num">#</th><th>Team</th><th class="num">Rating</th></tr></thead><tbody></tbody></table></div>
+  </section>
+</main>
+<footer><p>Schedules and scores from ESPN, lines from The Odds API. For information and entertainment; a model built only from results has no injury or lineup information, so check both before betting.</p></footer>
+<script>
+const S = {};
+const cdf = z => { const t = 1 / (1 + .2316419 * Math.abs(z)), d = .3989423 * Math.exp(-z * z / 2);
+  const p = d * t * (.3193815 + t * (-.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274)))); return z > 0 ? 1 - p : p; };
+const price = n => (n > 0 ? "+" : "") + n, pct = x => (x >= 0 ? "+" : "") + (x * 100).toFixed(1) + "%";
+const dayKey = iso => { const d = new Date(iso); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
+const dayLabel = k => { const [y, m, d] = k.split("-").map(Number); return new Date(y, m - 1, d).toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" }); };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+function card(g) {
+  const m = g.market, fav = g.pred_margin >= 0 ? g.home : g.away, fm = Math.abs(g.pred_margin).toFixed(1);
+  if (m && m.best && m.best.ev > 0) {
+    const b = m.best, e = b.ev >= .10 ? "e3" : b.ev >= .05 ? "e2" : "e1";
+    const also = m.bets.filter(x => x.ev > 0 && x.label !== b.label).map(x => `${esc(x.label)} (${pct(x.ev)})`).join(" · ");
+    return `<div class="pick bet ${e}"><div class="tag">Take</div><div class="favname">${esc(b.label)}</div>
+      <div class="spread">${pct(b.ev)} EV</div><div class="tier">${price(b.price)} at ${esc(b.book)} · ${(b.p * 100).toFixed(0)}% to hit</div>
+      <div class="tot">Model ${fav} by ${fm} · market ${m.market_margin >= 0 ? g.home : g.away} by ${Math.abs(m.market_margin ?? 0).toFixed(1)}, total ${m.market_total ?? "-"}</div>
+      ${b.ev >= .10 ? '<div class="tot"><span class="chk">CHECK</span> Big gap to the market: check injuries and the book\'s line first.</div>' : ""}
+      ${also ? `<div class="tot">Also: ${also}</div>` : ""}</div>`;
+  }
+  if (m) return `<div class="pick t0"><div class="tag">No edge vs market</div><div class="favname">Pass</div>
+      <div class="tot">Model ${fav} by ${fm} · market ${m.market_margin >= 0 ? g.home : g.away} by ${Math.abs(m.market_margin ?? 0).toFixed(1)}</div></div>`;
+  return `<div class="pick t1"><div class="tag">Model lean (no lines yet)</div><div class="favname">${fav} -${fm}</div>
+      <div class="tot">Projected total ${g.pred_total}</div></div>`;
+}
+function render() {
+  const day = S.day, list = S.d.games.filter(g => dayKey(g.start) === day);
+  const ev = g => g.market && g.market.best ? g.market.best.ev : -9;
+  list.sort(S.sort === "ev" ? (a, b) => ev(b) - ev(a) || a.start.localeCompare(b.start) : (a, b) => a.start.localeCompare(b.start));
+  document.getElementById("gempty").hidden = list.length > 0;
+  document.getElementById("games").innerHTML = list.map(g => {
+    const pw = cdf(g.pred_margin / S.d.sigma), t = new Date(g.start).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
+    return `<li class="game"><div class="teams"><div class="tm ${g.pred_margin < 0 ? "fav" : ""}"><span>${esc(g.away_name)}</span></div>
+      <div class="tm ${g.pred_margin >= 0 ? "fav" : ""}"><span>${esc(g.home_name)}</span></div><div class="when">${t}</div></div>
+      <div class="probwrap"><div class="prob"><i style="width:${((1 - pw) * 100).toFixed(0)}%"></i></div>
+      <div class="probcap">${esc(g.away)} ${((1 - pw) * 100).toFixed(0)}% · ${esc(g.home)} ${(pw * 100).toFixed(0)}%</div></div>${card(g)}</li>`;
+  }).join("");
+}
+async function load() {
+  try {
+    const r = await fetch(`data/nba.json?v=${Date.now()}`); if (!r.ok) throw 0; S.d = await r.json();
+  } catch (e) { document.getElementById("updated").textContent = "NBA data isn't published yet."; return; }
+  const d = S.d, has = d.games.some(g => g.market);
+  document.getElementById("updated").textContent = `Updated ${new Date(d.updated).toLocaleString()} · ${d.n_games} games in ratings`;
+  document.getElementById("legend").innerHTML = has
+    ? `<b>Take</b> is the bet with the best expected value (EV) per $1 after comparing every sportsbook. The model is blended ${Math.round(d.weight * 100)}% model / ${Math.round((1 - d.weight) * 100)}% market because results-only ratings are weaker than the betting market, so treat a big EV as a reason to double-check, not a lock.`
+    : `Lines aren't loaded, so these are model leans only (no EV).`;
+  const keys = [...new Set(d.games.map(g => dayKey(g.start)))].sort(), today = dayKey(new Date().toISOString());
+  S.day = keys.includes(today) ? today : keys[0]; S.sort = "ev";
+  const box = document.getElementById("days");
+  const rd = () => { box.innerHTML = ""; keys.forEach(k => { const b = document.createElement("button"); b.textContent = dayLabel(k);
+    b.setAttribute("aria-pressed", k === S.day); b.onclick = () => { S.day = k; rd(); render(); }; box.appendChild(b); }); };
+  rd(); render();
+  document.getElementById("gsort").onchange = e => { S.sort = e.target.value; render(); };
+  const b = d.bets || { n: 0 };
+  document.getElementById("roi").innerHTML = b.n ? `<div><b>${b.n}</b><span>graded bets</span></div><div><b>${b.units >= 0 ? "+" : ""}${b.units}u</b><span>profit (1u per bet)</span></div>
+    <div><b>${pct(b.roi)}</b><span>ROI</span></div><div><b>${(b.win_rate * 100).toFixed(0)}%</b><span>won</span></div><div><b>${pct(b.avg_ev_claimed)}</b><span>average EV claimed</span></div>`
+    : `<p class="note">No graded bets yet. Each play is logged when posted and graded after the game.</p>`;
+  document.querySelector("#rt tbody").innerHTML = d.ratings.map((t, i) => `<tr><td class="num">${i + 1}</td><td class="team">${esc(t.team)}</td><td class="num">${t.rating >= 0 ? "+" : ""}${t.rating.toFixed(1)}</td></tr>`).join("");
+}
+load();
+</script>
+</body>
+</html>

@@ -96,3 +96,5 @@ footer{padding-bottom:40px;color:var(--ink-soft);font-size:13px}
   h1{font-size:34px}
 }
 @media (prefers-reduced-motion:no-preference){.prob i{transition:width .5s ease}}
+.navlink{font:600 20px/1 var(--num);color:var(--ink-soft);padding:10px 14px;text-decoration:none;border-bottom:4px solid transparent;display:inline-block}
+.navlink:hover{color:var(--ink);border-bottom-color:var(--paint)}
