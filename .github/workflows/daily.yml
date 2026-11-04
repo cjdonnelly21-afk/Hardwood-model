@@ -2,8 +2,8 @@ name: daily-update
 
 on:
   schedule:
-    - cron: "17 10 * * *"   # ~5-6am Eastern: grade last night, predict today
-    - cron: "47 18 * * *"   # ~2-3pm Eastern: refresh ratings before tonight's tip-offs
+    - cron: "17 15 * * *"   # ~10:17am Eastern (UTC-5): grade last night, predict today (Mac is awake, not asleep at 6am)
+    - cron: "47 18 * * *"   # ~1:47pm Eastern: refresh ratings and lines before tonight's tip-offs
   workflow_dispatch:
 
 permissions:
