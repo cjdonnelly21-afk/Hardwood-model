@@ -292,17 +292,22 @@ def main():
     games_out = pred[cols].replace({np.nan: None}).to_dict(orient="records") if len(pred) else []
     # ---- betting lines -> EV (optional: needs ODDS_API_KEY; the site works without it)
     now_s = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
-    odds = None if args.no_fetch else fetch_odds(status)
-    if odds:
-        games_out = attach_lines(games_out, odds, idmap, model, status)
-        status["lines_at"] = now_s
-    bet_log = log_bets(games_out, now_s)
-    bet_log = grade_bets(bet_log, {str(f["game_id"]): (f["home"], f["away"], f["hpts"], f["apts"]) for f in finished})
-    bet_log.to_csv(ROOT / "data" / "bets_log.csv", index=False)
+    bet_roi = {"n": 0}
+    try:                                    # betting is an add-on: if it breaks, the predictions must still publish
+        odds = None if args.no_fetch else fetch_odds(status)
+        if odds:
+            games_out = attach_lines(games_out, odds, idmap, model, status)
+            status["lines_at"] = now_s
+        bet_log = log_bets(games_out, now_s)
+        bet_log = grade_bets(bet_log, {str(f["game_id"]): (f["home"], f["away"], f["hpts"], f["apts"]) for f in finished})
+        bet_log.to_csv(ROOT / "data" / "bets_log.csv", index=False)
+        bet_roi = roi_summary(bet_log)
+    except Exception as ex:
+        status["warnings"].append(f"Betting lines/EV step failed today ({type(ex).__name__}: {ex}); predictions are unaffected.")
     (SITE / "teams.json").write_text(json.dumps({"season": season, "mu": fin["mu"], "mu_p": fin["mu_p"], "hca": fin["h"], "teams": teams}))
     (SITE / "games.json").write_text(json.dumps(games_out))
     (SITE / "model.json").write_text(json.dumps({k: model[k] for k in ("margin", "total", "sigma", "total_sigma", "n_train", "backtest", "calibration")}))
-    (SITE / "accuracy.json").write_text(json.dumps({**live_accuracy(log), "bets": roi_summary(bet_log)}))
+    (SITE / "accuracy.json").write_text(json.dumps({**live_accuracy(log), "bets": bet_roi}))
     (SITE / "params.json").write_text((ROOT / "data" / "params.json").read_text() if (ROOT / "data" / "params.json").exists() else "{}")
     status["games_listed"], status["teams"] = len(games_out), len(teams)
     (SITE / "status.json").write_text(json.dumps(status))

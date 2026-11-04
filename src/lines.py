@@ -206,7 +206,7 @@ def attach_lines(games_out: list, events: list, idmap: dict, model: dict, status
 # ------------------------------------------------------------------ track record
 def log_bets(games_out: list, now: str):
     cols = ["game_id", "made_at", "market", "label", "side", "line", "price", "book", "p", "ev", "result", "units"]
-    old = pd.read_csv(BETS_LOG, dtype={"game_id": str}) if BETS_LOG.exists() else pd.DataFrame(columns=cols)
+    old = pd.read_csv(BETS_LOG, dtype={"game_id": str, "result": object}) if BETS_LOG.exists() else pd.DataFrame(columns=cols)
     done_keys = set(zip(old["game_id"], old["market"]))
     rows = []
     for g in games_out:
@@ -226,6 +226,9 @@ def log_bets(games_out: list, now: str):
 
 def grade_bets(log: pd.DataFrame, finals: dict) -> pd.DataFrame:
     """finals: game_id -> (home, away, hpts, apts). Fills result (W/L/P) and units for ungraded bets."""
+    log = log.copy()
+    log["result"] = log["result"].astype(object)      # an all-empty column is read back as float; it must hold W/L/P
+    log["units"] = pd.to_numeric(log["units"], errors="coerce")
     for i, r in log[log["result"].isna()].iterrows():
         f = finals.get(str(r.game_id))
         if not f:
