@@ -58,7 +58,13 @@ def backtest(g: pd.DataFrame) -> dict:
     tsig = float((t["tot"] - t["total_line"]).std())
     by = r.groupby("season").apply(lambda x: pd.Series({"n": len(x), "model": (x["margin"] - x["m_model"]).abs().mean(),
                                                         "market": (x["margin"] - x["spread_line"]).abs().mean()}), include_groups=False)
-    return {"n": int(len(r)), "seasons": f"{int(r['season'].min())}-{int(r['season'].max())}",
+    # win-probability curve: the cover sigma overrates underdogs, so fit the moneyline sigma on actual straight-up results
+    from scipy.optimize import minimize_scalar
+    dec = r[r["margin"] != 0]
+    mk, hw = dec["spread_line"].to_numpy(float), (dec["margin"] > 0).to_numpy()   # nflverse spread_line = market home margin
+    nll = lambda sg: -(np.where(hw, norm.logcdf(mk / sg), norm.logcdf(-mk / sg))).sum()
+    ml_sigma = float(minimize_scalar(nll, bounds=(6, 16), method="bounded").x)
+    return {"ml_sigma": round(ml_sigma, 2), "n": int(len(r)), "seasons": f"{int(r['season'].min())}-{int(r['season'].max())}",
             "mae_model": round(float((r["margin"] - r["m_model"]).abs().mean()), 2),
             "mae_market": round(float((r["margin"] - r["spread_line"]).abs().mean()), 2),
             "spread_weight": round(w, 3), "total_weight": round(tw, 3), "sigma": round(sig, 2), "total_sigma": round(tsig, 2),
@@ -95,7 +101,7 @@ def main():
     lines.BETS_LOG = BETS
     names = {nname(v): k for k, v in NAMES.items()}
     lines.build_name_index = lambda _idmap: {"full": names, "loc": {}}
-    lines.evaluate = functools.partial(lines.evaluate, w=weight)
+    lines.evaluate = functools.partial(lines.evaluate, w=weight, ml_sigma=bt["ml_sigma"])
     model = {"sigma": sigma, "total_sigma": bt["total_sigma"]}
     now_s = now.strftime("%Y-%m-%dT%H:%MZ")
     roi = {"n": 0}

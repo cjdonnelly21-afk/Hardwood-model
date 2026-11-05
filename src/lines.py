@@ -117,7 +117,7 @@ def parse_event(ev: dict, ix: dict):
     return {"home": h, "away": a, "start": ev["commence_time"], "spread": sp_h, "total": tot, "ml_h": ml_h, "ml_a": ml_a}
 
 
-def evaluate(g: dict, ln: dict, sigma: float, tsigma: float, w: float = MODEL_WEIGHT, total_bias: float = 0.0) -> dict:
+def evaluate(g: dict, ln: dict, sigma: float, tsigma: float, w: float = MODEL_WEIGHT, total_bias: float = 0.0, ml_sigma: float = None) -> dict:
     """g: a prediction row (home, away, pred_margin, pred_total); ln: parsed odds for the same game."""
     mk_margin = _med([-pt for _, pt, _, _ in ln["spread"]])       # home margin implied by the market
     mk_total = _med([pt for _, pt, _, _ in ln["total"]])
@@ -148,7 +148,7 @@ def evaluate(g: dict, ln: dict, sigma: float, tsigma: float, w: float = MODEL_WE
         po_p = norm.cdf((t_adj - pt) / tsigma)
         add("total", "over", f"Over {pt:g}", book, po, po_p, pt)
         add("total", "under", f"Under {pt:g}", book, pu, 1 - po_p, pt)
-    ph_win = norm.cdf(m_adj / sigma)
+    ph_win = norm.cdf(m_adj / (ml_sigma or sigma))        # win chance can need a different spread than cover chance (NFL: ties / key numbers)
     for book, pr in mlh_ok:
         add("moneyline", "home", f"{h} to win", book, pr, ph_win, None)
     for book, pr in mla_ok:
