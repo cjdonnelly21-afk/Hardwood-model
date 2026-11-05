@@ -9,6 +9,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import requests
+from io import StringIO
 
 ROOT = Path(__file__).resolve().parent.parent
 CSV_URL = "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
@@ -18,10 +20,17 @@ DEFAULTS = {"half_life": 400.0, "alpha": 8.0}
 
 
 def load_games(refresh=True) -> pd.DataFrame:
+    g = None
     if refresh or not CACHE.exists():
-        g = pd.read_csv(CSV_URL)
-        g.to_csv(CACHE, index=False)
-    else:
+        try:                                                   # requests ships its own CA bundle (the Mac's python.org build has none)
+            resp = requests.get(CSV_URL, timeout=60)
+            resp.raise_for_status()
+            g = pd.read_csv(StringIO(resp.text))
+            g.to_csv(CACHE, index=False)
+        except Exception:
+            if not CACHE.exists():
+                raise
+    if g is None:
         g = pd.read_csv(CACHE)
     g = g[g["game_type"].isin(["REG", "WC", "DIV", "CON", "SB"])].copy()
     for c in ("home_team", "away_team"):
