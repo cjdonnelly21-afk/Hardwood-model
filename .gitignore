@@ -8,3 +8,4 @@ data/params_run1.json
 __pycache__/
 *.pyc
 .venv/
+data/nfl_games.csv
