@@ -17,3 +17,6 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 2026_09_BUF_MIN,2026-11-05T14:48Z,moneyline,MIN to win,home,,155,BetOnline.ag,0.4094,0.0439,,
 2026_09_BUF_MIN,2026-11-05T14:48Z,spread,MIN +3,home,3.0,106,LowVig.ag,0.5017,0.0335,,
 2026_10_WAS_NYG,2026-11-05T14:48Z,moneyline,NYG to win,home,,-118,DraftKings,0.5471,0.0108,,
+2026_09_DAL_IND,2026-11-05T15:27Z,spread,IND +6,home,6.0,-108,BetRivers,0.5197,0.001,,
+2026_09_DEN_CAR,2026-11-05T15:27Z,moneyline,DEN to win,away,,-143,BetOnline.ag,0.589,0.0009,,
+2026_09_DET_MIA,2026-11-05T15:27Z,spread,DET -7,away,-7.0,101,LowVig.ag,0.4996,0.0042,,
