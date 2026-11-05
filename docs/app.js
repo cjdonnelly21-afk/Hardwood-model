@@ -211,6 +211,7 @@ async function load() {
   $("#rconf").innerHTML = `<option value="">All</option>` + confs.map(c => `<option>${esc(c)}</option>`).join("");
   $("#tlist").innerHTML = S.teams.map(t => `<option value="${esc(t.team)}">`).join("");
   renderDays(); renderGames(); renderRankings(); renderModel();
+  if (hasLines) evKey($("#evkey"), S.games.filter(g => !g.done), { min: "5% EV", why: "College lines for small schools are soft and the model has no injury data, so edges under 5% are mostly noise, while 10%+ usually means the gap needs checking." });
 }
 
 document.querySelectorAll("nav button").forEach(b => b.onclick = () => setTab(b.dataset.tab));

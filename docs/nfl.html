@@ -21,6 +21,7 @@
       <label class="sel"><span>Sort</span><select id="gsort"><option value="ev">Best EV</option><option value="time">Tip time</option></select></label>
     </div>
     <p class="legend" id="legend"></p>
+    <div id="evkey"></div>
     <ol id="games" class="games"></ol>
     <p id="gempty" class="empty" hidden>No games on this day.</p>
     <h2>Track record</h2>
@@ -33,6 +34,7 @@
   </section>
 </main>
 <footer><p>Results and historical lines from nflverse, current lines from The Odds API. For information and entertainment; a results-only model has no injury or quarterback information, so check both before betting.</p></footer>
+<script src="evkey.js"></script>
 <script>
 const S = {};
 const cdf = z => { const t = 1 / (1 + .2316419 * Math.abs(z)), d = .3989423 * Math.exp(-z * z / 2);
@@ -85,6 +87,7 @@ async function load() {
   const rd = () => { box.innerHTML = ""; keys.forEach(k => { const b = document.createElement("button"); b.textContent = dayLabel(k);
     b.setAttribute("aria-pressed", k === S.day); b.onclick = () => { S.day = k; rd(); render(); }; box.appendChild(b); }); };
   rd(); render();
+  if (has) evKey(document.getElementById("evkey"), d.games, { min: "3% EV", why: "The NFL backtest showed the model adds almost nothing to the closing line, so these edges come from price differences between books. Small ones are real but small; this is a judgement call, not a backtested cutoff." });
   document.getElementById("gsort").onchange = e => { S.sort = e.target.value; render(); };
   const B = d.backtest;
   if (B) document.getElementById("bt").innerHTML = `<p class="note">Every game from ${B.seasons} (${B.n.toLocaleString()} games) predicted using only earlier games, then compared with the closing line.</p>

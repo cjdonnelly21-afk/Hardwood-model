@@ -21,6 +21,7 @@
       <label class="sel"><span>Sort</span><select id="gsort"><option value="ev">Best EV</option><option value="time">Tip time</option></select></label>
     </div>
     <p class="legend" id="legend"></p>
+    <div id="evkey"></div>
     <ol id="games" class="games"></ol>
     <p id="gempty" class="empty" hidden>No games on this day.</p>
     <h2>Track record</h2>
@@ -31,6 +32,7 @@
   </section>
 </main>
 <footer><p>Schedules and scores from ESPN, lines from The Odds API. For information and entertainment; a model built only from results has no injury or lineup information, so check both before betting.</p></footer>
+<script src="evkey.js"></script>
 <script>
 const S = {};
 const cdf = z => { const t = 1 / (1 + .2316419 * Math.abs(z)), d = .3989423 * Math.exp(-z * z / 2);
@@ -83,6 +85,7 @@ async function load() {
   const rd = () => { box.innerHTML = ""; keys.forEach(k => { const b = document.createElement("button"); b.textContent = dayLabel(k);
     b.setAttribute("aria-pressed", k === S.day); b.onclick = () => { S.day = k; rd(); render(); }; box.appendChild(b); }); };
   rd(); render();
+  if (has) evKey(document.getElementById("evkey"), d.games, { min: "5% EV", why: "Results-only NBA ratings are blended 25% with the market and cannot see injuries, so small edges are mostly noise." });
   document.getElementById("gsort").onchange = e => { S.sort = e.target.value; render(); };
   const b = d.bets || { n: 0 };
   document.getElementById("roi").innerHTML = b.n ? `<div><b>${b.n}</b><span>graded bets</span></div><div><b>${b.units >= 0 ? "+" : ""}${b.units}u</b><span>profit (1u per bet)</span></div>
