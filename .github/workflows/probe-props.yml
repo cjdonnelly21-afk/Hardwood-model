@@ -1,0 +1,15 @@
+name: probe-props
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: self-hosted
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install -q -r requirements.txt
+          .venv/bin/python src/probe_props.py
