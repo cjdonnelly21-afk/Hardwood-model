@@ -133,3 +133,7 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401921133,2026-11-05T14:39Z,moneyline,Texas Tech to win,home,,-9000,DraftKings,0.9936,0.0047,,
 401909739,2026-11-05T14:39Z,total,Under 174,under,174.0,-103,LowVig.ag,0.5367,0.0578,,
 401909739,2026-11-05T14:39Z,moneyline,Arizona to win,home,,-10000,BetMGM,0.9968,0.0068,,
+401925754,2026-11-05T16:21Z,moneyline,Michigan St. to win,home,,-10000,BetMGM,0.9905,0.0004,,
+401921094,2026-11-05T16:21Z,total,Under 145.5,under,145.5,-103,LowVig.ag,0.5076,0.0004,,
+401921698,2026-11-05T16:21Z,spread,Utah -8,home,-8.0,-106,LowVig.ag,0.5217,0.0139,,
+401909739,2026-11-05T16:21Z,spread,Cal Poly +31,away,31.0,-109,LowVig.ag,0.5259,0.0085,,
