@@ -19,9 +19,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401809943,2025-10-24T23:00Z,ORL,ATL,Orlando Magic,Atlanta Hawks,False,True,107,111
 401809944,2025-10-24T23:30Z,BKN,CLE,Brooklyn Nets,Cleveland Cavaliers,False,True,124,131
 401809945,2025-10-24T23:30Z,NY,BOS,New York Knicks,Boston Celtics,False,True,105,95
-401809947,2025-10-25T00:00Z,HOU,DET,Houston Rockets,Detroit Pistons,False,True,111,115
 401809948,2025-10-25T00:00Z,MEM,MIA,Memphis Grizzlies,Miami Heat,False,True,114,146
 401809949,2025-10-25T00:00Z,NO,SA,New Orleans Pelicans,San Antonio Spurs,False,True,116,120
+401809947,2025-10-25T00:00Z,HOU,DET,Houston Rockets,Detroit Pistons,False,True,111,115
 401809950,2025-10-25T00:30Z,DAL,WSH,Dallas Mavericks,Washington Wizards,False,True,107,117
 401809951,2025-10-25T02:00Z,LAL,MIN,Los Angeles Lakers,Minnesota Timberwolves,False,True,128,110
 401809952,2025-10-25T02:00Z,POR,GS,Portland Trail Blazers,Golden State Warriors,False,True,139,119
@@ -41,12 +41,12 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401809966,2025-10-26T23:30Z,DAL,TOR,Dallas Mavericks,Toronto Raptors,False,True,139,129
 401809967,2025-10-27T01:00Z,LAC,POR,LA Clippers,Portland Trail Blazers,False,True,114,107
 401809968,2025-10-27T01:00Z,SAC,LAL,Sacramento Kings,Los Angeles Lakers,False,True,120,127
-401809245,2025-10-27T23:00Z,DET,CLE,Detroit Pistons,Cleveland Cavaliers,False,True,95,116
 401809969,2025-10-27T23:00Z,PHI,ORL,Philadelphia 76ers,Orlando Magic,False,True,136,124
-401809970,2025-10-28T00:00Z,CHI,ATL,Chicago Bulls,Atlanta Hawks,False,True,128,123
-401809971,2025-10-28T00:00Z,HOU,BKN,Houston Rockets,Brooklyn Nets,False,True,137,109
+401809245,2025-10-27T23:00Z,DET,CLE,Detroit Pistons,Cleveland Cavaliers,False,True,95,116
 401809972,2025-10-28T00:00Z,NO,BOS,New Orleans Pelicans,Boston Celtics,False,True,90,122
 401809973,2025-10-28T00:00Z,SA,TOR,San Antonio Spurs,Toronto Raptors,False,True,121,103
+401809970,2025-10-28T00:00Z,CHI,ATL,Chicago Bulls,Atlanta Hawks,False,True,128,123
+401809971,2025-10-28T00:00Z,HOU,BKN,Houston Rockets,Brooklyn Nets,False,True,137,109
 401809974,2025-10-28T00:30Z,DAL,OKC,Dallas Mavericks,Oklahoma City Thunder,False,True,94,101
 401809975,2025-10-28T01:00Z,UTAH,PHX,Utah Jazz,Phoenix Suns,False,True,138,134
 401809246,2025-10-28T01:30Z,MIN,DEN,Minnesota Timberwolves,Denver Nuggets,False,True,114,127
@@ -68,8 +68,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401809991,2025-10-30T01:30Z,MIN,LAL,Minnesota Timberwolves,Los Angeles Lakers,False,True,115,116
 401809992,2025-10-30T02:00Z,PHX,MEM,Phoenix Suns,Memphis Grizzlies,False,True,113,114
 401809993,2025-10-30T23:00Z,CHA,ORL,Charlotte Hornets,Orlando Magic,False,True,107,123
-401809994,2025-10-31T00:00Z,MIL,GS,Milwaukee Bucks,Golden State Warriors,False,True,120,110
 401809995,2025-10-31T00:00Z,OKC,WSH,Oklahoma City Thunder,Washington Wizards,False,True,127,108
+401809994,2025-10-31T00:00Z,MIL,GS,Milwaukee Bucks,Golden State Warriors,False,True,120,110
 401809996,2025-10-31T00:30Z,SA,MIA,San Antonio Spurs,Miami Heat,False,True,107,101
 401809502,2025-10-31T23:00Z,IND,ATL,Indiana Pacers,Atlanta Hawks,False,True,108,128
 401809503,2025-10-31T23:00Z,PHI,BOS,Philadelphia 76ers,Boston Celtics,False,True,108,109
@@ -81,8 +81,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401809509,2025-11-01T02:30Z,LAC,NO,LA Clippers,New Orleans Pelicans,False,True,126,124
 401809997,2025-11-01T21:00Z,MIL,SAC,Milwaukee Bucks,Sacramento Kings,False,True,133,135
 401809998,2025-11-01T22:00Z,CHA,MIN,Charlotte Hornets,Minnesota Timberwolves,False,True,105,122
-401809999,2025-11-01T23:00Z,IND,GS,Indiana Pacers,Golden State Warriors,False,True,114,109
 401810000,2025-11-01T23:00Z,WSH,ORL,Washington Wizards,Orlando Magic,False,True,94,125
+401809999,2025-11-01T23:00Z,IND,GS,Indiana Pacers,Golden State Warriors,False,True,114,109
 401810001,2025-11-02T00:00Z,BOS,HOU,Boston Celtics,Houston Rockets,False,True,101,128
 401810002,2025-11-02T02:00Z,DET,DAL,Detroit Pistons,Dallas Mavericks,True,True,122,110
 401810003,2025-11-02T20:30Z,OKC,NO,Oklahoma City Thunder,New Orleans Pelicans,False,True,137,106
@@ -93,8 +93,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810008,2025-11-03T00:00Z,NY,CHI,New York Knicks,Chicago Bulls,False,True,128,116
 401810009,2025-11-03T01:00Z,PHX,SA,Phoenix Suns,San Antonio Spurs,False,True,130,118
 401810010,2025-11-03T02:30Z,LAL,MIA,Los Angeles Lakers,Miami Heat,False,True,130,120
-401810011,2025-11-04T00:00Z,BKN,MIN,Brooklyn Nets,Minnesota Timberwolves,False,True,109,125
 401810012,2025-11-04T00:00Z,IND,MIL,Indiana Pacers,Milwaukee Bucks,False,True,115,117
+401810011,2025-11-04T00:00Z,BKN,MIN,Brooklyn Nets,Minnesota Timberwolves,False,True,109,125
 401810013,2025-11-04T00:30Z,BOS,UTAH,Boston Celtics,Utah Jazz,False,True,103,105
 401810014,2025-11-04T00:30Z,NY,WSH,New York Knicks,Washington Wizards,False,True,119,102
 401810015,2025-11-04T01:00Z,HOU,DAL,Houston Rockets,Dallas Mavericks,False,True,110,102
@@ -103,9 +103,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810018,2025-11-04T03:00Z,POR,LAL,Portland Trail Blazers,Los Angeles Lakers,False,True,115,123
 401810019,2025-11-04T03:30Z,LAC,MIA,LA Clippers,Miami Heat,False,True,119,120
 401810020,2025-11-05T00:30Z,TOR,MIL,Toronto Raptors,Milwaukee Bucks,False,True,128,100
-401810021,2025-11-05T01:00Z,ATL,ORL,Atlanta Hawks,Orlando Magic,False,True,127,112
 401810022,2025-11-05T01:00Z,CHI,PHI,Chicago Bulls,Philadelphia 76ers,False,True,113,111
 401810023,2025-11-05T01:00Z,NO,CHA,New Orleans Pelicans,Charlotte Hornets,False,True,116,112
+401810021,2025-11-05T01:00Z,ATL,ORL,Atlanta Hawks,Orlando Magic,False,True,127,112
 401810024,2025-11-05T03:00Z,GS,PHX,Golden State Warriors,Phoenix Suns,False,True,118,107
 401810025,2025-11-05T04:00Z,LAC,OKC,LA Clippers,Oklahoma City Thunder,False,True,107,126
 401810026,2025-11-06T00:00Z,CLE,PHI,Cleveland Cavaliers,Philadelphia 76ers,False,True,132,121
@@ -116,9 +116,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810031,2025-11-06T01:00Z,MEM,HOU,Memphis Grizzlies,Houston Rockets,False,True,109,124
 401810032,2025-11-06T01:30Z,DAL,NO,Dallas Mavericks,New Orleans Pelicans,False,True,99,101
 401810033,2025-11-06T02:00Z,DEN,MIA,Denver Nuggets,Miami Heat,False,True,122,112
-401810034,2025-11-06T03:00Z,LAL,SA,Los Angeles Lakers,San Antonio Spurs,False,True,118,116
-401810035,2025-11-06T03:00Z,POR,OKC,Portland Trail Blazers,Oklahoma City Thunder,False,True,121,119
 401810036,2025-11-06T03:00Z,SAC,GS,Sacramento Kings,Golden State Warriors,False,True,121,116
+401810035,2025-11-06T03:00Z,POR,OKC,Portland Trail Blazers,Oklahoma City Thunder,False,True,121,119
+401810034,2025-11-06T03:00Z,LAL,SA,Los Angeles Lakers,San Antonio Spurs,False,True,118,116
 401810037,2025-11-07T02:00Z,PHX,LAC,Phoenix Suns,LA Clippers,False,True,115,102
 401809510,2025-11-08T00:00Z,ORL,BOS,Orlando Magic,Boston Celtics,False,True,123,110
 401809511,2025-11-08T00:00Z,WSH,CLE,Washington Wizards,Cleveland Cavaliers,False,True,115,148
@@ -129,8 +129,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401809776,2025-11-08T01:00Z,MEM,DAL,Memphis Grizzlies,Dallas Mavericks,False,True,118,104
 401809777,2025-11-08T01:00Z,MIL,CHI,Milwaukee Bucks,Chicago Bulls,False,True,126,110
 401809778,2025-11-08T01:00Z,MIN,UTAH,Minnesota Timberwolves,Utah Jazz,False,True,137,97
-401809779,2025-11-08T03:00Z,DEN,GS,Denver Nuggets,Golden State Warriors,False,True,129,104
 401809780,2025-11-08T03:00Z,SAC,OKC,Sacramento Kings,Oklahoma City Thunder,False,True,101,132
+401809779,2025-11-08T03:00Z,DEN,GS,Denver Nuggets,Golden State Warriors,False,True,129,104
 401810038,2025-11-09T00:00Z,WSH,DAL,Washington Wizards,Dallas Mavericks,False,True,105,111
 401810039,2025-11-09T00:30Z,PHI,TOR,Philadelphia 76ers,Toronto Raptors,False,True,130,120
 401810040,2025-11-09T01:00Z,ATL,LAL,Atlanta Hawks,Los Angeles Lakers,False,True,122,102
@@ -140,9 +140,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810044,2025-11-09T02:00Z,DEN,IND,Denver Nuggets,Indiana Pacers,False,True,117,100
 401810045,2025-11-09T03:30Z,LAC,PHX,LA Clippers,Phoenix Suns,False,True,103,114
 401810046,2025-11-09T20:30Z,MIL,HOU,Milwaukee Bucks,Houston Rockets,False,True,115,122
-401810047,2025-11-09T23:00Z,NY,BKN,New York Knicks,Brooklyn Nets,False,True,134,98
-401810048,2025-11-09T23:00Z,ORL,BOS,Orlando Magic,Boston Celtics,False,True,107,111
 401810049,2025-11-09T23:00Z,MEM,OKC,Memphis Grizzlies,Oklahoma City Thunder,False,True,100,114
+401810048,2025-11-09T23:00Z,ORL,BOS,Orlando Magic,Boston Celtics,False,True,107,111
+401810047,2025-11-09T23:00Z,NY,BKN,New York Knicks,Brooklyn Nets,False,True,134,98
 401810050,2025-11-10T00:30Z,PHI,DET,Philadelphia 76ers,Detroit Pistons,False,True,108,111
 401810051,2025-11-10T01:30Z,GS,IND,Golden State Warriors,Indiana Pacers,False,True,114,83
 401810052,2025-11-10T02:00Z,SAC,MIN,Sacramento Kings,Minnesota Timberwolves,False,True,117,144
@@ -152,8 +152,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810056,2025-11-11T00:30Z,MIA,CLE,Miami Heat,Cleveland Cavaliers,False,True,140,138
 401810057,2025-11-11T01:00Z,CHI,SA,Chicago Bulls,San Antonio Spurs,False,True,117,121
 401810058,2025-11-11T01:30Z,DAL,MIL,Dallas Mavericks,Milwaukee Bucks,False,True,114,116
-401810059,2025-11-11T02:00Z,PHX,NO,Phoenix Suns,New Orleans Pelicans,False,True,121,98
 401810060,2025-11-11T02:00Z,UTAH,MIN,Utah Jazz,Minnesota Timberwolves,False,True,113,120
+401810059,2025-11-11T02:00Z,PHX,NO,Phoenix Suns,New Orleans Pelicans,False,True,121,98
 401810061,2025-11-11T03:30Z,LAC,ATL,LA Clippers,Atlanta Hawks,False,True,102,105
 401810062,2025-11-12T00:30Z,BKN,TOR,Brooklyn Nets,Toronto Raptors,False,True,109,119
 401810063,2025-11-12T00:30Z,NY,MEM,New York Knicks,Memphis Grizzlies,False,True,133,120
@@ -164,8 +164,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810068,2025-11-13T00:00Z,CHA,MIL,Charlotte Hornets,Milwaukee Bucks,False,True,111,100
 401810069,2025-11-13T00:00Z,DET,CHI,Detroit Pistons,Chicago Bulls,False,True,124,113
 401810070,2025-11-13T00:00Z,NY,ORL,New York Knicks,Orlando Magic,False,True,107,124
-401810071,2025-11-13T00:30Z,BOS,MEM,Boston Celtics,Memphis Grizzlies,False,True,131,95
 401810072,2025-11-13T00:30Z,MIA,CLE,Miami Heat,Cleveland Cavaliers,False,True,116,130
+401810071,2025-11-13T00:30Z,BOS,MEM,Boston Celtics,Memphis Grizzlies,False,True,131,95
 401810073,2025-11-13T01:00Z,HOU,WSH,Houston Rockets,Washington Wizards,False,True,135,112
 401810074,2025-11-13T01:00Z,NO,POR,New Orleans Pelicans,Portland Trail Blazers,False,True,117,125
 401810075,2025-11-13T01:00Z,SA,GS,San Antonio Spurs,Golden State Warriors,False,True,120,125
@@ -174,10 +174,10 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810078,2025-11-13T03:00Z,SAC,ATL,Sacramento Kings,Atlanta Hawks,False,True,100,133
 401810079,2025-11-13T03:30Z,LAC,DEN,LA Clippers,Denver Nuggets,False,True,116,130
 401810080,2025-11-14T00:00Z,CLE,TOR,Cleveland Cavaliers,Toronto Raptors,False,True,113,126
-401810081,2025-11-14T02:00Z,PHX,IND,Phoenix Suns,Indiana Pacers,False,True,133,98
 401810082,2025-11-14T02:00Z,UTAH,ATL,Utah Jazz,Atlanta Hawks,False,True,122,132
-401809781,2025-11-15T00:00Z,NY,MIA,New York Knicks,Miami Heat,False,True,140,132
+401810081,2025-11-14T02:00Z,PHX,IND,Phoenix Suns,Indiana Pacers,False,True,133,98
 401809782,2025-11-15T00:00Z,ORL,BKN,Orlando Magic,Brooklyn Nets,False,True,105,98
+401809781,2025-11-15T00:00Z,NY,MIA,New York Knicks,Miami Heat,False,True,140,132
 401809783,2025-11-15T00:30Z,DET,PHI,Detroit Pistons,Philadelphia 76ers,False,True,114,105
 401809784,2025-11-15T01:00Z,HOU,POR,Houston Rockets,Portland Trail Blazers,False,True,140,116
 401809785,2025-11-15T01:00Z,MIL,CHA,Milwaukee Bucks,Charlotte Hornets,False,True,147,134
@@ -186,10 +186,10 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401809788,2025-11-15T01:30Z,DAL,LAC,Dallas Mavericks,LA Clippers,False,True,127,133
 401809789,2025-11-15T02:30Z,SA,GS,San Antonio Spurs,Golden State Warriors,False,True,108,109
 401810083,2025-11-15T22:00Z,CLE,MEM,Cleveland Cavaliers,Memphis Grizzlies,False,True,108,100
-401810084,2025-11-16T00:00Z,CHA,OKC,Charlotte Hornets,Oklahoma City Thunder,False,True,96,109
 401810085,2025-11-16T00:00Z,IND,TOR,Indiana Pacers,Toronto Raptors,False,True,111,129
-401810086,2025-11-16T01:00Z,MIL,LAL,Milwaukee Bucks,Los Angeles Lakers,False,True,95,119
+401810084,2025-11-16T00:00Z,CHA,OKC,Charlotte Hornets,Oklahoma City Thunder,False,True,96,109
 401810087,2025-11-16T01:00Z,MIN,DEN,Minnesota Timberwolves,Denver Nuggets,False,True,112,123
+401810086,2025-11-16T01:00Z,MIL,LAL,Milwaukee Bucks,Los Angeles Lakers,False,True,95,119
 401810088,2025-11-16T20:30Z,BOS,LAC,Boston Celtics,LA Clippers,False,True,121,118
 401810089,2025-11-16T21:00Z,SA,SAC,San Antonio Spurs,Sacramento Kings,False,True,123,110
 401810090,2025-11-16T23:00Z,WSH,BKN,Washington Wizards,Brooklyn Nets,False,True,106,129
@@ -201,8 +201,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810096,2025-11-18T00:00Z,CLE,MIL,Cleveland Cavaliers,Milwaukee Bucks,False,True,118,106
 401810097,2025-11-18T00:00Z,DET,IND,Detroit Pistons,Indiana Pacers,False,True,127,112
 401810098,2025-11-18T00:00Z,PHI,LAC,Philadelphia 76ers,LA Clippers,False,True,110,108
-401810099,2025-11-18T00:30Z,MIA,NY,Miami Heat,New York Knicks,False,True,115,113
 401810100,2025-11-18T00:30Z,TOR,CHA,Toronto Raptors,Charlotte Hornets,False,True,110,108
+401810099,2025-11-18T00:30Z,MIA,NY,Miami Heat,New York Knicks,False,True,115,113
 401810101,2025-11-18T01:00Z,MIN,DAL,Minnesota Timberwolves,Dallas Mavericks,False,True,120,96
 401810102,2025-11-18T01:00Z,NO,OKC,New Orleans Pelicans,Oklahoma City Thunder,False,True,109,126
 401810103,2025-11-18T02:00Z,DEN,CHI,Denver Nuggets,Chicago Bulls,False,True,127,130
@@ -212,9 +212,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810107,2025-11-19T01:00Z,SA,MEM,San Antonio Spurs,Memphis Grizzlies,False,True,111,101
 401810108,2025-11-19T03:30Z,LAL,UTAH,Los Angeles Lakers,Utah Jazz,False,True,140,126
 401810109,2025-11-19T04:00Z,POR,PHX,Portland Trail Blazers,Phoenix Suns,False,True,110,127
+401810113,2025-11-20T00:00Z,PHI,TOR,Philadelphia 76ers,Toronto Raptors,False,True,112,121
 401810110,2025-11-20T00:00Z,CLE,HOU,Cleveland Cavaliers,Houston Rockets,False,True,104,114
 401810111,2025-11-20T00:00Z,IND,CHA,Indiana Pacers,Charlotte Hornets,False,True,127,118
-401810113,2025-11-20T00:00Z,PHI,TOR,Philadelphia 76ers,Toronto Raptors,False,True,112,121
 401810112,2025-11-20T00:30Z,MIA,GS,Miami Heat,Golden State Warriors,False,True,110,96
 401810114,2025-11-20T01:00Z,MIN,WSH,Minnesota Timberwolves,Washington Wizards,False,True,120,109
 401810115,2025-11-20T01:00Z,NO,DEN,New Orleans Pelicans,Denver Nuggets,False,True,118,125
@@ -222,9 +222,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810117,2025-11-20T02:30Z,DAL,NY,Dallas Mavericks,New York Knicks,False,True,111,113
 401810118,2025-11-20T03:00Z,POR,CHI,Portland Trail Blazers,Chicago Bulls,False,True,121,122
 401810119,2025-11-21T00:00Z,ORL,LAC,Orlando Magic,LA Clippers,False,True,129,101
-401810120,2025-11-21T01:00Z,MEM,SAC,Memphis Grizzlies,Sacramento Kings,False,True,137,96
-401810121,2025-11-21T01:00Z,MIL,PHI,Milwaukee Bucks,Philadelphia 76ers,False,True,114,123
 401810122,2025-11-21T01:00Z,SA,ATL,San Antonio Spurs,Atlanta Hawks,False,True,135,126
+401810121,2025-11-21T01:00Z,MIL,PHI,Milwaukee Bucks,Philadelphia 76ers,False,True,114,123
+401810120,2025-11-21T01:00Z,MEM,SAC,Memphis Grizzlies,Sacramento Kings,False,True,137,96
 401809790,2025-11-22T00:00Z,CLE,IND,Cleveland Cavaliers,Indiana Pacers,False,True,120,109
 401809791,2025-11-22T00:30Z,BOS,BKN,Boston Celtics,Brooklyn Nets,False,True,105,113
 401809792,2025-11-22T00:30Z,TOR,WSH,Toronto Raptors,Washington Wizards,False,True,140,110
@@ -247,8 +247,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810134,2025-11-23T23:00Z,TOR,BKN,Toronto Raptors,Brooklyn Nets,False,True,119,109
 401810133,2025-11-23T23:00Z,CLE,LAC,Cleveland Cavaliers,LA Clippers,False,True,120,105
 401810135,2025-11-24T00:00Z,OKC,POR,Oklahoma City Thunder,Portland Trail Blazers,False,True,122,95
-401810136,2025-11-24T01:00Z,PHX,SA,Phoenix Suns,San Antonio Spurs,False,True,111,102
 401810137,2025-11-24T01:00Z,UTAH,LAL,Utah Jazz,Los Angeles Lakers,False,True,106,108
+401810136,2025-11-24T01:00Z,PHX,SA,Phoenix Suns,San Antonio Spurs,False,True,111,102
 401810138,2025-11-25T00:00Z,IND,DET,Indiana Pacers,Detroit Pistons,False,True,117,122
 401810139,2025-11-25T00:00Z,TOR,CLE,Toronto Raptors,Cleveland Cavaliers,False,True,110,99
 401810140,2025-11-25T00:30Z,BKN,NY,Brooklyn Nets,New York Knicks,False,True,100,113
@@ -271,17 +271,17 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401809808,2025-11-27T03:00Z,GS,HOU,Golden State Warriors,Houston Rockets,False,True,100,104
 401809809,2025-11-27T03:00Z,POR,SA,Portland Trail Blazers,San Antonio Spurs,False,True,102,115
 401809810,2025-11-27T03:00Z,SAC,PHX,Sacramento Kings,Phoenix Suns,False,True,100,112
+401809816,2025-11-29T00:30Z,NY,MIL,New York Knicks,Milwaukee Bucks,False,True,118,109
+401809815,2025-11-29T00:30Z,IND,WSH,Indiana Pacers,Washington Wizards,False,True,119,86
+401809814,2025-11-29T00:30Z,DET,ORL,Detroit Pistons,Orlando Magic,False,True,109,112
 401809811,2025-11-29T00:30Z,ATL,CLE,Atlanta Hawks,Cleveland Cavaliers,False,True,130,123
 401809812,2025-11-29T00:30Z,BKN,PHI,Brooklyn Nets,Philadelphia 76ers,False,True,103,115
 401809813,2025-11-29T00:30Z,CHA,CHI,Charlotte Hornets,Chicago Bulls,False,True,123,116
-401809814,2025-11-29T00:30Z,DET,ORL,Detroit Pistons,Orlando Magic,False,True,109,112
-401809815,2025-11-29T00:30Z,IND,WSH,Indiana Pacers,Washington Wizards,False,True,119,86
-401809816,2025-11-29T00:30Z,NY,MIL,New York Knicks,Milwaukee Bucks,False,True,118,109
 401809817,2025-11-29T02:30Z,OKC,PHX,Oklahoma City Thunder,Phoenix Suns,False,True,123,119
 401809818,2025-11-29T02:30Z,DEN,SA,Denver Nuggets,San Antonio Spurs,False,True,136,139
 401809819,2025-11-29T02:30Z,UTAH,SAC,Utah Jazz,Sacramento Kings,False,True,128,119
-401809820,2025-11-29T03:00Z,LAL,DAL,Los Angeles Lakers,Dallas Mavericks,False,True,129,119
 401809821,2025-11-29T03:00Z,LAC,MEM,LA Clippers,Memphis Grizzlies,False,True,107,112
+401809820,2025-11-29T03:00Z,LAL,DAL,Los Angeles Lakers,Dallas Mavericks,False,True,129,119
 401810148,2025-11-29T22:00Z,MIN,BOS,Minnesota Timberwolves,Boston Celtics,False,True,119,115
 401810149,2025-11-29T23:00Z,CHA,TOR,Charlotte Hornets,Toronto Raptors,False,True,118,111
 401810150,2025-11-30T00:30Z,IND,CHI,Indiana Pacers,Chicago Bulls,False,True,103,101
@@ -318,9 +318,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810181,2025-12-04T00:00Z,ORL,SA,Orlando Magic,San Antonio Spurs,False,True,112,114
 401810182,2025-12-04T00:30Z,ATL,LAC,Atlanta Hawks,LA Clippers,False,True,92,115
 401810183,2025-12-04T00:30Z,NY,CHA,New York Knicks,Charlotte Hornets,False,True,119,104
-401810184,2025-12-04T01:00Z,CHI,BKN,Chicago Bulls,Brooklyn Nets,False,True,103,113
-401810185,2025-12-04T01:00Z,HOU,SAC,Houston Rockets,Sacramento Kings,False,True,121,95
 401810186,2025-12-04T01:00Z,MIL,DET,Milwaukee Bucks,Detroit Pistons,False,True,113,109
+401810185,2025-12-04T01:00Z,HOU,SAC,Houston Rockets,Sacramento Kings,False,True,121,95
+401810184,2025-12-04T01:00Z,CHI,BKN,Chicago Bulls,Brooklyn Nets,False,True,103,113
 401810187,2025-12-04T01:30Z,DAL,MIA,Dallas Mavericks,Miami Heat,False,True,118,108
 401810188,2025-12-05T00:00Z,PHI,GS,Philadelphia 76ers,Golden State Warriors,False,True,99,98
 401810189,2025-12-05T00:00Z,WSH,BOS,Washington Wizards,Boston Celtics,False,True,101,146
@@ -329,11 +329,11 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810192,2025-12-05T01:00Z,NO,MIN,New Orleans Pelicans,Minnesota Timberwolves,False,True,116,125
 401810193,2025-12-06T00:00Z,BOS,LAL,Boston Celtics,Los Angeles Lakers,False,True,126,105
 401810194,2025-12-06T00:00Z,ORL,MIA,Orlando Magic,Miami Heat,False,True,106,105
-401810195,2025-12-06T00:30Z,ATL,DEN,Atlanta Hawks,Denver Nuggets,False,True,133,134
+401810199,2025-12-06T00:30Z,TOR,CHA,Toronto Raptors,Charlotte Hornets,False,True,86,111
+401810198,2025-12-06T00:30Z,NY,UTAH,New York Knicks,Utah Jazz,False,True,146,112
 401810196,2025-12-06T00:30Z,CLE,SA,Cleveland Cavaliers,San Antonio Spurs,False,True,130,117
 401810197,2025-12-06T00:30Z,DET,POR,Detroit Pistons,Portland Trail Blazers,False,True,122,116
-401810198,2025-12-06T00:30Z,NY,UTAH,New York Knicks,Utah Jazz,False,True,146,112
-401810199,2025-12-06T00:30Z,TOR,CHA,Toronto Raptors,Charlotte Hornets,False,True,86,111
+401810195,2025-12-06T00:30Z,ATL,DEN,Atlanta Hawks,Denver Nuggets,False,True,133,134
 401810200,2025-12-06T01:00Z,CHI,IND,Chicago Bulls,Indiana Pacers,False,True,105,120
 401810201,2025-12-06T01:00Z,HOU,PHX,Houston Rockets,Phoenix Suns,False,True,117,98
 401810202,2025-12-06T01:00Z,MEM,LAC,Memphis Grizzlies,LA Clippers,False,True,107,98
@@ -341,8 +341,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810204,2025-12-06T02:30Z,OKC,DAL,Oklahoma City Thunder,Dallas Mavericks,False,True,132,111
 401810205,2025-12-06T22:00Z,BKN,NO,Brooklyn Nets,New Orleans Pelicans,False,True,119,101
 401810206,2025-12-07T00:00Z,WSH,ATL,Washington Wizards,Atlanta Hawks,False,True,116,131
-401810207,2025-12-07T00:30Z,CLE,GS,Cleveland Cavaliers,Golden State Warriors,False,True,94,99
 401810208,2025-12-07T00:30Z,DET,MIL,Detroit Pistons,Milwaukee Bucks,False,True,124,112
+401810207,2025-12-07T00:30Z,CLE,GS,Cleveland Cavaliers,Golden State Warriors,False,True,94,99
 401810209,2025-12-07T01:00Z,MIA,SAC,Miami Heat,Sacramento Kings,False,True,111,127
 401810210,2025-12-07T01:00Z,MIN,LAC,Minnesota Timberwolves,LA Clippers,False,True,109,106
 401810211,2025-12-07T01:30Z,DAL,HOU,Dallas Mavericks,Houston Rockets,False,True,122,109
@@ -364,10 +364,10 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401836747,2025-12-12T01:00Z,MIL,BOS,Milwaukee Bucks,Boston Celtics,False,True,116,101
 401836748,2025-12-12T01:00Z,NO,POR,New Orleans Pelicans,Portland Trail Blazers,False,True,143,120
 401836749,2025-12-12T03:00Z,SAC,DEN,Sacramento Kings,Denver Nuggets,False,True,105,136
+401836753,2025-12-13T00:00Z,WSH,CLE,Washington Wizards,Cleveland Cavaliers,False,True,126,130
+401836752,2025-12-13T00:00Z,PHI,IND,Philadelphia 76ers,Indiana Pacers,False,True,115,105
 401836750,2025-12-13T00:00Z,CHA,CHI,Charlotte Hornets,Chicago Bulls,False,True,126,129
 401836751,2025-12-13T00:00Z,DET,ATL,Detroit Pistons,Atlanta Hawks,False,True,142,115
-401836752,2025-12-13T00:00Z,PHI,IND,Philadelphia 76ers,Indiana Pacers,False,True,115,105
-401836753,2025-12-13T00:00Z,WSH,CLE,Washington Wizards,Cleveland Cavaliers,False,True,126,130
 401836754,2025-12-13T01:00Z,MEM,UTAH,Memphis Grizzlies,Utah Jazz,False,True,126,130
 401836795,2025-12-13T01:30Z,DAL,BKN,Dallas Mavericks,Brooklyn Nets,False,True,119,111
 401836796,2025-12-13T03:00Z,GS,MIN,Golden State Warriors,Minnesota Timberwolves,False,True,120,127
@@ -375,10 +375,10 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401809838,2025-12-14T02:00Z,OKC,SA,Oklahoma City Thunder,San Antonio Spurs,True,True,109,111
 401836797,2025-12-14T20:00Z,IND,WSH,Indiana Pacers,Washington Wizards,False,True,89,108
 401836799,2025-12-14T20:30Z,CLE,CHA,Cleveland Cavaliers,Charlotte Hornets,False,True,111,119
-401836798,2025-12-14T23:00Z,ATL,PHI,Atlanta Hawks,Philadelphia 76ers,False,True,120,117
 401836800,2025-12-14T23:00Z,BKN,MIL,Brooklyn Nets,Milwaukee Bucks,False,True,127,82
-401836801,2025-12-15T00:00Z,MIN,SAC,Minnesota Timberwolves,Sacramento Kings,False,True,117,103
+401836798,2025-12-14T23:00Z,ATL,PHI,Atlanta Hawks,Philadelphia 76ers,False,True,120,117
 401836804,2025-12-15T00:00Z,CHI,NO,Chicago Bulls,New Orleans Pelicans,False,True,104,114
+401836801,2025-12-15T00:00Z,MIN,SAC,Minnesota Timberwolves,Sacramento Kings,False,True,117,103
 401839699,2025-12-15T01:00Z,PHX,LAL,Phoenix Suns,Los Angeles Lakers,False,True,114,116
 401836802,2025-12-15T02:00Z,POR,GS,Portland Trail Blazers,Golden State Warriors,False,True,136,131
 401836803,2025-12-16T00:00Z,BOS,DET,Boston Celtics,Detroit Pistons,False,True,105,112
@@ -389,8 +389,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401809839,2025-12-17T01:30Z,NY,SA,New York Knicks,San Antonio Spurs,True,True,124,113
 401810222,2025-12-18T01:00Z,CHI,CLE,Chicago Bulls,Cleveland Cavaliers,False,True,127,111
 401810223,2025-12-18T01:00Z,MIN,MEM,Minnesota Timberwolves,Memphis Grizzlies,False,True,110,116
-401810226,2025-12-19T00:00Z,CHA,ATL,Charlotte Hornets,Atlanta Hawks,False,True,133,126
 401810227,2025-12-19T00:00Z,IND,NY,Indiana Pacers,New York Knicks,False,True,113,114
+401810226,2025-12-19T00:00Z,CHA,ATL,Charlotte Hornets,Atlanta Hawks,False,True,133,126
 401810228,2025-12-19T00:30Z,BKN,MIA,Brooklyn Nets,Miami Heat,False,True,95,106
 401810224,2025-12-19T01:00Z,OKC,LAC,Oklahoma City Thunder,LA Clippers,False,True,122,101
 401810225,2025-12-19T01:00Z,SA,WSH,San Antonio Spurs,Washington Wizards,False,True,119,94
@@ -401,8 +401,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810233,2025-12-19T02:00Z,PHX,GS,Phoenix Suns,Golden State Warriors,False,True,99,98
 401810234,2025-12-19T02:00Z,UTAH,LAL,Utah Jazz,Los Angeles Lakers,False,True,135,143
 401810235,2025-12-19T03:00Z,POR,SAC,Portland Trail Blazers,Sacramento Kings,False,True,134,133
-401810236,2025-12-20T00:00Z,BOS,MIA,Boston Celtics,Miami Heat,False,True,129,116
 401810237,2025-12-20T00:00Z,NY,PHI,New York Knicks,Philadelphia 76ers,False,True,107,116
+401810236,2025-12-20T00:00Z,BOS,MIA,Boston Celtics,Miami Heat,False,True,129,116
 401810238,2025-12-20T00:30Z,ATL,SA,Atlanta Hawks,San Antonio Spurs,False,True,98,126
 401810239,2025-12-20T00:30Z,CLE,CHI,Cleveland Cavaliers,Chicago Bulls,False,True,125,136
 401810240,2025-12-20T02:30Z,MIN,OKC,Minnesota Timberwolves,Oklahoma City Thunder,False,True,112,107
@@ -448,10 +448,10 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401809240,2025-12-25T22:17Z,GS,DAL,Golden State Warriors,Dallas Mavericks,False,True,126,116
 401809241,2025-12-26T01:00Z,LAL,HOU,Los Angeles Lakers,Houston Rockets,False,True,96,119
 401809242,2025-12-26T03:30Z,DEN,MIN,Denver Nuggets,Minnesota Timberwolves,False,True,142,138
-401810278,2025-12-27T00:00Z,ATL,MIA,Atlanta Hawks,Miami Heat,False,True,111,126
-401810279,2025-12-27T00:00Z,ORL,CHA,Orlando Magic,Charlotte Hornets,False,True,105,120
-401810280,2025-12-27T00:00Z,WSH,TOR,Washington Wizards,Toronto Raptors,False,True,138,117
 401810281,2025-12-27T00:00Z,IND,BOS,Indiana Pacers,Boston Celtics,False,True,122,140
+401810280,2025-12-27T00:00Z,WSH,TOR,Washington Wizards,Toronto Raptors,False,True,138,117
+401810279,2025-12-27T00:00Z,ORL,CHA,Orlando Magic,Charlotte Hornets,False,True,105,120
+401810278,2025-12-27T00:00Z,ATL,MIA,Atlanta Hawks,Miami Heat,False,True,111,126
 401810282,2025-12-27T00:30Z,CHI,PHI,Chicago Bulls,Philadelphia 76ers,False,True,109,102
 401810283,2025-12-27T01:00Z,MEM,MIL,Memphis Grizzlies,Milwaukee Bucks,False,True,125,104
 401810284,2025-12-27T01:00Z,NO,PHX,New Orleans Pelicans,Phoenix Suns,False,True,108,115
@@ -460,20 +460,20 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810287,2025-12-27T22:00Z,SAC,DAL,Sacramento Kings,Dallas Mavericks,False,True,113,107
 401810288,2025-12-28T00:00Z,ORL,DEN,Orlando Magic,Denver Nuggets,False,True,127,126
 401810289,2025-12-28T00:00Z,NO,PHX,New Orleans Pelicans,Phoenix Suns,False,True,114,123
-401810294,2025-12-28T01:00Z,MIN,BKN,Minnesota Timberwolves,Brooklyn Nets,False,True,107,123
-401810290,2025-12-28T01:00Z,ATL,NY,Atlanta Hawks,New York Knicks,False,True,125,128
-401810291,2025-12-28T01:00Z,MIA,IND,Miami Heat,Indiana Pacers,False,True,142,116
-401810292,2025-12-28T01:00Z,CHI,MIL,Chicago Bulls,Milwaukee Bucks,False,True,103,112
-401810293,2025-12-28T01:00Z,HOU,CLE,Houston Rockets,Cleveland Cavaliers,False,True,117,100
 401810295,2025-12-28T01:00Z,SA,UTAH,San Antonio Spurs,Utah Jazz,False,True,114,127
+401810293,2025-12-28T01:00Z,HOU,CLE,Houston Rockets,Cleveland Cavaliers,False,True,117,100
+401810292,2025-12-28T01:00Z,CHI,MIL,Chicago Bulls,Milwaukee Bucks,False,True,103,112
+401810290,2025-12-28T01:00Z,ATL,NY,Atlanta Hawks,New York Knicks,False,True,125,128
+401810294,2025-12-28T01:00Z,MIN,BKN,Minnesota Timberwolves,Brooklyn Nets,False,True,107,123
+401810291,2025-12-28T01:00Z,MIA,IND,Miami Heat,Indiana Pacers,False,True,142,116
 401810296,2025-12-28T20:30Z,TOR,GS,Toronto Raptors,Golden State Warriors,False,True,141,127
 401810297,2025-12-28T20:30Z,OKC,PHI,Oklahoma City Thunder,Philadelphia 76ers,False,True,129,104
 401810298,2025-12-28T23:00Z,WSH,MEM,Washington Wizards,Memphis Grizzlies,False,True,116,112
 401810299,2025-12-28T23:00Z,POR,BOS,Portland Trail Blazers,Boston Celtics,False,True,114,108
 401810300,2025-12-29T02:00Z,LAC,DET,LA Clippers,Detroit Pistons,False,True,112,99
 401810301,2025-12-29T02:30Z,LAL,SAC,Los Angeles Lakers,Sacramento Kings,False,True,125,101
-401810302,2025-12-30T00:00Z,CHA,MIL,Charlotte Hornets,Milwaukee Bucks,False,True,113,123
 401810303,2025-12-30T00:00Z,WSH,PHX,Washington Wizards,Phoenix Suns,False,True,101,115
+401810302,2025-12-30T00:00Z,CHA,MIL,Charlotte Hornets,Milwaukee Bucks,False,True,113,123
 401810304,2025-12-30T00:30Z,BKN,GS,Brooklyn Nets,Golden State Warriors,False,True,107,120
 401810305,2025-12-30T00:30Z,MIA,DEN,Miami Heat,Denver Nuggets,False,True,147,123
 401810306,2025-12-30T00:30Z,TOR,ORL,Toronto Raptors,Orlando Magic,False,True,107,106
@@ -530,8 +530,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810357,2026-01-06T00:00Z,DET,NY,Detroit Pistons,New York Knicks,False,True,121,90
 401810358,2026-01-06T00:30Z,BOS,CHI,Boston Celtics,Chicago Bulls,False,True,115,101
 401810359,2026-01-06T00:30Z,TOR,ATL,Toronto Raptors,Atlanta Hawks,False,True,118,100
-401810360,2026-01-06T01:00Z,HOU,PHX,Houston Rockets,Phoenix Suns,False,True,100,97
 401810361,2026-01-06T01:00Z,OKC,CHA,Oklahoma City Thunder,Charlotte Hornets,False,True,97,124
+401810360,2026-01-06T01:00Z,HOU,PHX,Houston Rockets,Phoenix Suns,False,True,100,97
 401810362,2026-01-06T01:30Z,PHI,DEN,Philadelphia 76ers,Denver Nuggets,False,True,124,125
 401810363,2026-01-06T03:00Z,LAC,GS,LA Clippers,Golden State Warriors,False,True,103,102
 401810364,2026-01-06T03:00Z,POR,UTAH,Portland Trail Blazers,Utah Jazz,False,True,137,117
@@ -541,10 +541,10 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810368,2026-01-07T01:00Z,MIN,MIA,Minnesota Timberwolves,Miami Heat,False,True,122,94
 401810369,2026-01-07T01:00Z,NO,LAL,New Orleans Pelicans,Los Angeles Lakers,False,True,103,111
 401810370,2026-01-07T04:00Z,SAC,DAL,Sacramento Kings,Dallas Mavericks,False,True,98,100
+401810375,2026-01-08T00:00Z,BOS,DEN,Boston Celtics,Denver Nuggets,False,True,110,114
+401810373,2026-01-08T00:00Z,PHI,WSH,Philadelphia 76ers,Washington Wizards,False,True,131,110
 401810371,2026-01-08T00:00Z,CHA,TOR,Charlotte Hornets,Toronto Raptors,False,True,96,97
 401810372,2026-01-08T00:00Z,DET,CHI,Detroit Pistons,Chicago Bulls,False,True,108,93
-401810373,2026-01-08T00:00Z,PHI,WSH,Philadelphia 76ers,Washington Wizards,False,True,131,110
-401810375,2026-01-08T00:00Z,BOS,DEN,Boston Celtics,Denver Nuggets,False,True,110,114
 401810374,2026-01-08T00:30Z,ATL,NO,Atlanta Hawks,New Orleans Pelicans,False,True,117,100
 401810376,2026-01-08T00:30Z,BKN,ORL,Brooklyn Nets,Orlando Magic,False,True,103,104
 401810377,2026-01-08T00:30Z,NY,LAC,New York Knicks,LA Clippers,False,True,123,111
@@ -578,8 +578,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810406,2026-01-11T23:00Z,POR,NY,Portland Trail Blazers,New York Knicks,False,True,114,123
 401810407,2026-01-12T00:00Z,MIN,SA,Minnesota Timberwolves,San Antonio Spurs,False,True,104,103
 401810408,2026-01-12T00:00Z,OKC,MIA,Oklahoma City Thunder,Miami Heat,False,True,124,112
-401810409,2026-01-12T01:00Z,DEN,MIL,Denver Nuggets,Milwaukee Bucks,False,True,108,104
 401810410,2026-01-12T01:00Z,PHX,WSH,Phoenix Suns,Washington Wizards,False,True,112,93
+401810409,2026-01-12T01:00Z,DEN,MIL,Denver Nuggets,Milwaukee Bucks,False,True,108,104
 401810411,2026-01-12T01:30Z,GS,ATL,Golden State Warriors,Atlanta Hawks,False,True,111,124
 401810412,2026-01-12T02:00Z,SAC,HOU,Sacramento Kings,Houston Rockets,False,True,111,98
 401810413,2026-01-13T00:00Z,CLE,UTAH,Cleveland Cavaliers,Utah Jazz,False,True,112,123
@@ -589,10 +589,10 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810417,2026-01-13T03:00Z,SAC,LAL,Sacramento Kings,Los Angeles Lakers,False,True,124,112
 401810418,2026-01-13T03:30Z,LAC,CHA,LA Clippers,Charlotte Hornets,False,True,117,109
 401810419,2026-01-14T00:30Z,MIA,PHX,Miami Heat,Phoenix Suns,False,True,127,121
-401810420,2026-01-14T01:00Z,HOU,CHI,Houston Rockets,Chicago Bulls,False,True,119,113
-401810421,2026-01-14T01:00Z,MIL,MIN,Milwaukee Bucks,Minnesota Timberwolves,False,True,106,139
-401810422,2026-01-14T01:00Z,NO,DEN,New Orleans Pelicans,Denver Nuggets,False,True,116,122
 401810423,2026-01-14T01:00Z,OKC,SA,Oklahoma City Thunder,San Antonio Spurs,False,True,119,98
+401810422,2026-01-14T01:00Z,NO,DEN,New Orleans Pelicans,Denver Nuggets,False,True,116,122
+401810421,2026-01-14T01:00Z,MIL,MIN,Milwaukee Bucks,Minnesota Timberwolves,False,True,106,139
+401810420,2026-01-14T01:00Z,HOU,CHI,Houston Rockets,Chicago Bulls,False,True,119,113
 401810424,2026-01-14T03:30Z,LAL,ATL,Los Angeles Lakers,Atlanta Hawks,False,True,141,116
 401810425,2026-01-14T04:00Z,GS,POR,Golden State Warriors,Portland Trail Blazers,False,True,119,97
 401810426,2026-01-15T00:00Z,IND,TOR,Indiana Pacers,Toronto Raptors,False,True,101,115
@@ -613,8 +613,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810441,2026-01-16T03:30Z,LAL,CHA,Los Angeles Lakers,Charlotte Hornets,False,True,117,135
 401810443,2026-01-17T00:00Z,IND,NO,Indiana Pacers,New Orleans Pelicans,False,True,127,119
 401810444,2026-01-17T00:00Z,PHI,CLE,Philadelphia 76ers,Cleveland Cavaliers,False,True,115,117
-401810442,2026-01-17T00:30Z,BKN,CHI,Brooklyn Nets,Chicago Bulls,False,True,112,109
 401810445,2026-01-17T00:30Z,TOR,LAC,Toronto Raptors,LA Clippers,False,True,117,121
+401810442,2026-01-17T00:30Z,BKN,CHI,Brooklyn Nets,Chicago Bulls,False,True,112,109
 401810446,2026-01-17T02:30Z,HOU,MIN,Houston Rockets,Minnesota Timberwolves,False,True,110,105
 401810447,2026-01-17T03:00Z,SAC,WSH,Sacramento Kings,Washington Wizards,False,True,128,115
 401810448,2026-01-17T22:00Z,DAL,UTAH,Dallas Mavericks,Utah Jazz,False,True,138,120
@@ -661,8 +661,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810485,2026-01-23T00:30Z,DAL,GS,Dallas Mavericks,Golden State Warriors,False,True,123,115
 401810486,2026-01-23T01:00Z,MIN,CHI,Minnesota Timberwolves,Chicago Bulls,False,True,115,120
 401810487,2026-01-23T02:00Z,UTAH,SA,Utah Jazz,San Antonio Spurs,False,True,109,126
-401810488,2026-01-23T03:00Z,LAC,LAL,LA Clippers,Los Angeles Lakers,False,True,112,104
 401810489,2026-01-23T03:00Z,POR,MIA,Portland Trail Blazers,Miami Heat,False,True,127,110
+401810488,2026-01-23T03:00Z,LAC,LAL,LA Clippers,Los Angeles Lakers,False,True,112,104
 401810490,2026-01-24T00:00Z,DET,HOU,Detroit Pistons,Houston Rockets,False,True,104,111
 401810491,2026-01-24T00:30Z,ATL,PHX,Atlanta Hawks,Phoenix Suns,False,True,110,103
 401810492,2026-01-24T00:30Z,BKN,BOS,Brooklyn Nets,Boston Celtics,False,True,126,130
@@ -708,8 +708,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810534,2026-01-29T02:42Z,HOU,SA,Houston Rockets,San Antonio Spurs,False,True,99,111
 401810535,2026-01-30T00:00Z,PHI,SAC,Philadelphia 76ers,Sacramento Kings,False,True,113,111
 401810536,2026-01-30T00:00Z,WSH,MIL,Washington Wizards,Milwaukee Bucks,False,True,109,99
-401810537,2026-01-30T01:00Z,ATL,HOU,Atlanta Hawks,Houston Rockets,False,True,86,104
 401850920,2026-01-30T01:00Z,CHI,MIA,Chicago Bulls,Miami Heat,False,True,113,116
+401810537,2026-01-30T01:00Z,ATL,HOU,Atlanta Hawks,Houston Rockets,False,True,86,104
 401810538,2026-01-30T01:30Z,DAL,CHA,Dallas Mavericks,Charlotte Hornets,False,True,121,123
 401810539,2026-01-30T02:00Z,DEN,BKN,Denver Nuggets,Brooklyn Nets,False,True,107,103
 401810540,2026-01-30T02:00Z,PHX,DET,Phoenix Suns,Detroit Pistons,False,True,114,96
@@ -719,8 +719,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810544,2026-01-31T00:30Z,BOS,SAC,Boston Celtics,Sacramento Kings,False,True,112,93
 401810545,2026-01-31T00:30Z,NY,POR,New York Knicks,Portland Trail Blazers,False,True,127,97
 401810546,2026-01-31T00:30Z,NO,MEM,New Orleans Pelicans,Memphis Grizzlies,False,True,114,106
-401810548,2026-01-31T02:00Z,PHX,CLE,Phoenix Suns,Cleveland Cavaliers,False,True,126,113
 401810550,2026-01-31T02:00Z,DEN,LAC,Denver Nuggets,LA Clippers,False,True,122,109
+401810548,2026-01-31T02:00Z,PHX,CLE,Phoenix Suns,Cleveland Cavaliers,False,True,126,113
 401810549,2026-01-31T02:30Z,UTAH,BKN,Utah Jazz,Brooklyn Nets,False,True,99,109
 401810551,2026-01-31T03:00Z,GS,DET,Golden State Warriors,Detroit Pistons,False,True,124,131
 401810552,2026-01-31T17:00Z,CHA,SA,Charlotte Hornets,San Antonio Spurs,False,True,111,106
@@ -730,10 +730,10 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810555,2026-02-01T01:00Z,MEM,MIN,Memphis Grizzlies,Minnesota Timberwolves,False,True,114,131
 401810556,2026-02-01T01:30Z,HOU,DAL,Houston Rockets,Dallas Mavericks,False,True,111,107
 401810557,2026-02-01T20:30Z,BOS,MIL,Boston Celtics,Milwaukee Bucks,False,True,107,79
-401810559,2026-02-01T23:00Z,DET,BKN,Detroit Pistons,Brooklyn Nets,False,True,130,77
-401810560,2026-02-01T23:00Z,MIA,CHI,Miami Heat,Chicago Bulls,False,True,134,91
-401810561,2026-02-01T23:00Z,TOR,UTAH,Toronto Raptors,Utah Jazz,False,True,107,100
 401810562,2026-02-01T23:00Z,WSH,SAC,Washington Wizards,Sacramento Kings,False,True,116,112
+401810561,2026-02-01T23:00Z,TOR,UTAH,Toronto Raptors,Utah Jazz,False,True,107,100
+401810560,2026-02-01T23:00Z,MIA,CHI,Miami Heat,Chicago Bulls,False,True,134,91
+401810559,2026-02-01T23:00Z,DET,BKN,Detroit Pistons,Brooklyn Nets,False,True,130,77
 401810563,2026-02-02T00:00Z,NY,LAL,New York Knicks,Los Angeles Lakers,False,True,112,100
 401810564,2026-02-02T01:00Z,PHX,LAC,Phoenix Suns,LA Clippers,False,True,93,117
 401810558,2026-02-02T02:00Z,SA,ORL,San Antonio Spurs,Orlando Magic,False,True,112,103
@@ -743,9 +743,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810568,2026-02-03T00:00Z,IND,HOU,Indiana Pacers,Houston Rockets,False,True,114,118
 401810569,2026-02-03T00:30Z,MEM,MIN,Memphis Grizzlies,Minnesota Timberwolves,False,True,137,128
 401810570,2026-02-03T03:00Z,LAC,PHI,LA Clippers,Philadelphia 76ers,False,True,113,128
+401810573,2026-02-04T00:00Z,WSH,NY,Washington Wizards,New York Knicks,False,True,101,132
 401810571,2026-02-04T00:00Z,DET,DEN,Detroit Pistons,Denver Nuggets,False,True,124,121
 401810572,2026-02-04T00:00Z,IND,UTAH,Indiana Pacers,Utah Jazz,False,True,122,131
-401810573,2026-02-04T00:00Z,WSH,NY,Washington Wizards,New York Knicks,False,True,101,132
 401810574,2026-02-04T00:30Z,BKN,LAL,Brooklyn Nets,Los Angeles Lakers,False,True,109,125
 401810575,2026-02-04T00:30Z,MIA,ATL,Miami Heat,Atlanta Hawks,False,True,115,127
 401810576,2026-02-04T01:00Z,DAL,BOS,Dallas Mavericks,Boston Celtics,False,True,100,110
@@ -755,8 +755,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810580,2026-02-04T04:00Z,POR,PHX,Portland Trail Blazers,Phoenix Suns,False,True,125,130
 401810581,2026-02-05T00:00Z,NY,DEN,New York Knicks,Denver Nuggets,False,True,134,127
 401810582,2026-02-05T00:30Z,TOR,MIN,Toronto Raptors,Minnesota Timberwolves,False,True,126,128
-401810583,2026-02-05T01:00Z,HOU,BOS,Houston Rockets,Boston Celtics,False,True,93,114
 401810584,2026-02-05T01:00Z,MIL,NO,Milwaukee Bucks,New Orleans Pelicans,False,True,141,137
+401810583,2026-02-05T01:00Z,HOU,BOS,Houston Rockets,Boston Celtics,False,True,93,114
 401810585,2026-02-05T02:30Z,SA,OKC,San Antonio Spurs,Oklahoma City Thunder,False,True,116,106
 401810586,2026-02-05T03:00Z,SAC,MEM,Sacramento Kings,Memphis Grizzlies,False,True,125,129
 401810587,2026-02-05T03:30Z,LAC,CLE,LA Clippers,Cleveland Cavaliers,False,True,91,124
@@ -766,8 +766,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810591,2026-02-06T00:30Z,TOR,CHI,Toronto Raptors,Chicago Bulls,False,True,123,107
 401810592,2026-02-06T01:00Z,HOU,CHA,Houston Rockets,Charlotte Hornets,False,True,99,109
 401810593,2026-02-06T01:30Z,DAL,SA,Dallas Mavericks,San Antonio Spurs,False,True,123,135
-401810594,2026-02-06T03:00Z,PHX,GS,Phoenix Suns,Golden State Warriors,False,True,97,101
 401810595,2026-02-06T03:00Z,LAL,PHI,Los Angeles Lakers,Philadelphia 76ers,False,True,119,115
+401810594,2026-02-06T03:00Z,PHX,GS,Phoenix Suns,Golden State Warriors,False,True,97,101
 401810596,2026-02-07T00:30Z,BOS,MIA,Boston Celtics,Miami Heat,False,True,98,96
 401810597,2026-02-07T00:30Z,DET,NY,Detroit Pistons,New York Knicks,False,True,118,80
 401810598,2026-02-07T01:00Z,MIL,IND,Milwaukee Bucks,Indiana Pacers,False,True,105,99
@@ -789,9 +789,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810614,2026-02-08T20:00Z,TOR,IND,Toronto Raptors,Indiana Pacers,False,True,122,104
 401810615,2026-02-08T20:00Z,MIN,LAC,Minnesota Timberwolves,LA Clippers,False,True,96,115
 401810616,2026-02-10T00:00Z,CHA,DET,Charlotte Hornets,Detroit Pistons,False,True,104,110
-401810617,2026-02-10T00:30Z,BKN,CHI,Brooklyn Nets,Chicago Bulls,False,True,123,115
 401810618,2026-02-10T00:30Z,MIA,UTAH,Miami Heat,Utah Jazz,False,True,111,115
 401810619,2026-02-10T00:30Z,ORL,MIL,Orlando Magic,Milwaukee Bucks,False,True,118,99
+401810617,2026-02-10T00:30Z,BKN,CHI,Brooklyn Nets,Chicago Bulls,False,True,123,115
 401810620,2026-02-10T01:00Z,MIN,ATL,Minnesota Timberwolves,Atlanta Hawks,False,True,138,116
 401810621,2026-02-10T01:00Z,NO,SAC,New Orleans Pelicans,Sacramento Kings,False,True,120,94
 401810622,2026-02-10T02:00Z,DEN,CLE,Denver Nuggets,Cleveland Cavaliers,False,True,117,119
@@ -802,9 +802,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810627,2026-02-11T01:00Z,HOU,LAC,Houston Rockets,LA Clippers,False,True,102,95
 401810628,2026-02-11T02:00Z,PHX,DAL,Phoenix Suns,Dallas Mavericks,False,True,120,111
 401810629,2026-02-11T03:30Z,LAL,SA,Los Angeles Lakers,San Antonio Spurs,False,True,108,136
-401810630,2026-02-12T00:00Z,CHA,ATL,Charlotte Hornets,Atlanta Hawks,False,True,110,107
-401810631,2026-02-12T00:00Z,CLE,WSH,Cleveland Cavaliers,Washington Wizards,False,True,138,113
 401810632,2026-02-12T00:00Z,ORL,MIL,Orlando Magic,Milwaukee Bucks,False,True,108,116
+401810631,2026-02-12T00:00Z,CLE,WSH,Cleveland Cavaliers,Washington Wizards,False,True,138,113
+401810630,2026-02-12T00:00Z,CHA,ATL,Charlotte Hornets,Atlanta Hawks,False,True,110,107
 401810634,2026-02-12T00:30Z,BKN,IND,Brooklyn Nets,Indiana Pacers,False,True,110,115
 401810633,2026-02-12T00:30Z,BOS,CHI,Boston Celtics,Chicago Bulls,False,True,124,105
 401810636,2026-02-12T00:30Z,TOR,DET,Toronto Raptors,Detroit Pistons,False,True,95,113
@@ -812,9 +812,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810637,2026-02-12T01:00Z,HOU,LAC,Houston Rockets,LA Clippers,False,True,102,105
 401810638,2026-02-12T01:00Z,MIN,POR,Minnesota Timberwolves,Portland Trail Blazers,False,True,133,109
 401810639,2026-02-12T01:00Z,NO,MIA,New Orleans Pelicans,Miami Heat,False,True,111,123
-401810640,2026-02-12T02:00Z,PHX,OKC,Phoenix Suns,Oklahoma City Thunder,False,True,109,136
-401810641,2026-02-12T02:00Z,UTAH,SAC,Utah Jazz,Sacramento Kings,False,True,121,93
 401810642,2026-02-12T02:00Z,DEN,MEM,Denver Nuggets,Memphis Grizzlies,False,True,122,116
+401810641,2026-02-12T02:00Z,UTAH,SAC,Utah Jazz,Sacramento Kings,False,True,121,93
+401810640,2026-02-12T02:00Z,PHX,OKC,Phoenix Suns,Oklahoma City Thunder,False,True,109,136
 401810643,2026-02-12T03:00Z,GS,SA,Golden State Warriors,San Antonio Spurs,False,True,113,126
 401810644,2026-02-13T00:30Z,OKC,MIL,Oklahoma City Thunder,Milwaukee Bucks,False,True,93,110
 401810645,2026-02-13T02:00Z,UTAH,POR,Utah Jazz,Portland Trail Blazers,False,True,119,135
@@ -823,10 +823,10 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401838141,2026-02-15T22:55Z,STRIPES,STARS,Team Stripes,Team Stars,False,True,42,40
 401838142,2026-02-15T23:25Z,STRIPES,WORLD,Team Stripes,World,False,True,48,45
 401838143,2026-02-16T00:10Z,STRIPES,STARS,Team Stripes,Team Stars,False,True,21,47
-401810647,2026-02-20T00:00Z,CHA,HOU,Charlotte Hornets,Houston Rockets,False,True,101,105
-401810648,2026-02-20T00:00Z,CLE,BKN,Cleveland Cavaliers,Brooklyn Nets,False,True,112,84
 401810649,2026-02-20T00:00Z,PHI,ATL,Philadelphia 76ers,Atlanta Hawks,False,True,107,117
 401810650,2026-02-20T00:00Z,WSH,IND,Washington Wizards,Indiana Pacers,False,True,112,105
+401810647,2026-02-20T00:00Z,CHA,HOU,Charlotte Hornets,Houston Rockets,False,True,101,105
+401810648,2026-02-20T00:00Z,CLE,BKN,Cleveland Cavaliers,Brooklyn Nets,False,True,112,84
 401810651,2026-02-20T00:30Z,NY,DET,New York Knicks,Detroit Pistons,False,True,111,126
 401810652,2026-02-20T01:00Z,CHI,TOR,Chicago Bulls,Toronto Raptors,False,True,101,110
 401810653,2026-02-20T01:30Z,SA,PHX,San Antonio Spurs,Phoenix Suns,False,True,121,94
@@ -836,8 +836,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810657,2026-02-21T00:00Z,CHA,CLE,Charlotte Hornets,Cleveland Cavaliers,False,True,113,118
 401810658,2026-02-21T00:00Z,WSH,IND,Washington Wizards,Indiana Pacers,False,True,131,118
 401810659,2026-02-21T00:00Z,MEM,UTAH,Memphis Grizzlies,Utah Jazz,False,True,123,114
-401810660,2026-02-21T00:30Z,ATL,MIA,Atlanta Hawks,Miami Heat,False,True,97,128
 401810661,2026-02-21T00:30Z,MIN,DAL,Minnesota Timberwolves,Dallas Mavericks,False,True,122,111
+401810660,2026-02-21T00:30Z,ATL,MIA,Atlanta Hawks,Miami Heat,False,True,97,128
 401810662,2026-02-21T01:00Z,NO,MIL,New Orleans Pelicans,Milwaukee Bucks,False,True,118,139
 401810663,2026-02-21T01:00Z,OKC,BKN,Oklahoma City Thunder,Brooklyn Nets,False,True,105,86
 401810665,2026-02-21T03:00Z,POR,DEN,Portland Trail Blazers,Denver Nuggets,False,True,103,157
@@ -849,9 +849,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810670,2026-02-22T01:00Z,SA,SAC,San Antonio Spurs,Sacramento Kings,False,True,139,122
 401810671,2026-02-22T01:30Z,NY,HOU,New York Knicks,Houston Rockets,False,True,108,106
 401810672,2026-02-22T18:00Z,OKC,CLE,Oklahoma City Thunder,Cleveland Cavaliers,False,True,121,113
-401810673,2026-02-22T20:30Z,ATL,BKN,Atlanta Hawks,Brooklyn Nets,False,True,115,104
-401810674,2026-02-22T20:30Z,MIL,TOR,Milwaukee Bucks,Toronto Raptors,False,True,94,122
 401810675,2026-02-22T20:30Z,GS,DEN,Golden State Warriors,Denver Nuggets,False,True,128,117
+401810674,2026-02-22T20:30Z,MIL,TOR,Milwaukee Bucks,Toronto Raptors,False,True,94,122
+401810673,2026-02-22T20:30Z,ATL,BKN,Atlanta Hawks,Brooklyn Nets,False,True,115,104
 401810676,2026-02-22T22:00Z,IND,DAL,Indiana Pacers,Dallas Mavericks,False,True,130,134
 401810677,2026-02-22T23:00Z,WSH,CHA,Washington Wizards,Charlotte Hornets,False,True,112,129
 401810678,2026-02-22T23:30Z,LAL,BOS,Los Angeles Lakers,Boston Celtics,False,True,89,111
@@ -873,9 +873,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810694,2026-02-25T02:00Z,PHX,BOS,Phoenix Suns,Boston Celtics,False,True,81,97
 401810696,2026-02-25T03:00Z,POR,MIN,Portland Trail Blazers,Minnesota Timberwolves,False,True,121,124
 401810695,2026-02-25T03:30Z,LAL,ORL,Los Angeles Lakers,Orlando Magic,False,True,109,110
+401810699,2026-02-26T00:30Z,MEM,GS,Memphis Grizzlies,Golden State Warriors,False,True,112,133
 401810697,2026-02-26T00:30Z,DET,OKC,Detroit Pistons,Oklahoma City Thunder,False,True,124,116
 401810698,2026-02-26T00:30Z,TOR,SA,Toronto Raptors,San Antonio Spurs,False,True,107,110
-401810699,2026-02-26T00:30Z,MEM,GS,Memphis Grizzlies,Golden State Warriors,False,True,112,133
 401810700,2026-02-26T01:00Z,HOU,SAC,Houston Rockets,Sacramento Kings,False,True,128,97
 401810701,2026-02-26T01:00Z,MIL,CLE,Milwaukee Bucks,Cleveland Cavaliers,False,True,118,116
 401810702,2026-02-26T03:00Z,DEN,BOS,Denver Nuggets,Boston Celtics,False,True,103,84
@@ -919,9 +919,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810740,2026-03-04T00:00Z,ORL,WSH,Orlando Magic,Washington Wizards,False,True,126,109
 401810741,2026-03-04T00:30Z,MIA,BKN,Miami Heat,Brooklyn Nets,False,True,124,98
 401810742,2026-03-04T00:30Z,TOR,NY,Toronto Raptors,New York Knicks,False,True,95,111
-401810743,2026-03-04T01:00Z,PHI,SA,Philadelphia 76ers,San Antonio Spurs,False,True,91,131
 401810744,2026-03-04T01:00Z,CHI,OKC,Chicago Bulls,Oklahoma City Thunder,False,True,108,116
 401810745,2026-03-04T01:00Z,MIN,MEM,Minnesota Timberwolves,Memphis Grizzlies,False,True,117,110
+401810743,2026-03-04T01:00Z,PHI,SA,Philadelphia 76ers,San Antonio Spurs,False,True,91,131
 401810746,2026-03-04T03:30Z,LAL,NO,Los Angeles Lakers,New Orleans Pelicans,False,True,110,101
 401810747,2026-03-04T04:00Z,SAC,PHX,Sacramento Kings,Phoenix Suns,False,True,103,114
 401810748,2026-03-05T00:00Z,NY,OKC,New York Knicks,Oklahoma City Thunder,False,True,100,103
@@ -930,10 +930,10 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810751,2026-03-05T01:00Z,MEM,POR,Memphis Grizzlies,Portland Trail Blazers,False,True,114,122
 401810752,2026-03-05T02:30Z,MIL,ATL,Milwaukee Bucks,Atlanta Hawks,False,True,113,131
 401810753,2026-03-05T03:30Z,LAC,IND,LA Clippers,Indiana Pacers,False,True,130,107
-401810754,2026-03-06T00:00Z,ORL,DAL,Orlando Magic,Dallas Mavericks,False,True,115,114
 401810755,2026-03-06T00:00Z,WSH,UTAH,Washington Wizards,Utah Jazz,False,True,112,122
-401810756,2026-03-06T00:30Z,MIA,BKN,Miami Heat,Brooklyn Nets,False,True,126,110
+401810754,2026-03-06T00:00Z,ORL,DAL,Orlando Magic,Dallas Mavericks,False,True,115,114
 401810757,2026-03-06T00:30Z,HOU,GS,Houston Rockets,Golden State Warriors,False,True,113,115
+401810756,2026-03-06T00:30Z,MIA,BKN,Miami Heat,Brooklyn Nets,False,True,126,110
 401810758,2026-03-06T01:00Z,MIN,TOR,Minnesota Timberwolves,Toronto Raptors,False,True,115,107
 401810759,2026-03-06T01:00Z,SA,DET,San Antonio Spurs,Detroit Pistons,False,True,121,106
 401810760,2026-03-06T02:00Z,PHX,CHI,Phoenix Suns,Chicago Bulls,False,True,103,105
@@ -942,8 +942,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810763,2026-03-07T00:00Z,BOS,DAL,Boston Celtics,Dallas Mavericks,False,True,120,100
 401810764,2026-03-07T00:00Z,CHA,MIA,Charlotte Hornets,Miami Heat,False,True,120,128
 401810765,2026-03-07T01:00Z,HOU,POR,Houston Rockets,Portland Trail Blazers,False,True,106,99
-401810766,2026-03-07T02:00Z,DEN,NY,Denver Nuggets,New York Knicks,False,True,103,142
 401810767,2026-03-07T02:00Z,PHX,NO,Phoenix Suns,New Orleans Pelicans,False,True,118,116
+401810766,2026-03-07T02:00Z,DEN,NY,Denver Nuggets,New York Knicks,False,True,103,142
 401810768,2026-03-07T02:30Z,SA,LAC,San Antonio Spurs,LA Clippers,False,True,116,112
 401810769,2026-03-07T03:30Z,LAL,IND,Los Angeles Lakers,Indiana Pacers,False,True,128,117
 401810770,2026-03-07T20:00Z,MIN,ORL,Minnesota Timberwolves,Orlando Magic,False,True,92,119
@@ -957,8 +957,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810778,2026-03-08T22:00Z,MIA,DET,Miami Heat,Detroit Pistons,False,True,121,110
 401810779,2026-03-08T22:00Z,TOR,DAL,Toronto Raptors,Dallas Mavericks,False,True,122,92
 401810780,2026-03-08T23:00Z,NO,WSH,New Orleans Pelicans,Washington Wizards,False,True,138,118
-401810781,2026-03-09T00:00Z,MIL,ORL,Milwaukee Bucks,Orlando Magic,False,True,91,130
 401810782,2026-03-09T00:00Z,SA,HOU,San Antonio Spurs,Houston Rockets,False,True,145,120
+401810781,2026-03-09T00:00Z,MIL,ORL,Milwaukee Bucks,Orlando Magic,False,True,91,130
 401810784,2026-03-09T01:00Z,POR,IND,Portland Trail Blazers,Indiana Pacers,False,True,131,111
 401810785,2026-03-09T01:00Z,SAC,CHI,Sacramento Kings,Chicago Bulls,False,True,126,110
 401810783,2026-03-09T02:00Z,PHX,CHA,Phoenix Suns,Charlotte Hornets,False,True,111,99
@@ -968,9 +968,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810789,2026-03-10T01:00Z,UTAH,GS,Utah Jazz,Golden State Warriors,False,True,119,116
 401810790,2026-03-10T02:00Z,LAC,NY,LA Clippers,New York Knicks,False,True,126,118
 401810791,2026-03-10T23:00Z,PHI,MEM,Philadelphia 76ers,Memphis Grizzlies,False,True,139,129
+401810794,2026-03-10T23:30Z,ATL,DAL,Atlanta Hawks,Dallas Mavericks,False,True,124,112
 401810792,2026-03-10T23:30Z,BKN,DET,Brooklyn Nets,Detroit Pistons,False,True,100,138
 401810793,2026-03-10T23:30Z,MIA,WSH,Miami Heat,Washington Wizards,False,True,150,129
-401810794,2026-03-10T23:30Z,ATL,DAL,Atlanta Hawks,Dallas Mavericks,False,True,124,112
 401810795,2026-03-11T00:00Z,HOU,TOR,Houston Rockets,Toronto Raptors,False,True,113,99
 401810796,2026-03-11T00:00Z,MIL,PHX,Milwaukee Bucks,Phoenix Suns,False,True,114,129
 401810797,2026-03-11T00:00Z,SA,BOS,San Antonio Spurs,Boston Celtics,False,True,125,116
@@ -1015,8 +1015,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810835,2026-03-15T22:00Z,PHI,POR,Philadelphia 76ers,Portland Trail Blazers,False,True,109,103
 401810836,2026-03-16T00:00Z,NY,GS,New York Knicks,Golden State Warriors,False,True,110,107
 401810837,2026-03-16T02:00Z,SAC,UTAH,Sacramento Kings,Utah Jazz,False,True,116,111
-401810838,2026-03-16T23:00Z,ATL,ORL,Atlanta Hawks,Orlando Magic,False,True,124,112
 401810839,2026-03-16T23:00Z,WSH,GS,Washington Wizards,Golden State Warriors,False,True,117,125
+401810838,2026-03-16T23:00Z,ATL,ORL,Atlanta Hawks,Orlando Magic,False,True,124,112
 401810840,2026-03-16T23:30Z,BKN,POR,Brooklyn Nets,Portland Trail Blazers,False,True,95,114
 401810841,2026-03-16T23:30Z,BOS,PHX,Boston Celtics,Phoenix Suns,False,True,120,112
 401810842,2026-03-17T00:00Z,CHI,MEM,Chicago Bulls,Memphis Grizzlies,False,True,132,107
@@ -1027,8 +1027,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810847,2026-03-17T23:00Z,ORL,OKC,Orlando Magic,Oklahoma City Thunder,False,True,108,113
 401810848,2026-03-17T23:00Z,WSH,DET,Washington Wizards,Detroit Pistons,False,True,117,130
 401810849,2026-03-17T23:30Z,NY,IND,New York Knicks,Indiana Pacers,False,True,136,110
-401810850,2026-03-18T00:00Z,MIL,CLE,Milwaukee Bucks,Cleveland Cavaliers,False,True,116,123
 401810851,2026-03-18T00:00Z,MIN,PHX,Minnesota Timberwolves,Phoenix Suns,False,True,116,104
+401810850,2026-03-18T00:00Z,MIL,CLE,Milwaukee Bucks,Cleveland Cavaliers,False,True,116,123
 401810852,2026-03-18T02:00Z,DEN,PHI,Denver Nuggets,Philadelphia 76ers,False,True,124,96
 401810853,2026-03-18T02:00Z,SAC,SA,Sacramento Kings,San Antonio Spurs,False,True,104,132
 401810854,2026-03-18T23:00Z,BOS,GS,Boston Celtics,Golden State Warriors,False,True,120,99
@@ -1050,9 +1050,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810870,2026-03-20T02:00Z,SAC,PHI,Sacramento Kings,Philadelphia 76ers,False,True,118,139
 401810871,2026-03-20T23:30Z,BKN,NY,Brooklyn Nets,New York Knicks,False,True,92,93
 401810872,2026-03-20T23:30Z,DET,GS,Detroit Pistons,Golden State Warriors,False,True,115,101
-401810873,2026-03-21T00:00Z,HOU,ATL,Houston Rockets,Atlanta Hawks,False,True,117,95
-401810874,2026-03-21T00:00Z,MEM,BOS,Memphis Grizzlies,Boston Celtics,False,True,112,117
 401810875,2026-03-21T00:00Z,MIN,POR,Minnesota Timberwolves,Portland Trail Blazers,False,True,104,108
+401810874,2026-03-21T00:00Z,MEM,BOS,Memphis Grizzlies,Boston Celtics,False,True,112,117
+401810873,2026-03-21T00:00Z,HOU,ATL,Houston Rockets,Atlanta Hawks,False,True,117,95
 401810876,2026-03-21T01:00Z,DEN,TOR,Denver Nuggets,Toronto Raptors,False,True,121,115
 401810877,2026-03-21T21:00Z,WSH,OKC,Washington Wizards,Oklahoma City Thunder,False,True,111,132
 401810878,2026-03-21T23:00Z,CHA,MEM,Charlotte Hornets,Memphis Grizzlies,False,True,124,101
@@ -1086,8 +1086,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810906,2026-03-25T23:00Z,DET,ATL,Detroit Pistons,Atlanta Hawks,False,True,129,130
 401810907,2026-03-25T23:00Z,IND,LAL,Indiana Pacers,Los Angeles Lakers,False,True,130,137
 401810908,2026-03-25T23:00Z,PHI,CHI,Philadelphia 76ers,Chicago Bulls,False,True,157,137
-401810909,2026-03-25T23:30Z,BOS,OKC,Boston Celtics,Oklahoma City Thunder,False,True,119,109
 401810910,2026-03-25T23:30Z,CLE,MIA,Cleveland Cavaliers,Miami Heat,False,True,103,120
+401810909,2026-03-25T23:30Z,BOS,OKC,Boston Celtics,Oklahoma City Thunder,False,True,119,109
 401810911,2026-03-26T00:00Z,MEM,SA,Memphis Grizzlies,San Antonio Spurs,False,True,98,123
 401810912,2026-03-26T01:00Z,UTAH,WSH,Utah Jazz,Washington Wizards,False,True,110,133
 401810913,2026-03-26T01:42Z,MIN,HOU,Minnesota Timberwolves,Houston Rockets,False,True,110,108
@@ -1133,9 +1133,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810953,2026-03-31T02:00Z,LAL,WSH,Los Angeles Lakers,Washington Wizards,False,True,120,101
 401810954,2026-03-31T23:00Z,ORL,PHX,Orlando Magic,Phoenix Suns,False,True,115,111
 401810955,2026-03-31T23:30Z,BKN,CHA,Brooklyn Nets,Charlotte Hornets,False,True,86,117
-401810956,2026-04-01T00:00Z,DET,TOR,Detroit Pistons,Toronto Raptors,False,True,127,116
-401810957,2026-04-01T00:00Z,HOU,NY,Houston Rockets,New York Knicks,False,True,111,94
 401858694,2026-04-01T00:00Z,MIL,DAL,Milwaukee Bucks,Dallas Mavericks,False,True,123,99
+401810957,2026-04-01T00:00Z,HOU,NY,Houston Rockets,New York Knicks,False,True,111,94
+401810956,2026-04-01T00:00Z,DET,TOR,Detroit Pistons,Toronto Raptors,False,True,127,116
 401810958,2026-04-01T02:30Z,LAL,CLE,Los Angeles Lakers,Cleveland Cavaliers,False,True,127,113
 401810959,2026-04-01T03:00Z,LAC,POR,LA Clippers,Portland Trail Blazers,False,True,104,114
 401810960,2026-04-01T23:00Z,WSH,PHI,Washington Wizards,Philadelphia 76ers,False,True,131,153
@@ -1157,18 +1157,18 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810976,2026-04-03T23:00Z,PHI,MIN,Philadelphia 76ers,Minnesota Timberwolves,False,True,115,103
 401810977,2026-04-03T23:30Z,BKN,ATL,Brooklyn Nets,Atlanta Hawks,False,True,107,141
 401810978,2026-04-03T23:30Z,NY,CHI,New York Knicks,Chicago Bulls,False,True,136,96
+401810981,2026-04-04T00:00Z,MIL,BOS,Milwaukee Bucks,Boston Celtics,False,True,101,133
 401810979,2026-04-04T00:00Z,HOU,UTAH,Houston Rockets,Utah Jazz,False,True,140,106
 401810980,2026-04-04T00:00Z,MEM,TOR,Memphis Grizzlies,Toronto Raptors,False,True,96,128
-401810981,2026-04-04T00:00Z,MIL,BOS,Milwaukee Bucks,Boston Celtics,False,True,101,133
 401810982,2026-04-04T00:30Z,DAL,ORL,Dallas Mavericks,Orlando Magic,False,True,127,138
 401810983,2026-04-04T02:00Z,SAC,NO,Sacramento Kings,New Orleans Pelicans,False,True,117,113
 401810984,2026-04-04T19:00Z,MIA,WSH,Miami Heat,Washington Wizards,False,True,152,136
 401810985,2026-04-04T19:00Z,DEN,SA,Denver Nuggets,San Antonio Spurs,False,True,136,134
 401810986,2026-04-04T23:00Z,PHI,DET,Philadelphia 76ers,Detroit Pistons,False,True,93,116
+401810990,2026-04-05T19:30Z,MIL,MEM,Milwaukee Bucks,Memphis Grizzlies,False,True,131,115
 401810987,2026-04-05T19:30Z,BOS,TOR,Boston Celtics,Toronto Raptors,False,True,115,101
 401810988,2026-04-05T19:30Z,BKN,WSH,Brooklyn Nets,Washington Wizards,False,True,121,115
 401810989,2026-04-05T19:30Z,CHI,PHX,Chicago Bulls,Phoenix Suns,False,True,110,120
-401810990,2026-04-05T19:30Z,MIL,MEM,Milwaukee Bucks,Memphis Grizzlies,False,True,131,115
 401810991,2026-04-05T22:00Z,CLE,IND,Cleveland Cavaliers,Indiana Pacers,False,True,117,108
 401810992,2026-04-05T23:00Z,MIN,CHA,Minnesota Timberwolves,Charlotte Hornets,False,True,108,122
 401810993,2026-04-05T23:00Z,NO,ORL,New Orleans Pelicans,Orlando Magic,False,True,108,112
@@ -1178,11 +1178,11 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401810997,2026-04-06T02:00Z,GS,HOU,Golden State Warriors,Houston Rockets,False,True,116,117
 401810998,2026-04-06T23:00Z,ATL,NY,Atlanta Hawks,New York Knicks,False,True,105,108
 401810999,2026-04-06T23:00Z,ORL,DET,Orlando Magic,Detroit Pistons,False,True,123,107
-401811000,2026-04-07T00:00Z,MEM,CLE,Memphis Grizzlies,Cleveland Cavaliers,False,True,126,142
 401811001,2026-04-07T00:00Z,SA,PHI,San Antonio Spurs,Philadelphia 76ers,False,True,115,102
+401811000,2026-04-07T00:00Z,MEM,CLE,Memphis Grizzlies,Cleveland Cavaliers,False,True,126,142
 401811002,2026-04-07T01:00Z,DEN,POR,Denver Nuggets,Portland Trail Blazers,False,True,137,132
-401811003,2026-04-07T23:00Z,WSH,CHI,Washington Wizards,Chicago Bulls,False,True,98,129
 401811007,2026-04-07T23:00Z,IND,MIN,Indiana Pacers,Minnesota Timberwolves,False,True,104,124
+401811003,2026-04-07T23:00Z,WSH,CHI,Washington Wizards,Chicago Bulls,False,True,98,129
 401811005,2026-04-07T23:30Z,BKN,MIL,Brooklyn Nets,Milwaukee Bucks,False,True,96,90
 401811006,2026-04-07T23:30Z,TOR,MIA,Toronto Raptors,Miami Heat,False,True,121,95
 401811004,2026-04-08T00:00Z,BOS,CHA,Boston Celtics,Charlotte Hornets,False,True,113,102
@@ -1191,9 +1191,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401811010,2026-04-08T02:30Z,LAL,OKC,Los Angeles Lakers,Oklahoma City Thunder,False,True,87,123
 401811011,2026-04-08T02:30Z,LAC,DAL,LA Clippers,Dallas Mavericks,False,True,116,103
 401811012,2026-04-08T03:00Z,PHX,HOU,Phoenix Suns,Houston Rockets,False,True,105,119
-401811013,2026-04-08T23:00Z,CLE,ATL,Cleveland Cavaliers,Atlanta Hawks,False,True,122,116
 401811014,2026-04-08T23:00Z,ORL,MIN,Orlando Magic,Minnesota Timberwolves,False,True,132,120
 401811015,2026-04-08T23:00Z,DET,MIL,Detroit Pistons,Milwaukee Bucks,False,True,137,111
+401811013,2026-04-08T23:00Z,CLE,ATL,Cleveland Cavaliers,Atlanta Hawks,False,True,122,116
 401811017,2026-04-09T01:00Z,DEN,MEM,Denver Nuggets,Memphis Grizzlies,False,True,136,119
 401811016,2026-04-09T01:30Z,SA,POR,San Antonio Spurs,Portland Trail Blazers,False,True,112,101
 401811018,2026-04-09T02:00Z,LAC,OKC,LA Clippers,Oklahoma City Thunder,False,True,110,128
@@ -1204,9 +1204,9 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401811023,2026-04-09T23:30Z,NY,BOS,New York Knicks,Boston Celtics,False,True,112,106
 401811024,2026-04-10T00:00Z,HOU,PHI,Houston Rockets,Philadelphia 76ers,False,True,113,102
 401811025,2026-04-10T02:00Z,GS,LAL,Golden State Warriors,Los Angeles Lakers,False,True,103,119
-401811026,2026-04-10T23:00Z,CHA,DET,Charlotte Hornets,Detroit Pistons,False,True,100,118
-401811027,2026-04-10T23:00Z,WSH,MIA,Washington Wizards,Miami Heat,False,True,117,140
 401811028,2026-04-10T23:00Z,ATL,CLE,Atlanta Hawks,Cleveland Cavaliers,False,True,124,102
+401811027,2026-04-10T23:00Z,WSH,MIA,Washington Wizards,Miami Heat,False,True,117,140
+401811026,2026-04-10T23:00Z,CHA,DET,Charlotte Hornets,Detroit Pistons,False,True,100,118
 401811029,2026-04-10T23:30Z,BOS,NO,Boston Celtics,New Orleans Pelicans,False,True,144,118
 401811030,2026-04-10T23:30Z,IND,PHI,Indiana Pacers,Philadelphia 76ers,False,True,94,105
 401811031,2026-04-10T23:30Z,NY,TOR,New York Knicks,Toronto Raptors,False,True,112,95
@@ -1216,8 +1216,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401811037,2026-04-11T01:00Z,DEN,OKC,Denver Nuggets,Oklahoma City Thunder,False,True,127,107
 401811033,2026-04-11T01:30Z,HOU,MIN,Houston Rockets,Minnesota Timberwolves,False,True,132,136
 401811036,2026-04-11T01:30Z,UTAH,MEM,Utah Jazz,Memphis Grizzlies,False,True,147,101
-401811038,2026-04-11T02:00Z,POR,LAC,Portland Trail Blazers,LA Clippers,False,True,116,97
 401811039,2026-04-11T02:00Z,SAC,GS,Sacramento Kings,Golden State Warriors,False,True,124,118
+401811038,2026-04-11T02:00Z,POR,LAC,Portland Trail Blazers,LA Clippers,False,True,116,97
 401811040,2026-04-11T02:30Z,LAL,PHX,Los Angeles Lakers,Phoenix Suns,False,True,101,73
 401811041,2026-04-12T22:00Z,BOS,ORL,Boston Celtics,Orlando Magic,False,True,113,108
 401811042,2026-04-12T22:00Z,CLE,WSH,Cleveland Cavaliers,Washington Wizards,False,True,130,117
@@ -1226,14 +1226,14 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401811045,2026-04-12T22:00Z,NY,CHA,New York Knicks,Charlotte Hornets,False,True,96,110
 401811046,2026-04-12T22:00Z,PHI,MIL,Philadelphia 76ers,Milwaukee Bucks,False,True,126,106
 401811047,2026-04-12T22:00Z,TOR,BKN,Toronto Raptors,Brooklyn Nets,False,True,136,101
-401811048,2026-04-13T00:30Z,DAL,CHI,Dallas Mavericks,Chicago Bulls,False,True,149,128
-401811049,2026-04-13T00:30Z,HOU,MEM,Houston Rockets,Memphis Grizzlies,False,True,132,101
+401811054,2026-04-13T00:30Z,LAC,GS,LA Clippers,Golden State Warriors,False,True,115,110
+401811053,2026-04-13T00:30Z,LAL,UTAH,Los Angeles Lakers,Utah Jazz,False,True,131,107
+401811055,2026-04-13T00:30Z,POR,SAC,Portland Trail Blazers,Sacramento Kings,False,True,122,110
+401811052,2026-04-13T00:30Z,SA,DEN,San Antonio Spurs,Denver Nuggets,False,True,118,128
 401811050,2026-04-13T00:30Z,MIN,NO,Minnesota Timberwolves,New Orleans Pelicans,False,True,132,126
 401811051,2026-04-13T00:30Z,OKC,PHX,Oklahoma City Thunder,Phoenix Suns,False,True,103,135
-401811052,2026-04-13T00:30Z,SA,DEN,San Antonio Spurs,Denver Nuggets,False,True,118,128
-401811053,2026-04-13T00:30Z,LAL,UTAH,Los Angeles Lakers,Utah Jazz,False,True,131,107
-401811054,2026-04-13T00:30Z,LAC,GS,LA Clippers,Golden State Warriors,False,True,115,110
-401811055,2026-04-13T00:30Z,POR,SAC,Portland Trail Blazers,Sacramento Kings,False,True,122,110
+401811049,2026-04-13T00:30Z,HOU,MEM,Houston Rockets,Memphis Grizzlies,False,True,132,101
+401811048,2026-04-13T00:30Z,DAL,CHI,Dallas Mavericks,Chicago Bulls,False,True,149,128
 401866755,2026-04-14T23:30Z,CHA,MIA,Charlotte Hornets,Miami Heat,False,True,127,126
 401866754,2026-04-15T02:00Z,PHX,POR,Phoenix Suns,Portland Trail Blazers,False,True,110,114
 401866757,2026-04-15T23:30Z,PHI,ORL,Philadelphia 76ers,Orlando Magic,False,True,109,97
@@ -1369,8 +1369,8 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401898403,2026-10-13T23:00Z,ORL,CLE,Orlando Magic,Cleveland Cavaliers,False,True,132,116
 401908944,2026-10-13T23:00Z,TOR,NY,Toronto Raptors,New York Knicks,False,True,148,98
 401908621,2026-10-14T00:00Z,OKC,IND,Oklahoma City Thunder,Indiana Pacers,False,True,114,112
-401898718,2026-10-14T02:00Z,LAL,GS,Los Angeles Lakers,Golden State Warriors,True,True,89,101
 401901826,2026-10-14T02:00Z,SAC,POR,Sacramento Kings,Portland Trail Blazers,False,True,98,110
+401898718,2026-10-14T02:00Z,LAL,GS,Los Angeles Lakers,Golden State Warriors,True,True,89,101
 401898404,2026-10-14T23:30Z,MIA,BKN,Miami Heat,Brooklyn Nets,False,True,144,128
 401898405,2026-10-14T23:30Z,BOS,CHA,Boston Celtics,Charlotte Hornets,False,True,114,93
 401898722,2026-10-15T00:00Z,SA,PHX,San Antonio Spurs,Phoenix Suns,False,True,123,103
@@ -1380,10 +1380,10 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401918011,2026-10-15T02:30Z,LAC,DEN,LA Clippers,Denver Nuggets,False,True,122,110
 401908945,2026-10-15T23:30Z,NY,TOR,New York Knicks,Toronto Raptors,False,True,122,120
 401908622,2026-10-16T00:30Z,HOU,OKC,Houston Rockets,Oklahoma City Thunder,False,True,116,89
-401898407,2026-10-16T23:00Z,PHI,BOS,Philadelphia 76ers,Boston Celtics,False,True,120,125
-401898406,2026-10-16T23:00Z,ORL,MIA,Orlando Magic,Miami Heat,False,True,136,115
-401914126,2026-10-16T23:00Z,IND,MIL,Indiana Pacers,Milwaukee Bucks,False,True,127,128
 401908946,2026-10-16T23:00Z,DET,TOR,Detroit Pistons,Toronto Raptors,False,True,129,125
+401914126,2026-10-16T23:00Z,IND,MIL,Indiana Pacers,Milwaukee Bucks,False,True,127,128
+401898406,2026-10-16T23:00Z,ORL,MIA,Orlando Magic,Miami Heat,False,True,136,115
+401898407,2026-10-16T23:00Z,PHI,BOS,Philadelphia 76ers,Boston Celtics,False,True,120,125
 401898408,2026-10-17T00:00Z,DAL,ATL,Dallas Mavericks,Atlanta Hawks,False,True,111,135
 401898843,2026-10-17T00:00Z,SA,SAC,San Antonio Spurs,Sacramento Kings,False,True,126,97
 401901822,2026-10-17T00:00Z,MEM,CHA,Memphis Grizzlies,Charlotte Hornets,False,True,116,98
@@ -1403,23 +1403,23 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401909838,2026-10-22T00:00Z,MEM,UTAH,Memphis Grizzlies,Utah Jazz,False,True,123,103
 401909839,2026-10-22T00:00Z,NO,IND,New Orleans Pelicans,Indiana Pacers,False,True,120,123
 401909840,2026-10-22T00:30Z,HOU,DAL,Houston Rockets,Dallas Mavericks,False,True,128,110
-401909092,2026-10-22T02:00Z,LAL,GS,Los Angeles Lakers,Golden State Warriors,False,True,127,105
 401909841,2026-10-22T02:00Z,POR,PHX,Portland Trail Blazers,Phoenix Suns,False,True,124,83
+401909092,2026-10-22T02:00Z,LAL,GS,Los Angeles Lakers,Golden State Warriors,False,True,127,105
 401909842,2026-10-22T02:30Z,LAC,SAC,LA Clippers,Sacramento Kings,False,True,121,96
 401909093,2026-10-22T23:00Z,PHI,CLE,Philadelphia 76ers,Cleveland Cavaliers,False,True,114,106
 401909094,2026-10-23T01:30Z,OKC,DEN,Oklahoma City Thunder,Denver Nuggets,False,True,96,84
 401909848,2026-10-23T20:00Z,MIL,CHI,Milwaukee Bucks,Chicago Bulls,False,True,125,132
+401909846,2026-10-23T23:00Z,WSH,TOR,Washington Wizards,Toronto Raptors,False,True,102,112
 401909095,2026-10-23T23:00Z,BOS,NY,Boston Celtics,New York Knicks,False,True,107,103
 401909843,2026-10-23T23:00Z,CHA,ATL,Charlotte Hornets,Atlanta Hawks,False,True,81,128
 401909844,2026-10-23T23:00Z,IND,DAL,Indiana Pacers,Dallas Mavericks,False,True,105,121
 401909845,2026-10-23T23:00Z,ORL,MIN,Orlando Magic,Minnesota Timberwolves,False,True,93,115
-401909846,2026-10-23T23:00Z,WSH,TOR,Washington Wizards,Toronto Raptors,False,True,102,112
 401909847,2026-10-24T00:00Z,MIA,DET,Miami Heat,Detroit Pistons,False,True,111,128
-401909096,2026-10-24T01:30Z,SA,HOU,San Antonio Spurs,Houston Rockets,False,True,110,114
 401909849,2026-10-24T01:30Z,UTAH,NO,Utah Jazz,New Orleans Pelicans,False,True,120,119
-401909850,2026-10-24T02:00Z,GS,MEM,Golden State Warriors,Memphis Grizzlies,False,True,108,111
-401909851,2026-10-24T02:00Z,LAL,LAC,Los Angeles Lakers,LA Clippers,False,True,125,117
+401909096,2026-10-24T01:30Z,SA,HOU,San Antonio Spurs,Houston Rockets,False,True,110,114
 401909852,2026-10-24T02:00Z,SAC,POR,Sacramento Kings,Portland Trail Blazers,False,True,120,128
+401909851,2026-10-24T02:00Z,LAL,LAC,Los Angeles Lakers,LA Clippers,False,True,125,117
+401909850,2026-10-24T02:00Z,GS,MEM,Golden State Warriors,Memphis Grizzlies,False,True,108,111
 401909853,2026-10-24T22:00Z,CHA,MIA,Charlotte Hornets,Miami Heat,False,True,115,110
 401909854,2026-10-24T23:30Z,CLE,BKN,Cleveland Cavaliers,Brooklyn Nets,False,True,125,121
 401909855,2026-10-24T23:30Z,PHI,MIL,Philadelphia 76ers,Milwaukee Bucks,False,True,127,116
@@ -1430,17 +1430,17 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401909860,2026-10-25T02:00Z,PHX,GS,Phoenix Suns,Golden State Warriors,False,True,131,122
 401909861,2026-10-25T21:00Z,UTAH,LAL,Utah Jazz,Los Angeles Lakers,False,True,123,132
 401909862,2026-10-25T22:00Z,BKN,IND,Brooklyn Nets,Indiana Pacers,False,True,109,136
+401909865,2026-10-25T23:00Z,OKC,LAC,Oklahoma City Thunder,LA Clippers,False,True,108,101
 401909863,2026-10-25T23:00Z,NY,ORL,New York Knicks,Orlando Magic,False,True,102,111
 401909864,2026-10-25T23:00Z,MIN,TOR,Minnesota Timberwolves,Toronto Raptors,False,True,117,94
-401909865,2026-10-25T23:00Z,OKC,LAC,Oklahoma City Thunder,LA Clippers,False,True,108,101
 401909866,2026-10-25T23:30Z,PHI,DET,Philadelphia 76ers,Detroit Pistons,False,True,93,106
 401909867,2026-10-26T01:00Z,SAC,MEM,Sacramento Kings,Memphis Grizzlies,False,True,112,123
 401909868,2026-10-26T23:00Z,CHA,WSH,Charlotte Hornets,Washington Wizards,False,True,110,103
 401909869,2026-10-26T23:00Z,CLE,MIN,Cleveland Cavaliers,Minnesota Timberwolves,False,True,127,125
 401909870,2026-10-26T23:30Z,BOS,CHI,Boston Celtics,Chicago Bulls,False,True,134,99
 401909871,2026-10-26T23:30Z,MIA,DAL,Miami Heat,Dallas Mavericks,False,True,109,113
-401909872,2026-10-27T00:00Z,MIL,IND,Milwaukee Bucks,Indiana Pacers,False,True,110,102
 401909873,2026-10-27T00:00Z,OKC,PHX,Oklahoma City Thunder,Phoenix Suns,False,True,125,114
+401909872,2026-10-27T00:00Z,MIL,IND,Milwaukee Bucks,Indiana Pacers,False,True,110,102
 401909874,2026-10-27T00:30Z,HOU,ATL,Houston Rockets,Atlanta Hawks,False,True,120,110
 401909875,2026-10-27T01:00Z,UTAH,MEM,Utah Jazz,Memphis Grizzlies,False,True,105,110
 401909876,2026-10-27T02:00Z,DEN,GS,Denver Nuggets,Golden State Warriors,False,True,114,134
@@ -1453,10 +1453,10 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401909883,2026-10-28T23:00Z,DET,CHA,Detroit Pistons,Charlotte Hornets,False,True,97,89
 401909884,2026-10-28T23:00Z,IND,PHI,Indiana Pacers,Philadelphia 76ers,False,True,109,114
 401909885,2026-10-28T23:30Z,TOR,ORL,Toronto Raptors,Orlando Magic,False,True,129,99
-401909886,2026-10-29T00:00Z,CHI,NY,Chicago Bulls,New York Knicks,False,True,127,133
-401909887,2026-10-29T00:00Z,MIL,HOU,Milwaukee Bucks,Houston Rockets,False,True,100,132
-401909888,2026-10-29T00:00Z,MIN,GS,Minnesota Timberwolves,Golden State Warriors,False,True,114,119
 401909889,2026-10-29T00:00Z,NO,DEN,New Orleans Pelicans,Denver Nuggets,False,True,91,104
+401909888,2026-10-29T00:00Z,MIN,GS,Minnesota Timberwolves,Golden State Warriors,False,True,114,119
+401909887,2026-10-29T00:00Z,MIL,HOU,Milwaukee Bucks,Houston Rockets,False,True,100,132
+401909886,2026-10-29T00:00Z,CHI,NY,Chicago Bulls,New York Knicks,False,True,127,133
 401909890,2026-10-29T01:00Z,UTAH,SA,Utah Jazz,San Antonio Spurs,False,True,111,117
 401909891,2026-10-29T01:30Z,DAL,OKC,Dallas Mavericks,Oklahoma City Thunder,False,True,120,96
 401909892,2026-10-29T02:30Z,LAC,LAL,LA Clippers,Los Angeles Lakers,False,True,87,103
@@ -1464,10 +1464,10 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401909894,2026-10-30T00:00Z,NO,SAC,New Orleans Pelicans,Sacramento Kings,False,True,132,120
 401909895,2026-10-30T02:00Z,POR,MEM,Portland Trail Blazers,Memphis Grizzlies,False,True,103,124
 401909277,2026-10-30T23:00Z,WSH,CHA,Washington Wizards,Charlotte Hornets,False,True,95,79
-401909278,2026-10-30T23:30Z,BOS,CHI,Boston Celtics,Chicago Bulls,False,True,125,111
-401909279,2026-10-30T23:30Z,BKN,DET,Brooklyn Nets,Detroit Pistons,False,True,94,110
-401909280,2026-10-30T23:30Z,PHI,NY,Philadelphia 76ers,New York Knicks,False,True,98,93
 401909281,2026-10-30T23:30Z,TOR,ORL,Toronto Raptors,Orlando Magic,False,True,114,121
+401909280,2026-10-30T23:30Z,PHI,NY,Philadelphia 76ers,New York Knicks,False,True,98,93
+401909279,2026-10-30T23:30Z,BKN,DET,Brooklyn Nets,Detroit Pistons,False,True,94,110
+401909278,2026-10-30T23:30Z,BOS,CHI,Boston Celtics,Chicago Bulls,False,True,125,111
 401909282,2026-10-31T00:00Z,MIA,IND,Miami Heat,Indiana Pacers,False,True,145,125
 401909283,2026-10-31T00:00Z,DAL,HOU,Dallas Mavericks,Houston Rockets,False,True,116,111
 401909284,2026-10-31T00:00Z,MIN,LAC,Minnesota Timberwolves,LA Clippers,False,True,127,101
@@ -1476,20 +1476,20 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401909896,2026-10-31T19:00Z,UTAH,POR,Utah Jazz,Portland Trail Blazers,False,True,90,112
 401909897,2026-10-31T22:00Z,CHA,PHI,Charlotte Hornets,Philadelphia 76ers,False,True,104,109
 401909898,2026-10-31T23:00Z,NO,ATL,New Orleans Pelicans,Atlanta Hawks,False,True,121,99
+401909901,2026-11-01T00:00Z,SA,MIN,San Antonio Spurs,Minnesota Timberwolves,False,True,121,111
 401909899,2026-11-01T00:00Z,MEM,SAC,Memphis Grizzlies,Sacramento Kings,False,True,136,105
 401909900,2026-11-01T00:00Z,MIL,CLE,Milwaukee Bucks,Cleveland Cavaliers,False,True,111,136
-401909901,2026-11-01T00:00Z,SA,MIN,San Antonio Spurs,Minnesota Timberwolves,False,True,121,111
 401909902,2026-11-01T00:30Z,HOU,OKC,Houston Rockets,Oklahoma City Thunder,False,True,119,98
 401909903,2026-11-01T20:30Z,ORL,BOS,Orlando Magic,Boston Celtics,False,True,97,108
 401909904,2026-11-01T22:00Z,IND,BKN,Indiana Pacers,Brooklyn Nets,False,True,90,98
 401909905,2026-11-02T01:30Z,GS,LAC,Golden State Warriors,LA Clippers,False,True,124,112
 401909906,2026-11-02T02:00Z,LAL,TOR,Los Angeles Lakers,Toronto Raptors,False,True,131,125
 401909907,2026-11-03T00:00Z,CLE,OKC,Cleveland Cavaliers,Oklahoma City Thunder,False,True,112,117
+401909911,2026-11-03T00:30Z,ORL,WSH,Orlando Magic,Washington Wizards,False,True,94,103
+401909910,2026-11-03T00:30Z,NY,BKN,New York Knicks,Brooklyn Nets,False,True,103,90
+401909912,2026-11-03T00:30Z,PHI,CHI,Philadelphia 76ers,Chicago Bulls,False,True,126,107
 401909908,2026-11-03T00:30Z,CHA,DET,Charlotte Hornets,Detroit Pistons,False,True,91,124
 401909909,2026-11-03T00:30Z,IND,ATL,Indiana Pacers,Atlanta Hawks,False,True,104,108
-401909910,2026-11-03T00:30Z,NY,BKN,New York Knicks,Brooklyn Nets,False,True,103,90
-401909911,2026-11-03T00:30Z,ORL,WSH,Orlando Magic,Washington Wizards,False,True,94,103
-401909912,2026-11-03T00:30Z,PHI,CHI,Philadelphia 76ers,Chicago Bulls,False,True,126,107
 401909913,2026-11-03T01:00Z,DAL,SAC,Dallas Mavericks,Sacramento Kings,False,True,100,115
 401909914,2026-11-03T01:00Z,MEM,NO,Memphis Grizzlies,New Orleans Pelicans,False,True,134,135
 401909915,2026-11-03T01:00Z,MIN,MIL,Minnesota Timberwolves,Milwaukee Bucks,False,True,112,100
@@ -1499,3 +1499,17 @@ game_id,start,home,away,home_name,away_name,neutral,final,hpts,apts
 401909919,2026-11-03T03:00Z,GS,PHX,Golden State Warriors,Phoenix Suns,False,True,116,113
 401909920,2026-11-03T03:00Z,LAC,TOR,LA Clippers,Toronto Raptors,False,True,118,125
 401909921,2026-11-03T03:00Z,LAL,MIA,Los Angeles Lakers,Miami Heat,False,True,138,117
+401909923,2026-11-05T00:00Z,WSH,ATL,Washington Wizards,Atlanta Hawks,False,True,105,120
+401909922,2026-11-05T00:00Z,DET,PHI,Detroit Pistons,Philadelphia 76ers,False,True,106,112
+401909924,2026-11-05T00:30Z,BOS,MIL,Boston Celtics,Milwaukee Bucks,False,True,109,102
+401909925,2026-11-05T00:30Z,BKN,CHA,Brooklyn Nets,Charlotte Hornets,False,True,114,104
+401909926,2026-11-05T00:30Z,NY,CHI,New York Knicks,Chicago Bulls,False,True,135,105
+401909927,2026-11-05T01:00Z,MEM,IND,Memphis Grizzlies,Indiana Pacers,False,True,103,107
+401909928,2026-11-05T01:00Z,NO,UTAH,New Orleans Pelicans,Utah Jazz,False,True,120,113
+401909929,2026-11-05T01:00Z,OKC,CLE,Oklahoma City Thunder,Cleveland Cavaliers,False,True,124,116
+401909930,2026-11-05T01:30Z,HOU,MIN,Houston Rockets,Minnesota Timberwolves,False,True,107,117
+401909931,2026-11-05T02:00Z,DEN,TOR,Denver Nuggets,Toronto Raptors,False,True,128,109
+401909932,2026-11-05T02:00Z,PHX,POR,Phoenix Suns,Portland Trail Blazers,False,True,119,132
+401909933,2026-11-05T02:30Z,SA,DAL,San Antonio Spurs,Dallas Mavericks,False,True,112,111
+401909934,2026-11-05T03:00Z,SAC,LAL,Sacramento Kings,Los Angeles Lakers,False,True,103,116
+401909935,2026-11-05T03:30Z,LAC,MIA,LA Clippers,Miami Heat,False,True,116,117

@@ -32,27 +32,27 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401909796,2026-11-03T19:03Z,moneyline,Kansas St. to win,home,,-590,BetRivers,0.9045,0.0578,L,-1.0
 401924911,2026-11-03T19:03Z,total,Under 154.5,under,154.5,-108,BetRivers,0.5597,0.0779,L,-1.0
 401924911,2026-11-03T19:03Z,spread,UNLV -21,home,-21.0,-101,LowVig.ag,0.5298,0.0544,L,-1.0
-401928811,2026-11-03T19:03Z,total,Over 157,over,157.0,-108,LowVig.ag,0.5515,0.0621,,
-401928811,2026-11-03T19:03Z,spread,South Dakota +1,home,1.0,-101,LowVig.ag,0.5029,0.0008,,
-401917513,2026-11-03T19:03Z,spread,Santa Clara -18,home,-18.0,-106,LowVig.ag,0.5421,0.0536,,
-401917512,2026-11-03T19:03Z,spread,Saint Mary's -12,home,-12.0,-106,LowVig.ag,0.542,0.0534,,
+401928811,2026-11-03T19:03Z,total,Over 157,over,157.0,-108,LowVig.ag,0.5515,0.0621,W,0.925925925925926
+401928811,2026-11-03T19:03Z,spread,South Dakota +1,home,1.0,-101,LowVig.ag,0.5029,0.0008,L,-1.0
+401917513,2026-11-03T19:03Z,spread,Santa Clara -18,home,-18.0,-106,LowVig.ag,0.5421,0.0536,W,0.9433962264150944
+401917512,2026-11-03T19:03Z,spread,Saint Mary's -12,home,-12.0,-106,LowVig.ag,0.542,0.0534,W,0.9433962264150944
 401906757,2026-11-03T19:07Z,moneyline,Alabama to win,home,,-8000,DraftKings,0.9891,0.0015,W,0.012499999999999956
 401921819,2026-11-03T19:13Z,total,Over 148.5,over,148.5,-110,FanDuel,0.5351,0.0215,L,-1.0
-401917513,2026-11-03T19:13Z,total,Over 157.5,over,157.5,-108,LowVig.ag,0.5248,0.0107,,
-401917512,2026-11-03T19:13Z,total,Over 145.5,over,145.5,-108,LowVig.ag,0.5216,0.0046,,
+401917513,2026-11-03T19:13Z,total,Over 157.5,over,157.5,-108,LowVig.ag,0.5248,0.0107,W,0.925925925925926
+401917512,2026-11-03T19:13Z,total,Over 145.5,over,145.5,-108,LowVig.ag,0.5216,0.0046,W,0.925925925925926
 401920685,2026-11-03T19:35Z,moneyline,Michigan to win,home,,190,DraftKings,0.3805,0.1034,,
 401920685,2026-11-03T19:35Z,spread,Michigan +5.5,home,5.5,-112,DraftKings,0.5735,0.0856,,
-401920410,2026-11-04T16:52Z,spread,Maryland Eastern Shore +34.5,away,34.5,-104,LowVig.ag,0.5145,0.0093,,
-401920410,2026-11-04T16:52Z,moneyline,High Point to win,home,,-10000,BetMGM,0.9988,0.0088,,
-401902276,2026-11-04T16:52Z,spread,Fairleigh Dickinson +27.5,away,27.5,-105,BetRivers,0.5158,0.007,,
-401902276,2026-11-04T16:52Z,moneyline,Butler to win,home,,-10000,BetMGM,0.992,0.0019,,
-401920798,2026-11-04T16:52Z,spread,Southeastern Louisiana +30,away,30.0,-111,LowVig.ag,0.5554,0.0557,,
-401918052,2026-11-04T16:52Z,spread,California -15.5,home,-15.5,-115,FanDuel,0.5682,0.0622,,
-401920798,2026-11-04T17:00Z,moneyline,Auburn to win,home,,-10000,BetMGM,0.9943,0.0042,,
-401920410,2026-11-04T19:51Z,total,Under 147.5,under,147.5,-108,LowVig.ag,0.5193,0.0002,,
-401920191,2026-11-04T19:51Z,total,Under 151,under,151.0,-103,LowVig.ag,0.5117,0.0085,,
-401920191,2026-11-04T19:51Z,spread,Longwood +11,away,11.0,102,LowVig.ag,0.4973,0.0045,,
-401902276,2026-11-04T19:51Z,total,Under 156.5,under,156.5,-103,LowVig.ag,0.5217,0.0281,,
+401920410,2026-11-04T16:52Z,spread,Maryland Eastern Shore +34.5,away,34.5,-104,LowVig.ag,0.5145,0.0093,W,0.9615384615384617
+401920410,2026-11-04T16:52Z,moneyline,High Point to win,home,,-10000,BetMGM,0.9988,0.0088,W,0.010000000000000009
+401902276,2026-11-04T16:52Z,spread,Fairleigh Dickinson +27.5,away,27.5,-105,BetRivers,0.5158,0.007,L,-1.0
+401902276,2026-11-04T16:52Z,moneyline,Butler to win,home,,-10000,BetMGM,0.992,0.0019,W,0.010000000000000009
+401920798,2026-11-04T16:52Z,spread,Southeastern Louisiana +30,away,30.0,-111,LowVig.ag,0.5554,0.0557,L,-1.0
+401918052,2026-11-04T16:52Z,spread,California -15.5,home,-15.5,-115,FanDuel,0.5682,0.0622,L,-1.0
+401920798,2026-11-04T17:00Z,moneyline,Auburn to win,home,,-10000,BetMGM,0.9943,0.0042,W,0.010000000000000009
+401920410,2026-11-04T19:51Z,total,Under 147.5,under,147.5,-108,LowVig.ag,0.5193,0.0002,W,0.925925925925926
+401920191,2026-11-04T19:51Z,total,Under 151,under,151.0,-103,LowVig.ag,0.5117,0.0085,L,-1.0
+401920191,2026-11-04T19:51Z,spread,Longwood +11,away,11.0,102,LowVig.ag,0.4973,0.0045,W,1.02
+401902276,2026-11-04T19:51Z,total,Under 156.5,under,156.5,-103,LowVig.ag,0.5217,0.0281,L,-1.0
 401909726,2026-11-04T19:51Z,spread,Wake Forest +16,away,16.0,109,LowVig.ag,0.5242,0.0956,,
 401909726,2026-11-04T19:51Z,total,Over 153.5,over,153.5,-103,LowVig.ag,0.5226,0.03,,
 401925819,2026-11-04T19:51Z,spread,Charlotte -11.5,home,-11.5,-106,LowVig.ag,0.5304,0.0307,,
@@ -76,3 +76,60 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401909501,2026-11-04T19:51Z,spread,South Florida +5.5,away,5.5,-105,FanDuel,0.5276,0.0301,,
 401909501,2026-11-04T19:51Z,total,Over 147.5,over,147.5,-112,FanDuel,0.5405,0.023,,
 401909501,2026-11-04T19:51Z,moneyline,South Florida to win,away,,198,FanDuel,0.3372,0.0048,,
+401925031,2026-11-05T14:39Z,total,Over 139,over,139.0,-113,LowVig.ag,0.5418,0.0213,,
+401925031,2026-11-05T14:39Z,moneyline,McNeese St. to win,away,,-142,FanDuel,0.5968,0.0171,,
+401919732,2026-11-05T14:39Z,total,Over 143.5,over,143.5,-108,LowVig.ag,0.5229,0.0071,,
+401919732,2026-11-05T14:39Z,moneyline,Incarnate Word to win,home,,-325,DraftKings,0.7671,0.0031,,
+401917177,2026-11-05T14:39Z,spread,Penn St. -11.5,home,-11.5,-118,BetRivers,0.5608,0.0361,,
+401917177,2026-11-05T14:39Z,total,Under 159.5,under,159.5,-105,FanDuel,0.5213,0.0178,,
+401916287,2026-11-05T14:39Z,total,Over 152.5,over,152.5,-108,LowVig.ag,0.5352,0.0307,,
+401916287,2026-11-05T14:39Z,spread,Bellarmine +29.5,away,29.5,101,LowVig.ag,0.5081,0.0213,,
+401916287,2026-11-05T14:39Z,moneyline,Indiana to win,home,,-10000,BetMGM,0.9954,0.0054,,
+401925684,2026-11-05T14:39Z,spread,Howard -8.5,away,-8.5,-112,BetRivers,0.5436,0.0289,,
+401925684,2026-11-05T14:39Z,total,Under 150.5,under,150.5,-110,FanDuel,0.5384,0.0278,,
+401924733,2026-11-05T14:39Z,spread,Hofstra +3,away,3.0,-104,LowVig.ag,0.5152,0.0105,,
+401924718,2026-11-05T14:39Z,spread,Lehigh +1,home,1.0,-105,Bovada,0.5394,0.0531,,
+401924718,2026-11-05T14:39Z,total,Over 159.5,over,159.5,-113,BetRivers,0.558,0.0518,,
+401924718,2026-11-05T14:39Z,moneyline,Lehigh to win,home,,100,Bovada,0.504,0.0079,,
+401921681,2026-11-05T14:39Z,spread,New Hampshire +1.5,away,1.5,-114,FanDuel,0.5733,0.0762,,
+401921681,2026-11-05T14:39Z,moneyline,New Hampshire to win,away,,-102,FanDuel,0.5205,0.0307,,
+401921680,2026-11-05T14:39Z,moneyline,Quinnipiac to win,home,,-238,DraftKings,0.7647,0.086,,
+401921680,2026-11-05T14:39Z,spread,Quinnipiac -6.5,home,-6.5,-106,LowVig.ag,0.5569,0.0822,,
+401921679,2026-11-05T14:39Z,spread,Merrimack -9.5,home,-9.5,-105,Bovada,0.5425,0.0592,,
+401921679,2026-11-05T14:39Z,moneyline,Merrimack to win,home,,-440,DraftKings,0.8295,0.018,,
+401921679,2026-11-05T14:39Z,total,Over 141,over,141.0,-103,LowVig.ag,0.5085,0.0022,,
+401921219,2026-11-05T14:39Z,spread,Navy -7.5,home,-7.5,-106,LowVig.ag,0.5295,0.029,,
+401921084,2026-11-05T14:39Z,moneyline,Marist to win,home,,-178,FanDuel,0.6805,0.0627,,
+401921084,2026-11-05T14:39Z,spread,Marist -3.5,home,-3.5,-120,FanDuel,0.5626,0.0314,,
+401920691,2026-11-05T14:39Z,spread,Vermont +0.5,away,0.5,-108,FanDuel,0.5424,0.0447,,
+401920691,2026-11-05T14:39Z,total,Under 141.5,under,141.5,-105,FanDuel,0.528,0.0309,,
+401920691,2026-11-05T14:39Z,moneyline,Vermont to win,away,,-110,FanDuel,0.5247,0.0018,,
+401919823,2026-11-05T14:39Z,total,Over 139.5,over,139.5,-103,LowVig.ag,0.52,0.0248,,
+401911273,2026-11-05T14:39Z,total,Over 135.5,over,135.5,-110,FanDuel,0.5469,0.0442,,
+401911273,2026-11-05T14:39Z,spread,Saint Peter's -7.5,home,-7.5,-106,LowVig.ag,0.5262,0.0226,,
+401911273,2026-11-05T14:39Z,moneyline,Saint Peter's to win,home,,-310,DraftKings,0.7682,0.0161,,
+401909717,2026-11-05T14:39Z,total,Over 136.5,over,136.5,-103,LowVig.ag,0.5666,0.1167,,
+401909706,2026-11-05T14:39Z,total,Under 153,under,153.0,-105,BetOnline.ag,0.5296,0.034,,
+401919002,2026-11-05T14:39Z,total,Over 152,over,152.0,-108,LowVig.ag,0.5399,0.0398,,
+401911195,2026-11-05T14:39Z,total,Under 140.5,under,140.5,-110,FanDuel,0.5359,0.0231,,
+401911195,2026-11-05T14:39Z,spread,Stonehill +19.5,away,19.5,107,LowVig.ag,0.4929,0.0203,,
+401906770,2026-11-05T14:39Z,total,Under 157,under,157.0,-113,LowVig.ag,0.5643,0.0637,,
+401906770,2026-11-05T14:39Z,spread,Jacksonville +35.5,away,35.5,-110,DraftKings,0.5315,0.0147,,
+401906770,2026-11-05T14:39Z,moneyline,Florida to win,home,,-10000,BetMGM,0.999,0.009,,
+401909563,2026-11-05T14:39Z,moneyline,Duke to win,home,,-10000,BetMGM,0.9997,0.0097,,
+401925754,2026-11-05T14:39Z,total,Under 154,under,154.0,-105,Bovada,0.5263,0.0275,,
+401906864,2026-11-05T14:39Z,spread,Gardner Webb +41.5,away,41.5,-110,FanDuel,0.5832,0.1133,,
+401906864,2026-11-05T14:39Z,total,Over 154.5,over,154.5,-110,FanDuel,0.545,0.0405,,
+401906864,2026-11-05T14:39Z,moneyline,Texas to win,home,,-10000,BetMGM,0.9998,0.0097,,
+401921094,2026-11-05T14:39Z,moneyline,Rice to win,home,,-148,DraftKings,0.6731,0.1279,,
+401921094,2026-11-05T14:39Z,spread,Rice -3,home,-3.0,-105,Bovada,0.572,0.1168,,
+401918968,2026-11-05T14:39Z,total,Under 161.5,under,161.5,-117,BetRivers,0.5541,0.0277,,
+401918968,2026-11-05T14:39Z,moneyline,SMU to win,home,,-8000,DraftKings,0.9908,0.0032,,
+401909491,2026-11-05T14:39Z,spread,Le Moyne +30,away,30.0,-104,LowVig.ag,0.5389,0.0572,,
+401909491,2026-11-05T14:39Z,moneyline,Creighton to win,home,,-10000,BetMGM,0.9949,0.0049,,
+401909491,2026-11-05T14:39Z,total,Under 156.5,under,156.5,-103,LowVig.ag,0.5083,0.0019,,
+401913526,2026-11-05T14:39Z,moneyline,Illinois to win,home,,-10000,BetMGM,0.9944,0.0044,,
+401921133,2026-11-05T14:39Z,spread,Bethune Cookman +29,away,29.0,-101,LowVig.ag,0.5362,0.067,,
+401921133,2026-11-05T14:39Z,moneyline,Texas Tech to win,home,,-9000,DraftKings,0.9936,0.0047,,
+401909739,2026-11-05T14:39Z,total,Under 174,under,174.0,-103,LowVig.ag,0.5367,0.0578,,
+401909739,2026-11-05T14:39Z,moneyline,Arizona to win,home,,-10000,BetMGM,0.9968,0.0068,,
