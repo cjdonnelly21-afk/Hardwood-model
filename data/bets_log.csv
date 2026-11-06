@@ -228,3 +228,7 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401921061,2026-11-06T15:39Z,spread,North Dakota St. +8.5,away,8.5,102,BetRivers,0.5299,0.0705,,
 401922219,2026-11-06T15:39Z,spread,UCLA -32.5,home,-32.5,-109,BetRivers,0.537,0.0296,,
 401922219,2026-11-06T15:39Z,moneyline,UCLA to win,home,,-10000,BetMGM,0.9986,0.0086,,
+401909751,2026-11-06T16:01Z,total,Under 161.5,under,161.5,-110,FanDuel,0.5268,0.0056,,
+401921767,2026-11-06T16:01Z,total,Over 143,over,143.0,106,LowVig.ag,0.4956,0.0209,,
+401917914,2026-11-06T16:01Z,total,Under 154.5,under,154.5,-105,DraftKings,0.5195,0.0142,,
+401917515,2026-11-06T16:01Z,moneyline,Tarleton St. to win,away,,260,FanDuel,0.2907,0.0465,,
