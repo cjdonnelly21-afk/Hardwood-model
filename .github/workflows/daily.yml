@@ -29,11 +29,6 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: .venv/bin/python src/update.py
-      - name: NBA picks (never blocks the college update)
-        continue-on-error: true
-        env:
-          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-        run: .venv/bin/python src/nba.py
       - name: Publish
         run: |
           git config user.name "github-actions[bot]"
