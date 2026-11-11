@@ -169,6 +169,28 @@ function renderModel() {
   $("#weights").innerHTML = dl("Margin weights", m) + dl("Total weights", S.model.total);
 }
 
+function renderTracker() {
+  const b = (S.acc || {}).bets || {}, days = b.daily || [];
+  if (!days.length) { $("#tstats").innerHTML = ""; $("#tdays").innerHTML = '<p class="empty">No picks have been logged yet.</p>'; $("#tchart").innerHTML = ""; return; }
+  const sg = x => (x > 0 ? "+" : "") + x.toFixed(2);
+  const w = days.reduce((s, d) => s + d.w, 0), l = days.reduce((s, d) => s + d.l, 0), p = days.reduce((s, d) => s + d.p, 0);
+  const total = days[days.length - 1].cum;
+  $("#tstats").innerHTML = [[`${w}-${l}${p ? "-" + p : ""}`, "record on graded picks"], [sg(total) + "u", "profit (1 unit per pick)"],
+    [b.roi != null ? (b.roi * 100).toFixed(1) + "%" : "–", "return on each unit staked"]].map(([x, y]) => `<div><b>${x}</b><span>${y}</span></div>`).join("");
+  const W = 600, H = 220, P = 36, n = days.length, vals = [0, ...days.map(d => d.cum)];
+  const lo = Math.min(...vals), hi = Math.max(...vals), span = (hi - lo) || 1;
+  const sx = i => P + (n === 0 ? 0 : i * (W - 2 * P) / Math.max(1, n)), sy = v => H - P - (v - lo) / span * (H - 2 * P);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Cumulative profit by day" style="width:100%;height:auto">
+    <line x1="${P}" x2="${W - P}" y1="${sy(0)}" y2="${sy(0)}" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="4 4"/>
+    <text x="4" y="${sy(0) + 4}" font-size="12" fill="currentColor">0</text>
+    <polyline fill="none" stroke="var(--paint)" stroke-width="3" points="${vals.map((v, i) => sx(i) + "," + sy(v)).join(" ")}"/>`;
+  days.forEach((d, i) => { s += `<circle cx="${sx(i + 1)}" cy="${sy(d.cum)}" r="4" fill="var(--paint)"><title>${d.day}: ${sg(d.units)}u, total ${sg(d.cum)}u</title></circle><text x="${sx(i + 1)}" y="${H - 12}" text-anchor="middle" font-size="11" fill="currentColor">${d.day.slice(5)}</text>`; });
+  $("#tchart").innerHTML = s + "</svg>";
+  $("#tdays").innerHTML = days.slice().reverse().map(d => `<details class="tday"><summary><b>${d.day}</b> · ${d.w}-${d.l}${d.p ? "-" + d.p : ""}${d.pending ? ` · ${d.pending} pending` : ""} · <b>${sg(d.units)}u</b> · total ${sg(d.cum)}u</summary>
+    <div class="tablewrap"><table><thead><tr><th>Pick</th><th>Type</th><th class="num">Odds</th><th class="num">EV</th><th>Result</th><th class="num">Units</th></tr></thead><tbody>${d.picks.map(q =>
+      `<tr><td>${esc(q.label)}</td><td>${esc(q.market)}</td><td class="num">${price(q.price)}</td><td class="num">${pct(q.ev)}</td><td>${q.result === "W" ? "✅ Win" : q.result === "L" ? "❌ Loss" : q.result === "P" ? "Push" : "Pending"}</td><td class="num">${q.units == null ? "–" : sg(q.units)}</td></tr>`).join("")}</tbody></table></div></details>`).join("");
+}
+
 function drawCalibration(live) {
   const box = $("#cal");
   const pts = (live || []).filter(p => p.n >= 20);
@@ -210,7 +232,7 @@ async function load() {
   const confs = [...new Set(S.teams.map(t => t.conf))].sort();
   $("#rconf").innerHTML = `<option value="">All</option>` + confs.map(c => `<option>${esc(c)}</option>`).join("");
   $("#tlist").innerHTML = S.teams.map(t => `<option value="${esc(t.team)}">`).join("");
-  renderDays(); renderGames(); renderRankings(); renderModel();
+  renderDays(); renderGames(); renderRankings(); renderModel(); renderTracker();
   if (hasLines) evKey($("#evkey"), S.games.filter(g => !g.done), { min: "5% EV", why: "College lines for small schools are soft and the model has no injury data, so edges under 5% are mostly noise, while 10%+ usually means the gap needs checking." });
 }
 

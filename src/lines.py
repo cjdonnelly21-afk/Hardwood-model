@@ -35,7 +35,10 @@ MODEL_WEIGHT = 0.3      # share of the model vs the market when estimating the "
 MAX_POINT_GAP = 2.0     # a spread/total more than this far from the median across books is treated as stale or erroneous
 MAX_PROB_GAP = 0.04     # a moneyline price whose implied chance is this far "too good" vs the median is treated as an outlier
 MAX_ML_DECIMAL = 4.0    # no moneyline longshots beyond +300: normal-curve tails are least trustworthy there
-MIN_EV = 0.0            # only bets above this are called plays
+MIN_EV = 0.03           # only bets above this are called plays (first week: edges under 3% lost money, 54-40 for -5.3u)
+MAX_EV = 0.10           # edges bigger than this are treated as model error, not value (first week: 9-16 for -7.6u)
+MAX_FAV_ML = -250       # no moneylines on heavy chalk: one loss wipes out several wins (first week: -15% ROI)
+MAX_JUICE = -115        # no spread/total prices worse than this
 SPREAD_BONUS_NOTE = "Win probability uses the same normal model as the rest of the site."
 
 
@@ -160,7 +163,15 @@ def evaluate(g: dict, ln: dict, sigma: float, tsigma: float, w: float = MODEL_WE
         k = (c["market"], c["side"], c["line"])
         if k not in best or c["ev"] > best[k]["ev"]:
             best[k] = c
-    ranked = sorted(best.values(), key=lambda c: -c["ev"])
+    def playable(c):
+        if c["ev"] > MAX_EV:
+            return False
+        if c["market"] == "moneyline" and c["price"] < MAX_FAV_ML:
+            return False
+        if c["market"] != "moneyline" and c["price"] < MAX_JUICE:
+            return False
+        return True
+    ranked = sorted((c for c in best.values() if playable(c)), key=lambda c: -c["ev"])
     # keep the single best bet per market so the card is not four versions of the same pick
     per_market, seen = [], set()
     for c in ranked:
@@ -256,12 +267,36 @@ def grade_bets(log: pd.DataFrame, finals: dict) -> pd.DataFrame:
     return log
 
 
+def daily_tracker(log: pd.DataFrame) -> list:
+    """One entry per day the picks were made: every pick, its result and units, plus the running profit."""
+    days, cum = [], 0.0
+    if log.empty:
+        return days
+    log = log.copy()
+    log["day"] = log["made_at"].astype(str).str[:10]
+    for day, x in log.groupby("day", sort=True):
+        picks = []
+        for _, r in x.iterrows():
+            res = r["result"] if isinstance(r["result"], str) else None
+            u = None if pd.isna(r["units"]) else round(float(r["units"]), 2)
+            picks.append({"label": r["label"], "market": r["market"], "price": int(r["price"]), "book": r["book"],
+                          "ev": float(r["ev"]), "result": res, "units": u})
+        done = [q for q in picks if q["result"] in ("W", "L", "P")]
+        units = round(sum(q["units"] or 0 for q in done), 2)
+        cum += units
+        days.append({"day": day, "w": sum(q["result"] == "W" for q in done), "l": sum(q["result"] == "L" for q in done),
+                     "p": sum(q["result"] == "P" for q in done), "pending": len(picks) - len(done),
+                     "units": units, "cum": round(cum, 2), "picks": picks})
+    return days
+
+
 def roi_summary(log: pd.DataFrame) -> dict:
     g = log[log["result"].notna()]
     if g.empty:
-        return {"n": 0}
+        return {"n": 0, "daily": daily_tracker(log)}
     out = {"n": int(len(g)), "units": round(float(g["units"].sum()), 2), "roi": round(float(g["units"].mean()), 4),
            "win_rate": round(float((g["result"] == "W").sum() / max(1, (g["result"] != "P").sum())), 4),
            "avg_ev_claimed": round(float(g["ev"].mean()), 4)}
     out["by_market"] = {m: {"n": int(len(x)), "roi": round(float(x["units"].mean()), 4)} for m, x in g.groupby("market")}
+    out["daily"] = daily_tracker(log)
     return out

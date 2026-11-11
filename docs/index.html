@@ -20,6 +20,7 @@
     <button role="tab" aria-selected="true" data-tab="today">Today</button>
     <button role="tab" aria-selected="false" data-tab="rankings">Rankings</button>
     <button role="tab" aria-selected="false" data-tab="matchup">Matchup</button>
+    <button role="tab" aria-selected="false" data-tab="tracker">Tracker</button>
     <button role="tab" aria-selected="false" data-tab="model">Model report</button>
     <a href="nba.html" class="navlink">NBA</a>
     <a href="nfl.html" class="navlink">NFL</a>
@@ -65,6 +66,14 @@
       <datalist id="tlist"></datalist>
     </form>
     <div id="mout" class="mout"><p class="empty">Pick two teams to see the projected score, spread and win chance.</p></div>
+  </section>
+
+  <section id="tracker" class="panel" hidden>
+    <div id="tstats" class="stats"></div>
+    <h2>Profit by day</h2>
+    <p class="note">Every "Take" the model logged, graded after the game finishes. Units: a winning bet pays its odds, a losing bet costs 1 unit. Days are the day the pick was made.</p>
+    <div id="tchart" class="cal"></div>
+    <div id="tdays"></div>
   </section>
 
   <section id="model" class="panel" hidden>

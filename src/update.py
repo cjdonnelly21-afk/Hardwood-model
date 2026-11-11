@@ -253,7 +253,16 @@ def main():
 
     idmap = load_map()
     events, unknown, finished = [], set(), []
-    for k in range(-2, HORIZON_DAYS + 1):
+    # look back far enough to grade every game still missing a score (a skipped run used to leave picks ungraded forever)
+    back = 2
+    try:
+        pl = pd.read_csv(ROOT / "data" / "predictions_log.csv")
+        old = pd.to_datetime(pl.loc[pl["hpts"].isna() & (pl["date"] < str(today)), "date"], errors="coerce").dropna()
+        if len(old):
+            back = max(2, min(21, (today - old.min().date()).days + 1))
+    except Exception:
+        pass
+    for k in range(-back, HORIZON_DAYS + 1):
         try:
             ev = espn_day(today + dt.timedelta(days=k))
         except Exception as ex:
