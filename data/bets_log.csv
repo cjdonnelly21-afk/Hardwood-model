@@ -403,3 +403,7 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401911454,2026-11-11T15:21Z,total,Over 144.5,over,144.5,-108,LowVig.ag,0.5441,0.048,,
 401918054,2026-11-11T15:21Z,spread,California +8.5,home,8.5,-109,LowVig.ag,0.5613,0.0762,,
 401918054,2026-11-11T15:21Z,moneyline,California to win,home,,290,FanDuel,0.2736,0.067,,
+401925717,2026-11-11T16:16Z,spread,San Diego St. -18,home,-18.0,-106,LowVig.ag,0.5328,0.0355,,
+401926202,2026-11-11T16:16Z,spread,North Carolina Central +8.5,away,8.5,-110,FanDuel,0.5666,0.0817,,
+401925858,2026-11-11T16:16Z,total,Under 157,under,157.0,-110,Bovada,0.5686,0.0855,,
+401926868,2026-11-11T16:16Z,spread,Indiana St. -4,home,-4.0,-105,Bovada,0.5323,0.0393,,
