@@ -427,3 +427,5 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401921741,2026-11-12T14:32Z,spread,Montana St. +23.5,away,23.5,-106,LowVig.ag,0.5518,0.0723,,
 401911533,2026-11-12T14:32Z,total,Over 142.5,over,142.5,-110,FanDuel,0.5519,0.0537,,
 401911533,2026-11-12T14:32Z,moneyline,New Mexico St. to win,away,,200,BetRivers,0.3485,0.0455,,
+401920412,2026-11-12T17:25Z,total,Under 158.5,under,158.5,-108,LowVig.ag,0.539,0.0381,,
+401911239,2026-11-12T17:25Z,spread,Richmond -2.5,away,-2.5,-101,LowVig.ag,0.5238,0.0424,,
