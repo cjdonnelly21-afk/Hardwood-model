@@ -47,6 +47,7 @@ function price(n) { return (n > 0 ? "+" : "") + n; }
 // the card on the right of each game: the bet to take (when we have lines) or the plain model pick
 function betCard(g, fav, favP, tierName, tierCls) {
   const m = g.market, b = m && m.best;
+  const old = m && m.stale_at ? `<div class="tot"><i>Lines from ${new Date(m.stale_at).toLocaleString(undefined, { weekday: "short", hour: "numeric", minute: "2-digit" })}; check the book.</i></div>` : "";
   if (b && b.ev > 0) {
     const cls = b.ev >= .06 ? "e3" : b.ev >= .03 ? "e2" : "e1";
     const others = m.bets.filter(x => !(x.market === b.market && x.label === b.label) && x.ev > 0).map(x => `${esc(x.label)} (${pct(x.ev)})`).join(" · ");
@@ -54,14 +55,15 @@ function betCard(g, fav, favP, tierName, tierCls) {
       <div class="spread">${pct(b.ev)}</div><div class="tier">EV per $1 · ${price(b.price)} ${esc(b.book)}</div>
       <div class="tot">Model ${fmt(-Math.abs(g.pred_margin), 1)} ${esc(fav)} · market ${m.market_margin === null ? "n/a" : fmt(-Math.abs(m.market_margin), 1)} · total ${fmt(g.pred_total, 0)}/${m.market_total ?? "n/a"}</div>
       ${b.ev >= .10 ? '<div class="tot"><b>Big gap to the market: check injuries and the book\'s line before trusting it.</b></div>' : ""}
-      ${others ? `<div class="tot">Also: ${others}</div>` : ""}</div>`;
+      ${others ? `<div class="tot">Also: ${others}</div>` : ""}${old}</div>`;
   }
   if (b) {
     return `<div class="pick t0"><div class="tag">No edge vs market</div><div class="favname">${esc(fav)}</div>
       <div class="spread">${fmt(-Math.abs(g.pred_margin), 1)}</div><div class="tier">Pass · best EV ${pct(b.ev)}</div>
-      <div class="tot">Market ${m.market_margin === null ? "n/a" : fmt(-Math.abs(m.market_margin), 1)} · total ${fmt(g.pred_total, 0)}/${m.market_total ?? "n/a"}</div></div>`;
+      <div class="tot">Market ${m.market_margin === null ? "n/a" : fmt(-Math.abs(m.market_margin), 1)} · total ${fmt(g.pred_total, 0)}/${m.market_total ?? "n/a"}</div>${old}</div>`;
   }
-  return `<div class="pick ${tierCls}"><div class="tag">Model pick</div><div class="favname">${esc(fav)}</div><div class="spread">${fmt(-Math.abs(g.pred_margin), 1)}</div><div class="tier">${tierName} · ${Math.round(favP * 100)}%</div><div class="tot">Proj. total ${fmt(g.pred_total, 0)}</div></div>`;
+  const wait = S.hasLines && !g.done ? '<div class="tot"><i>Lines not posted yet</i></div>' : "";
+  return `<div class="pick ${tierCls}"><div class="tag">Model pick</div><div class="favname">${esc(fav)}</div><div class="spread">${fmt(-Math.abs(g.pred_margin), 1)}</div><div class="tier">${tierName} · ${Math.round(favP * 100)}%</div><div class="tot">Proj. total ${fmt(g.pred_total, 0)}</div>${wait}</div>`;
 }
 
 function dayKey(iso) { const d = new Date(iso); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; }

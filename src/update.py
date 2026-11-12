@@ -308,6 +308,17 @@ def main():
             games_out = attach_lines(games_out, odds, idmap, model, status)
             status["lines_at"] = now_s
         bet_log = log_bets(games_out, now_s)
+        # keep the last known lines for games the latest pull does not cover (books post some lines late), so the
+        # page never drops back to plain picks; these are shown as older lines and are never logged as new bets
+        try:
+            prev = {str(x["game_id"]): x for x in json.loads((SITE / "games.json").read_text()) if x.get("market")}
+            prev_at = json.loads((SITE / "status.json").read_text()).get("lines_at")
+            for g in games_out:
+                old_g = prev.get(str(g["game_id"]))
+                if old_g and not g.get("market") and not g.get("done"):
+                    g["market"] = {**old_g["market"], "stale_at": old_g["market"].get("stale_at") or prev_at}
+        except Exception:
+            pass
         bet_log = grade_bets(bet_log, {str(f["game_id"]): (f["home"], f["away"], f["hpts"], f["apts"]) for f in finished})
         bet_log.to_csv(ROOT / "data" / "bets_log.csv", index=False)
         bet_roi = roi_summary(bet_log)
