@@ -3,7 +3,6 @@ name: daily-update
 on:
   schedule:
     - cron: "17 15 * * *"   # ~10:17am Eastern (UTC-5): grade last night, predict today (Mac is awake, not asleep at 6am)
-    - cron: "47 18 * * *"   # ~1:47pm Eastern: refresh ratings and lines before tonight's tip-offs
   workflow_dispatch:
 
 permissions:
