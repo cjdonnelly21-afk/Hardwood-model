@@ -407,25 +407,64 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401926202,2026-11-11T16:16Z,spread,North Carolina Central +8.5,away,8.5,-110,FanDuel,0.5666,0.0817,L,-1.0
 401925858,2026-11-11T16:16Z,total,Under 157,under,157.0,-110,Bovada,0.5686,0.0855,L,-1.0
 401926868,2026-11-11T16:16Z,spread,Indiana St. -4,home,-4.0,-105,Bovada,0.5323,0.0393,L,-1.0
-401925631,2026-11-12T14:32Z,total,Over 134.5,over,134.5,-110,FanDuel,0.5632,0.0751,,
-401921086,2026-11-12T14:32Z,total,Under 165.5,under,165.5,-112,BetRivers,0.5562,0.0528,,
-401921086,2026-11-12T14:32Z,spread,UMBC -6,home,-6.0,-106,LowVig.ag,0.5329,0.0357,,
-401916288,2026-11-12T14:32Z,total,Under 169.5,under,169.5,-108,LowVig.ag,0.5614,0.0812,,
-401924876,2026-11-12T14:32Z,total,Over 146.5,over,146.5,-103,LowVig.ag,0.5434,0.071,,
-401924857,2026-11-12T14:32Z,moneyline,Quinnipiac to win,home,,-110,Bovada,0.5588,0.0668,,
-401924857,2026-11-12T14:32Z,total,Over 145,over,145.0,-103,LowVig.ag,0.54,0.0643,,
-401921768,2026-11-12T14:32Z,spread,Mercer +27.5,away,27.5,-110,FanDuel,0.5686,0.0855,,
-401920412,2026-11-12T14:32Z,spread,Southern Utah +23.5,away,23.5,-110,FanDuel,0.5494,0.0489,,
-401920064,2026-11-12T14:32Z,spread,Maryland Eastern Shore +26,away,26.0,-106,LowVig.ag,0.5407,0.0508,,
-401911307,2026-11-12T14:32Z,total,Under 138.5,under,138.5,-110,FanDuel,0.5461,0.0425,,
-401919041,2026-11-12T14:32Z,total,Under 179,under,179.0,-108,LowVig.ag,0.5652,0.0885,,
-401917524,2026-11-12T14:32Z,total,Over 142.5,over,142.5,-103,LowVig.ag,0.55,0.0839,,
-401917524,2026-11-12T14:32Z,moneyline,Loyola Marymount to win,away,,-106,BetRivers,0.5565,0.0814,,
-401917524,2026-11-12T14:32Z,spread,Loyola Marymount -0,away,-0.0,-110,BetUS,0.5565,0.0623,,
-401916306,2026-11-12T14:32Z,spread,Southern +25.5,away,25.5,-106,LowVig.ag,0.5358,0.0413,,
-401911239,2026-11-12T14:32Z,moneyline,Richmond to win,away,,-160,Bovada,0.6347,0.0314,,
-401921741,2026-11-12T14:32Z,spread,Montana St. +23.5,away,23.5,-106,LowVig.ag,0.5518,0.0723,,
-401911533,2026-11-12T14:32Z,total,Over 142.5,over,142.5,-110,FanDuel,0.5519,0.0537,,
-401911533,2026-11-12T14:32Z,moneyline,New Mexico St. to win,away,,200,BetRivers,0.3485,0.0455,,
-401920412,2026-11-12T17:25Z,total,Under 158.5,under,158.5,-108,LowVig.ag,0.539,0.0381,,
-401911239,2026-11-12T17:25Z,spread,Richmond -2.5,away,-2.5,-101,LowVig.ag,0.5238,0.0424,,
+401925631,2026-11-12T14:32Z,total,Over 134.5,over,134.5,-110,FanDuel,0.5632,0.0751,L,-1.0
+401921086,2026-11-12T14:32Z,total,Under 165.5,under,165.5,-112,BetRivers,0.5562,0.0528,W,0.8928571428571428
+401921086,2026-11-12T14:32Z,spread,UMBC -6,home,-6.0,-106,LowVig.ag,0.5329,0.0357,W,0.9433962264150944
+401916288,2026-11-12T14:32Z,total,Under 169.5,under,169.5,-108,LowVig.ag,0.5614,0.0812,W,0.925925925925926
+401924876,2026-11-12T14:32Z,total,Over 146.5,over,146.5,-103,LowVig.ag,0.5434,0.071,W,0.970873786407767
+401924857,2026-11-12T14:32Z,moneyline,Quinnipiac to win,home,,-110,Bovada,0.5588,0.0668,L,-1.0
+401924857,2026-11-12T14:32Z,total,Over 145,over,145.0,-103,LowVig.ag,0.54,0.0643,L,-1.0
+401921768,2026-11-12T14:32Z,spread,Mercer +27.5,away,27.5,-110,FanDuel,0.5686,0.0855,W,0.9090909090909092
+401920412,2026-11-12T14:32Z,spread,Southern Utah +23.5,away,23.5,-110,FanDuel,0.5494,0.0489,L,-1.0
+401920064,2026-11-12T14:32Z,spread,Maryland Eastern Shore +26,away,26.0,-106,LowVig.ag,0.5407,0.0508,W,0.9433962264150944
+401911307,2026-11-12T14:32Z,total,Under 138.5,under,138.5,-110,FanDuel,0.5461,0.0425,L,-1.0
+401919041,2026-11-12T14:32Z,total,Under 179,under,179.0,-108,LowVig.ag,0.5652,0.0885,W,0.925925925925926
+401917524,2026-11-12T14:32Z,total,Over 142.5,over,142.5,-103,LowVig.ag,0.55,0.0839,W,0.970873786407767
+401917524,2026-11-12T14:32Z,moneyline,Loyola Marymount to win,away,,-106,BetRivers,0.5565,0.0814,L,-1.0
+401917524,2026-11-12T14:32Z,spread,Loyola Marymount -0,away,-0.0,-110,BetUS,0.5565,0.0623,L,-1.0
+401916306,2026-11-12T14:32Z,spread,Southern +25.5,away,25.5,-106,LowVig.ag,0.5358,0.0413,L,-1.0
+401911239,2026-11-12T14:32Z,moneyline,Richmond to win,away,,-160,Bovada,0.6347,0.0314,L,-1.0
+401921741,2026-11-12T14:32Z,spread,Montana St. +23.5,away,23.5,-106,LowVig.ag,0.5518,0.0723,W,0.9433962264150944
+401911533,2026-11-12T14:32Z,total,Over 142.5,over,142.5,-110,FanDuel,0.5519,0.0537,L,-1.0
+401911533,2026-11-12T14:32Z,moneyline,New Mexico St. to win,away,,200,BetRivers,0.3485,0.0455,L,-1.0
+401920412,2026-11-12T17:25Z,total,Under 158.5,under,158.5,-108,LowVig.ag,0.539,0.0381,W,0.925925925925926
+401911239,2026-11-12T17:25Z,spread,Richmond -2.5,away,-2.5,-101,LowVig.ag,0.5238,0.0424,L,-1.0
+401921167,2026-11-13T17:59Z,total,Over 150.5,over,150.5,-108,DraftKings,0.5652,0.0884,,
+401921721,2026-11-13T17:59Z,spread,North Alabama +33,away,33.0,-110,BetUS,0.5596,0.0683,,
+401921721,2026-11-13T17:59Z,total,Under 152.5,under,152.5,-110,BetRivers,0.5512,0.0523,,
+401923270,2026-11-13T17:59Z,spread,Rutgers -21.5,home,-21.5,-104,LowVig.ag,0.5292,0.038,,
+401902278,2026-11-13T17:59Z,moneyline,Butler to win,home,,-154,FanDuel,0.6324,0.0431,,
+401902278,2026-11-13T17:59Z,total,Under 158.5,under,158.5,-105,FanDuel,0.5277,0.0303,,
+401906772,2026-11-13T17:59Z,spread,Merrimack +36,away,36.0,-105,Bovada,0.5578,0.089,,
+401913528,2026-11-13T17:59Z,total,Under 171,under,171.0,-108,LowVig.ag,0.5597,0.078,,
+401906850,2026-11-13T17:59Z,spread,Tennessee St. +28.5,away,28.5,-109,BetRivers,0.5451,0.0452,,
+401921803,2026-11-13T17:59Z,spread,Northern Arizona +30.5,away,30.5,-110,FanDuel,0.5429,0.0364,,
+401926133,2026-11-13T17:59Z,spread,Purdue -18,home,-18.0,-108,LowVig.ag,0.5467,0.0529,,
+401926133,2026-11-13T17:59Z,total,Over 150,over,150.0,-108,LowVig.ag,0.54,0.0399,,
+401924796,2026-11-13T17:59Z,spread,Marist +2,away,2.0,101,LowVig.ag,0.5132,0.0315,,
+401924704,2026-11-13T17:59Z,total,Over 146,over,146.0,-108,LowVig.ag,0.5361,0.0325,,
+401921191,2026-11-13T17:59Z,total,Over 133.5,over,133.5,-110,BetUS,0.5642,0.077,,
+401920973,2026-11-13T17:59Z,spread,Elon -1.5,home,-1.5,-110,FanDuel,0.5659,0.0803,,
+401918958,2026-11-13T17:59Z,spread,Troy +23,away,23.0,-105,LowVig.ag,0.5514,0.0765,,
+401906782,2026-11-13T17:59Z,moneyline,North Carolina to win,home,,-175,Bovada,0.664,0.0434,,
+401916316,2026-11-13T17:59Z,spread,Ohio St. +11.5,away,11.5,-101,LowVig.ag,0.5257,0.0461,,
+401909565,2026-11-13T17:59Z,total,Under 148.5,under,148.5,-105,DraftKings,0.5462,0.0664,,
+401917916,2026-11-13T17:59Z,spread,Central Arkansas +24.5,away,24.5,-110,FanDuel,0.5623,0.0735,,
+401917916,2026-11-13T17:59Z,total,Under 162,under,162.0,-103,LowVig.ag,0.523,0.0308,,
+401929199,2026-11-13T17:59Z,total,Over 140.5,over,140.5,-108,LowVig.ag,0.5471,0.0538,,
+401927380,2026-11-13T17:59Z,spread,Texas Southern +29,away,29.0,-105,Bovada,0.5593,0.092,,
+401927374,2026-11-13T17:59Z,total,Over 145,over,145.0,106,LowVig.ag,0.5233,0.0779,,
+401926117,2026-11-13T17:59Z,moneyline,Wright St. to win,away,,-115,BetOnline.ag,0.5799,0.0841,,
+401926117,2026-11-13T17:59Z,spread,Wright St. -1,away,-1.0,-106,LowVig.ag,0.5448,0.0588,,
+401920123,2026-11-13T17:59Z,moneyline,Idaho to win,home,,-118,FanDuel,0.5721,0.057,,
+401920123,2026-11-13T17:59Z,total,Under 168.5,under,168.5,-110,FanDuel,0.5409,0.0325,,
+401906760,2026-11-13T17:59Z,spread,Seton Hall +17.5,away,17.5,-101,LowVig.ag,0.5496,0.0937,,
+401921728,2026-11-13T17:59Z,spread,UNLV +1,home,1.0,-103,LowVig.ag,0.5268,0.0382,,
+401917980,2026-11-13T17:59Z,spread,Louisiana Monroe +29.5,away,29.5,-102,FanDuel,0.5291,0.0477,,
+401911014,2026-11-13T17:59Z,total,Under 152,under,152.0,-108,LowVig.ag,0.5544,0.0677,,
+401909503,2026-11-13T17:59Z,spread,Northwestern -1.5,home,-1.5,110,DraftKings,0.5181,0.088,,
+401906794,2026-11-13T17:59Z,spread,Mississippi St. +4,home,4.0,-108,LowVig.ag,0.5374,0.035,,
+401917526,2026-11-13T17:59Z,total,Over 144.5,over,144.5,104,BetRivers,0.5283,0.0777,,
+401920372,2026-11-13T17:59Z,total,Under 158.5,under,158.5,-110,Bovada,0.572,0.092,,
+401917525,2026-11-13T17:59Z,spread,Saint Mary's -6,home,-6.0,-108,LowVig.ag,0.5498,0.0589,,
+401917525,2026-11-13T17:59Z,moneyline,Saint Mary's to win,home,,-250,FanDuel,0.745,0.0431,,
