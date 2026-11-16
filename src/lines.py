@@ -39,6 +39,9 @@ MIN_EV = 0.03           # only bets above this are called plays (first week: edg
 MAX_EV = 0.10           # edges bigger than this are treated as model error, not value (first week: 9-16 for -7.6u)
 MAX_FAV_ML = -250       # no moneylines on heavy chalk: one loss wipes out several wins (first week: -15% ROI)
 MAX_JUICE = -115        # no spread/total prices worse than this
+MAX_SPREAD = 10.0       # no spread bets on lines bigger than this (Nov 3-12: spreads of 15+ went 14-33 for -18u; 10 or less was 55%)
+MAX_DAILY = 8           # at most this many "Take" plays per day, best EV first; the rest show as passes
+ALLOW_ML = False        # moneylines lost money both weeks (-8% to -15% ROI)
 SPREAD_BONUS_NOTE = "Win probability uses the same normal model as the rest of the site."
 
 
@@ -166,7 +169,9 @@ def evaluate(g: dict, ln: dict, sigma: float, tsigma: float, w: float = MODEL_WE
     def playable(c):
         if c["ev"] > MAX_EV:
             return False
-        if c["market"] == "moneyline" and c["price"] < MAX_FAV_ML:
+        if c["market"] == "moneyline" and (not ALLOW_ML or c["price"] < MAX_FAV_ML):
+            return False
+        if c["market"] == "spread" and abs(c["line"]) > MAX_SPREAD:
             return False
         if c["market"] != "moneyline" and c["price"] < MAX_JUICE:
             return False
@@ -221,6 +226,30 @@ def attach_lines(games_out: list, events: list, idmap: dict, model: dict, status
     return games_out
 
 
+def mark_takes(games_out: list, cap: int = MAX_DAILY):
+    """Concentrate: per Eastern-time day keep only the `cap` best-EV bets as plays (b["take"] = True), the rest False.
+    Bets already logged count first, so a later pull cannot add more plays to a day that is already full."""
+    logged = set()
+    if BETS_LOG.exists():
+        lg = pd.read_csv(BETS_LOG, dtype={"game_id": str})
+        logged = set(zip(lg["game_id"], lg["market"]))
+    days = {}
+    for g in games_out:
+        m = g.get("market")
+        if not m or g.get("done") or m.get("stale_at"):
+            continue
+        day = pd.Timestamp(g["start"]).tz_convert("America/New_York").strftime("%Y-%m-%d")
+        for b in m["bets"]:
+            if b["ev"] >= MIN_EV:
+                days.setdefault(day, []).append((((str(g["game_id"]), b["market"]) not in logged), -b["ev"], b))
+            else:
+                b["take"] = False
+    for day, items in days.items():
+        items.sort(key=lambda t: (t[0], t[1]))            # already-logged first, then best EV
+        for i, (_, _, b) in enumerate(items):
+            b["take"] = i < cap
+
+
 # ------------------------------------------------------------------ track record
 def log_bets(games_out: list, now: str):
     cols = ["game_id", "made_at", "market", "label", "side", "line", "price", "book", "p", "ev", "result", "units"]
@@ -229,10 +258,10 @@ def log_bets(games_out: list, now: str):
     rows = []
     for g in games_out:
         m = g.get("market")
-        if not m or g.get("done"):
+        if not m or g.get("done") or m.get("stale_at"):
             continue
         for b in m["bets"]:
-            if b["ev"] > MIN_EV and (str(g["game_id"]), b["market"]) not in done_keys:
+            if b["ev"] >= MIN_EV and b.get("take", True) and (str(g["game_id"]), b["market"]) not in done_keys:
                 rows.append({"game_id": str(g["game_id"]), "made_at": now, "market": b["market"], "label": b["label"],
                              "side": b["side"], "line": b["line"], "price": b["price"], "book": b["book"], "p": b["p"],
                              "ev": b["ev"], "result": np.nan, "units": np.nan})

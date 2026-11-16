@@ -99,6 +99,7 @@ def main():
     # reuse lines.py with NFL settings
     lines.URL = "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds"
     lines.BETS_LOG = BETS
+    lines.ALLOW_ML, lines.MAX_SPREAD = True, 99.0       # the college-only guards (no moneylines, spreads under 10) do not apply to the NFL
     names = {nname(v): k for k, v in NAMES.items()}
     lines.build_name_index = lambda _idmap: {"full": names, "loc": {}}
     lines.evaluate = functools.partial(lines.evaluate, w=weight, ml_sigma=bt["ml_sigma"])

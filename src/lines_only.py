@@ -13,7 +13,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from names import load_map  # noqa: E402
-from lines import attach_lines, fetch_odds, log_bets  # noqa: E402
+from lines import attach_lines, fetch_odds, log_bets, mark_takes  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "docs" / "data"
@@ -48,6 +48,7 @@ def main():
         m = g.get("market")
         if m and id(m) in before and not m.get("stale_at"):
             m["stale_at"] = prev_at
+    mark_takes(upcoming)
     log_bets(upcoming, now_s)
     status["lines_at"] = now_s
     (SITE / "games.json").write_text(json.dumps(games))

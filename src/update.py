@@ -22,7 +22,7 @@ import requests
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_games  # noqa: E402
 from names import load_map  # noqa: E402
-from lines import attach_lines, fetch_odds, grade_bets, log_bets, roi_summary  # noqa: E402
+from lines import attach_lines, fetch_odds, grade_bets, log_bets, mark_takes, roi_summary  # noqa: E402
 from build_games import load_games  # noqa: E402
 from ratings import Params, run_all  # noqa: E402
 from train import fit, load_params, make_features, predict, walk_forward, build_frame, calibration_bins  # noqa: E402
@@ -307,6 +307,7 @@ def main():
         if odds:
             games_out = attach_lines(games_out, odds, idmap, model, status)
             status["lines_at"] = now_s
+        mark_takes(games_out)
         bet_log = log_bets(games_out, now_s)
         # keep the last known lines for games the latest pull does not cover (books post some lines late), so the
         # page never drops back to plain picks; these are shown as older lines and are never logged as new bets

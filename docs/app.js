@@ -48,7 +48,7 @@ function price(n) { return (n > 0 ? "+" : "") + n; }
 function betCard(g, fav, favP, tierName, tierCls) {
   const m = g.market, b = m && m.best;
   const old = m && m.stale_at ? `<div class="tot"><i>Lines from ${new Date(m.stale_at).toLocaleString(undefined, { weekday: "short", hour: "numeric", minute: "2-digit" })}; check the book.</i></div>` : "";
-  if (b && b.ev > 0) {
+  if (b && b.ev > 0 && b.take !== false) {
     const cls = b.ev >= .06 ? "e3" : b.ev >= .03 ? "e2" : "e1";
     const others = m.bets.filter(x => !(x.market === b.market && x.label === b.label) && x.ev > 0).map(x => `${esc(x.label)} (${pct(x.ev)})`).join(" · ");
     return `<div class="pick bet ${cls}"><div class="tag">Take</div><div class="favname">${esc(b.label)}</div>
@@ -58,7 +58,7 @@ function betCard(g, fav, favP, tierName, tierCls) {
       ${others ? `<div class="tot">Also: ${others}</div>` : ""}${old}</div>`;
   }
   if (b) {
-    return `<div class="pick t0"><div class="tag">No edge vs market</div><div class="favname">${esc(fav)}</div>
+    return `<div class="pick t0"><div class="tag">${b.ev > 0 ? "Not a top play today" : "No edge vs market"}</div><div class="favname">${esc(fav)}</div>
       <div class="spread">${fmt(-Math.abs(g.pred_margin), 1)}</div><div class="tier">Pass · best EV ${pct(b.ev)}</div>
       <div class="tot">Market ${m.market_margin === null ? "n/a" : fmt(-Math.abs(m.market_margin), 1)} · total ${fmt(g.pred_total, 0)}/${m.market_total ?? "n/a"}</div>${old}</div>`;
   }
