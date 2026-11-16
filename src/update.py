@@ -330,6 +330,14 @@ def main():
     (SITE / "accuracy.json").write_text(json.dumps({**live_accuracy(log), "bets": bet_roi}))
     (SITE / "params.json").write_text((ROOT / "data" / "params.json").read_text() if (ROOT / "data" / "params.json").exists() else "{}")
     status["games_listed"], status["teams"] = len(games_out), len(teams)
+    try:                                    # the cloud lines job owns these keys; a Mac run without a key must not erase them
+        prev_st = json.loads((SITE / "status.json").read_text())
+        if str(status.get("lines", "")).startswith("off"):
+            for k in ("lines", "lines_matched", "lines_at", "totals_bias"):
+                if k in prev_st:
+                    status[k] = prev_st[k]
+    except Exception:
+        pass
     (SITE / "status.json").write_text(json.dumps(status))
     print(json.dumps(status))
 
