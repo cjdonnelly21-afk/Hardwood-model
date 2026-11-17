@@ -488,3 +488,4 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401916289,2026-11-17T14:32Z,total,Over 153.5,over,153.5,-110,Bovada,0.5539,0.0575,,
 401911020,2026-11-17T14:32Z,spread,Massachusetts -9.5,home,-9.5,-106,LowVig.ag,0.5454,0.0599,,
 401911521,2026-11-17T14:32Z,total,Over 142,over,142.0,-108,LowVig.ag,0.5549,0.0688,,
+401906761,2026-11-17T18:27Z,total,Under 177,under,177.0,-105,Bovada,0.5476,0.0692,,
