@@ -480,3 +480,11 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401924265,2026-11-16T23:08Z,spread,Long Beach St. +30,away,30.0,-105,Bovada,0.5435,0.0611,L,-1.0
 401920373,2026-11-16T23:08Z,total,Under 157.5,under,157.5,-110,Bovada,0.5657,0.08,L,-1.0
 401917532,2026-11-16T23:08Z,spread,Saint Mary's -18.5,home,-18.5,-102,LowVig.ag,0.524,0.0378,L,-1.0
+401920953,2026-11-17T14:32Z,spread,Liberty +2,away,2.0,101,LowVig.ag,0.529,0.0632,,
+401912230,2026-11-17T14:32Z,spread,Marist +1,away,1.0,-106,LowVig.ag,0.5549,0.0784,,
+401909566,2026-11-17T14:32Z,total,Under 165.5,under,165.5,-115,DraftKings,0.5843,0.0925,,
+401921722,2026-11-17T14:32Z,total,Under 149.5,under,149.5,-105,FanDuel,0.5563,0.086,,
+401921756,2026-11-17T14:32Z,spread,UCF +1,home,1.0,-110,Bovada,0.5543,0.0582,,
+401916289,2026-11-17T14:32Z,total,Over 153.5,over,153.5,-110,Bovada,0.5539,0.0575,,
+401911020,2026-11-17T14:32Z,spread,Massachusetts -9.5,home,-9.5,-106,LowVig.ag,0.5454,0.0599,,
+401911521,2026-11-17T14:32Z,total,Over 142,over,142.0,-108,LowVig.ag,0.5549,0.0688,,
