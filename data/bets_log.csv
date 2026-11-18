@@ -498,3 +498,5 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401921734,2026-11-17T22:55Z,total,Over 150.5,over,150.5,-113,LowVig.ag,0.547,0.0311,,
 401917535,2026-11-17T22:55Z,total,Over 149,over,149.0,102,LowVig.ag,0.5394,0.0897,,
 401929004,2026-11-17T22:55Z,total,Over 144,over,144.0,-101,LowVig.ag,0.5403,0.0753,,
+401922292,2026-11-18T14:21Z,total,Under 163.5,under,163.5,-113,LowVig.ag,0.5727,0.0796,,
+401920974,2026-11-18T14:21Z,spread,Winthrop +3.5,home,3.5,-105,BetMGM,0.5535,0.0806,,
