@@ -502,3 +502,6 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401920974,2026-11-18T14:21Z,spread,Winthrop +3.5,home,3.5,-105,BetMGM,0.5535,0.0806,,
 401922292,2026-11-18T15:42Z,spread,UNC Asheville +3.5,home,3.5,-105,DraftKings,0.5554,0.0843,,
 401928398,2026-11-18T15:42Z,total,Under 163,under,163.0,-103,LowVig.ag,0.5541,0.092,,
+401925782,2026-11-18T18:26Z,total,Over 139,over,139.0,-108,LowVig.ag,0.5448,0.0493,,
+401922047,2026-11-18T18:26Z,total,Under 155.5,under,155.5,-110,Bovada,0.5639,0.0766,,
+401911377,2026-11-18T18:26Z,spread,Charleston Southern +1.5,home,1.5,104,LowVig.ag,0.5374,0.0964,,
