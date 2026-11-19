@@ -513,3 +513,7 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401919050,2026-11-18T22:53Z,total,Under 163.5,under,163.5,-110,FanDuel,0.5493,0.0487,,
 401928354,2026-11-18T22:53Z,spread,UC Santa Barbara -3.5,away,-3.5,102,LowVig.ag,0.5221,0.0545,,
 401926773,2026-11-18T22:53Z,total,Under 159.5,under,159.5,-110,FanDuel,0.5463,0.0429,,
+401923304,2026-11-19T14:24Z,total,Over 132.5,over,132.5,-114,FanDuel,0.5705,0.071,,
+401930884,2026-11-19T14:24Z,spread,Oregon -1,home,-1.0,-111,LowVig.ag,0.5542,0.0536,,
+401911534,2026-11-19T14:24Z,total,Over 131.5,over,131.5,-115,BetRivers,0.5753,0.0755,,
+401920349,2026-11-19T14:24Z,total,Under 156,under,156.0,-111,LowVig.ag,0.5694,0.0823,,
