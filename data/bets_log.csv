@@ -529,3 +529,6 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401916122,2026-11-20T14:22Z,spread,Middle Tennessee +4.5,home,4.5,-112,BetRivers,0.5747,0.0877,,
 401925865,2026-11-20T14:22Z,spread,Tulsa +7,away,7.0,104,LowVig.ag,0.5307,0.0826,,
 401925080,2026-11-20T14:22Z,total,Under 146.5,under,146.5,-110,BetRivers,0.571,0.0901,,
+401921723,2026-11-20T18:34Z,total,Under 151,under,151.0,-103,LowVig.ag,0.5486,0.0811,,
+401926782,2026-11-20T18:34Z,spread,Jacksonville St. +0.5,home,0.5,-114,FanDuel,0.5822,0.0928,,
+401912710,2026-11-20T18:34Z,total,Under 158.5,under,158.5,-110,FanDuel,0.5581,0.0655,,
