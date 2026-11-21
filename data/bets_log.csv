@@ -541,3 +541,5 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401911022,2026-11-20T22:47Z,spread,Bowling Green -5,home,-5.0,-106,LowVig.ag,0.5544,0.0774,,
 401927365,2026-11-20T22:47Z,spread,Missouri St. +3.5,home,3.5,-101,LowVig.ag,0.5339,0.0624,,
 401921776,2026-11-20T22:47Z,total,Under 160.5,under,160.5,-105,DraftKings,0.5469,0.0677,,
+401919828,2026-11-21T14:02Z,total,Over 130.5,over,130.5,-105,BetMGM,0.5514,0.0766,,
+401921183,2026-11-21T14:02Z,total,Under 160.5,under,160.5,-108,DraftKings,0.5585,0.0757,,
