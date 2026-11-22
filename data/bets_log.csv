@@ -553,3 +553,11 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401926217,2026-11-21T22:41Z,spread,Presbyterian +8,away,8.0,-106,LowVig.ag,0.5341,0.0381,L,-1.0
 401928998,2026-11-21T22:41Z,total,Over 136.5,over,136.5,-108,DraftKings,0.5555,0.0698,W,0.925925925925926
 401917537,2026-11-21T22:41Z,total,Over 129.5,over,129.5,-107,BetRivers,0.5391,0.043,L,-1.0
+401925942,2026-11-22T18:59Z,total,Over 152.5,over,152.5,-113,BetRivers,0.567,0.0687,,
+401921748,2026-11-22T18:59Z,total,Under 149.5,under,149.5,-105,FanDuel,0.5517,0.0771,,
+401921706,2026-11-22T18:59Z,total,Over 136,over,136.0,-110,Bovada,0.5447,0.0398,,
+401911200,2026-11-22T18:59Z,total,Over 142.5,over,142.5,-105,DraftKings,0.5317,0.0381,,
+401928790,2026-11-22T18:59Z,total,Over 134.5,over,134.5,-108,LowVig.ag,0.5396,0.0392,,
+401922252,2026-11-22T18:59Z,total,Over 138,over,138.0,-108,LowVig.ag,0.5536,0.0661,,
+401921205,2026-11-22T18:59Z,spread,Stephen F. Austin +2.5,home,2.5,-106,LowVig.ag,0.5351,0.0399,,
+401928999,2026-11-22T18:59Z,total,Over 142.5,over,142.5,-115,FanDuel,0.5856,0.0948,,
