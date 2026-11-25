@@ -609,3 +609,6 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401921714,2026-11-25T17:41Z,total,Under 148.5,under,148.5,-105,BetMGM,0.5383,0.051,,
 401920529,2026-11-25T17:41Z,total,Under 139.5,under,139.5,-105,DraftKings,0.5596,0.0925,,
 401920540,2026-11-25T17:41Z,total,Under 160.5,under,160.5,-110,DraftKings,0.5628,0.0744,,
+401929406,2026-11-25T18:03Z,total,Over 150,over,150.0,-110,LowVig.ag,0.5597,0.0685,,
+401911522,2026-11-25T18:03Z,spread,UC Davis -4,home,-4.0,100,LowVig.ag,0.5339,0.0678,,
+401920528,2026-11-25T18:03Z,spread,San Diego St. +1.5,away,1.5,-110,DraftKings,0.5534,0.0564,,
