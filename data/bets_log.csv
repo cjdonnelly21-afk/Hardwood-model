@@ -600,3 +600,6 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401909568,2026-11-24T22:58Z,total,Under 150,under,150.0,-108,LowVig.ag,0.5621,0.0825,,
 401920916,2026-11-24T22:58Z,total,Over 138.5,over,138.5,-103,LowVig.ag,0.5403,0.0649,,
 401920916,2026-11-24T22:58Z,spread,SIU Edwardsville +4.5,home,4.5,-106,LowVig.ag,0.5411,0.0516,,
+401911029,2026-11-25T14:27Z,total,Under 158,under,158.0,-106,LowVig.ag,0.5453,0.0598,,
+401925917,2026-11-25T14:27Z,total,Under 152.5,under,152.5,-110,FanDuel,0.558,0.0653,,
+401922285,2026-11-25T14:27Z,spread,The Citadel -3,home,-3.0,-106,LowVig.ag,0.5497,0.0682,,
