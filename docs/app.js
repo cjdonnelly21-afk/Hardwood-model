@@ -44,6 +44,16 @@ function tier(p) { return p >= .9 ? ["Strong", "t3"] : p >= .75 ? ["Solid", "t2"
 function pct(x) { return (x >= 0 ? "+" : "") + (x * 100).toFixed(1) + "%"; }
 function price(n) { return (n > 0 ? "+" : "") + n; }
 
+function mktRows(g) {
+  const m = g.market, v = m.view;
+  if (!v) return "";
+  const best = m.best, name = { spread: "Spread", total: "Total", moneyline: "Moneyline" };
+  return `<div class="mkts">` + ["spread", "total", "moneyline"].filter(k => v[k]).map(k => {
+    const x = v[k], top = best && best.market === k && best.label === x.label;
+    return `<div class="${top ? "mtop" : ""}"><span>${name[k]}${top ? " ★" : ""}</span> ${esc(x.label)} ${price(x.price)} <b>${pct(x.ev)}</b>${x.play ? "" : " <i>not a play</i>"}</div>`;
+  }).join("") + `</div>`;
+}
+
 // the card on the right of each game: the bet to take (when we have lines) or the plain model pick
 function betCard(g, fav, favP, tierName, tierCls) {
   const m = g.market, b = m && m.best;
@@ -55,12 +65,12 @@ function betCard(g, fav, favP, tierName, tierCls) {
       <div class="spread">${pct(b.ev)}</div><div class="tier">EV per $1 · ${price(b.price)} ${esc(b.book)}</div>
       <div class="tot">Model ${fmt(-Math.abs(g.pred_margin), 1)} ${esc(fav)} · market ${m.market_margin === null ? "n/a" : fmt(-Math.abs(m.market_margin), 1)} · total ${fmt(g.pred_total, 0)}/${m.market_total ?? "n/a"}</div>
       ${b.ev >= .10 ? '<div class="tot"><b>Big gap to the market: check injuries and the book\'s line before trusting it.</b></div>' : ""}
-      ${others ? `<div class="tot">Also: ${others}</div>` : ""}${old}</div>`;
+      ${m.view ? mktRows(g) : (others ? `<div class="tot">Also: ${others}</div>` : "")}${old}</div>`;
   }
   if (b) {
     return `<div class="pick t0"><div class="tag">${b.ev > 0 ? "Not a top play today" : "No edge vs market"}</div><div class="favname">${esc(fav)}</div>
       <div class="spread">${fmt(-Math.abs(g.pred_margin), 1)}</div><div class="tier">Pass · best EV ${pct(b.ev)}</div>
-      <div class="tot">Market ${m.market_margin === null ? "n/a" : fmt(-Math.abs(m.market_margin), 1)} · total ${fmt(g.pred_total, 0)}/${m.market_total ?? "n/a"}</div>${old}</div>`;
+      <div class="tot">Market ${m.market_margin === null ? "n/a" : fmt(-Math.abs(m.market_margin), 1)} · total ${fmt(g.pred_total, 0)}/${m.market_total ?? "n/a"}</div>${m.view ? mktRows(g) : ""}${old}</div>`;
   }
   const wait = S.hasLines && !g.done ? '<div class="tot"><i>Lines not posted yet</i></div>' : "";
   return `<div class="pick ${tierCls}"><div class="tag">Model pick</div><div class="favname">${esc(fav)}</div><div class="spread">${fmt(-Math.abs(g.pred_margin), 1)}</div><div class="tier">${tierName} · ${Math.round(favP * 100)}%</div><div class="tot">Proj. total ${fmt(g.pred_total, 0)}</div>${wait}</div>`;
@@ -69,18 +79,9 @@ function betCard(g, fav, favP, tierName, tierCls) {
 function dayKey(iso) { const d = new Date(iso); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; }
 function dayLabel(k) { const [y, m, d] = k.split("-").map(Number); return new Date(y, m - 1, d).toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" }); }
 
-function renderGames() {
-  const q = $("#gsearch").value.trim().toLowerCase();
-  let list = S.games.filter(g => dayKey(g.start) === S.day && (!q || (g.home + " " + g.away).toLowerCase().includes(q)));
-  const mode = $("#gsort").value;
-  const evOf = g => (g.market && g.market.best) ? g.market.best.ev : -9;
-  if (mode === "ev") list.sort((a, b) => evOf(b) - evOf(a));
-  else if (mode === "conf") list.sort((a, b) => Math.abs(b.win_prob_home - .5) - Math.abs(a.win_prob_home - .5));
-  else if (mode === "close") list.sort((a, b) => Math.abs(a.pred_margin) - Math.abs(b.pred_margin));
-  else list.sort((a, b) => a.start.localeCompare(b.start));
-  const ol = $("#games"); ol.innerHTML = "";
-  $("#gempty").hidden = list.length > 0;
-  for (const g of list) {
+function projScore(g) { return { h: (g.pred_total + g.pred_margin) / 2, a: (g.pred_total - g.pred_margin) / 2 }; }
+
+function gameRow(g) {
     const hp = Math.min(.99, Math.max(.01, g.win_prob_home)), favHome = hp >= .5;
     const h = S.byName[g.home], a = S.byName[g.away];
     const li = el("li", "game");
@@ -93,15 +94,28 @@ function renderGames() {
       <div class="teams">
         <div class="tm ${favHome ? "fav" : ""}"><span>${esc(g.home)}${favHome ? badge : ""}</span><span class="rk">${h ? "#" + h.rank : ""}</span></div>
         <div class="tm ${!favHome ? "fav" : ""}"><span>${esc(g.away)}${g.neutral ? " <em>neutral</em>" : ""}${!favHome ? badge : ""}</span><span class="rk">${a ? "#" + a.rank : ""}</span></div>
-        <div class="when">${g.done ? "" : time}</div>${result}
+        <div class="when">${g.done ? "" : time}</div><div class="proj">Projected: ${esc(g.home)} ${fmt(projScore(g).h, 0)}, ${esc(g.away)} ${fmt(projScore(g).a, 0)}</div>${result}
       </div>
       <div class="probwrap">
         <div class="prob" role="img" aria-label="${esc(fav)} ${Math.round(favP * 100)} percent to win"><i style="width:${(favP * 100).toFixed(1)}%"></i></div>
         <div class="probcap">${Math.round(favP * 100)}% to win</div>
       </div>
       ${betCard(g, fav, favP, tierName, tierCls)}`;
-    ol.appendChild(li);
-  }
+    return li;
+}
+
+function renderGames() {
+  const q = $("#gsearch").value.trim().toLowerCase();
+  let list = S.games.filter(g => dayKey(g.start) === S.day && (!q || (g.home + " " + g.away).toLowerCase().includes(q)));
+  const mode = $("#gsort").value;
+  const evOf = g => (g.market && g.market.best) ? g.market.best.ev : -9;
+  if (mode === "ev") list.sort((a, b) => evOf(b) - evOf(a));
+  else if (mode === "conf") list.sort((a, b) => Math.abs(b.win_prob_home - .5) - Math.abs(a.win_prob_home - .5));
+  else if (mode === "close") list.sort((a, b) => Math.abs(a.pred_margin) - Math.abs(b.pred_margin));
+  else list.sort((a, b) => a.start.localeCompare(b.start));
+  const ol = $("#games"); ol.innerHTML = "";
+  $("#gempty").hidden = list.length > 0;
+  for (const g of list) ol.appendChild(gameRow(g));
 }
 
 function renderDays() {
@@ -171,6 +185,27 @@ function renderModel() {
   $("#weights").innerHTML = dl("Margin weights", m) + dl("Total weights", S.model.total);
 }
 
+function renderTop() {
+  const mode = S.topMode || "marquee", scope = S.topScope || "today";
+  const now = Date.now(), todayK = dayKey(new Date().toISOString());
+  const keys = [...new Set(S.games.map(g => dayKey(g.start)))].sort();
+  const pick = scope === "today" ? [todayK] : scope === "tomorrow" ? [keys[keys.indexOf(todayK) + 1]] : keys.filter(k => k >= todayK).slice(0, 3);
+  let list = S.games.filter(g => !g.done && new Date(g.start).getTime() > now && pick.includes(dayKey(g.start)));
+  const rk = g => { const h = S.byName[g.home], a = S.byName[g.away]; return (h ? h.rank : 400) + (a ? a.rank : 400); };
+  if (mode === "primetime") list = list.filter(g => new Date(g.start).getHours() >= 18);
+  if (mode === "ev") { list = list.filter(g => g.market && g.market.best && g.market.best.take !== false && g.market.best.ev > 0); list.sort((a, b) => b.market.best.ev - a.market.best.ev); }
+  else list.sort((a, b) => rk(a) - rk(b) || a.start.localeCompare(b.start));
+  list = list.slice(0, 50);
+  const bar = (id, items, cur) => `<div class="chips" id="${id}" role="group">${items.map(([k, t]) => `<button data-k="${k}" aria-pressed="${k === cur}">${t}</button>`).join("")}</div>`;
+  $("#topbar").innerHTML = bar("topmode", [["marquee", "Top games"], ["primetime", "Primetime (6pm+)"], ["ev", "Best EV"]], mode) + bar("topscope", [["today", "Today"], ["tomorrow", "Tomorrow"], ["three", "Next 3 days"]], scope);
+  $("#topmode").onclick = e => { const k = e.target.dataset.k; if (k) { S.topMode = k; renderTop(); } };
+  $("#topscope").onclick = e => { const k = e.target.dataset.k; if (k) { S.topScope = k; renderTop(); } };
+  const ol = $("#toplist"); ol.innerHTML = "";
+  for (const g of list) ol.appendChild(gameRow(g));
+  $("#topnote").textContent = mode === "ev" ? "The best-EV plays, highest first (only today's Take plays; passes are left out)." : mode === "primetime" ? "Games tipping at 6 PM or later your time, ranked by the combined strength of both teams." : "Ranked by the combined rank of both teams, so the best matchups are first.";
+  $("#topempty").hidden = list.length > 0;
+}
+
 function renderTracker() {
   const b = (S.acc || {}).bets || {}, days = b.daily || [];
   if (!days.length) { $("#tstats").innerHTML = ""; $("#tdays").innerHTML = '<p class="empty">No picks have been logged yet.</p>'; $("#tchart").innerHTML = ""; return; }
@@ -234,7 +269,7 @@ async function load() {
   const confs = [...new Set(S.teams.map(t => t.conf))].sort();
   $("#rconf").innerHTML = `<option value="">All</option>` + confs.map(c => `<option>${esc(c)}</option>`).join("");
   $("#tlist").innerHTML = S.teams.map(t => `<option value="${esc(t.team)}">`).join("");
-  renderDays(); renderGames(); renderRankings(); renderModel(); renderTracker();
+  renderDays(); renderGames(); renderRankings(); renderModel(); renderTracker(); renderTop();
   if (hasLines) evKey($("#evkey"), S.games.filter(g => !g.done), { min: "5% EV", why: "College lines for small schools are soft and the model has no injury data, so edges under 5% are mostly noise, while 10%+ usually means the gap needs checking." });
 }
 

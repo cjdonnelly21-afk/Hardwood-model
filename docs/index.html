@@ -18,6 +18,7 @@
   </div>
   <nav role="tablist" aria-label="Sections">
     <button role="tab" aria-selected="true" data-tab="today">Today</button>
+    <button role="tab" aria-selected="false" data-tab="top">Top games</button>
     <button role="tab" aria-selected="false" data-tab="rankings">Rankings</button>
     <button role="tab" aria-selected="false" data-tab="matchup">Matchup</button>
     <button role="tab" aria-selected="false" data-tab="tracker">Tracker</button>
@@ -41,6 +42,13 @@
     <div id="evkey"></div>
     <ol id="games" class="games"></ol>
     <p id="gempty" class="empty" hidden>No games with predictions on this day. Games between non-Division I teams are skipped.</p>
+  </section>
+
+  <section id="top" class="panel" hidden>
+    <div id="topbar" class="controls"></div>
+    <p id="topnote" class="note"></p>
+    <ol id="toplist" class="games"></ol>
+    <p id="topempty" class="empty" hidden>No games match that filter yet.</p>
   </section>
 
   <section id="rankings" class="panel" hidden>

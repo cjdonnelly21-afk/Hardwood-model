@@ -182,7 +182,14 @@ def evaluate(g: dict, ln: dict, sigma: float, tsigma: float, w: float = MODEL_WE
     for c in ranked:
         if c["market"] not in seen:
             per_market.append(c); seen.add(c["market"])
-    return {"market_margin": None if mk_margin is None else round(mk_margin, 1),
+    view = {}                                    # best price in each market, shown on the page even when it is not a play
+    for mk in ("spread", "total", "moneyline"):
+        pool = [c for c in best.values() if c["market"] == mk]
+        if pool:
+            t = max(pool, key=lambda c: c["ev"])
+            view[mk] = {k: t[k] for k in ("side", "label", "book", "price", "line", "ev")}
+            view[mk]["play"] = playable(t)
+    return {"view": view, "market_margin": None if mk_margin is None else round(mk_margin, 1),
             "market_total": None if mk_total is None else round(mk_total, 1),
             "adj_margin": round(m_adj, 2), "adj_total": round(t_adj, 1), "books": len({c["book"] for c in cands}),
             "bets": per_market, "best": per_market[0] if per_market else None}
