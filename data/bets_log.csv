@@ -627,3 +627,4 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401918972,2026-11-26T14:25Z,spread,SMU +6.5,away,6.5,102,LowVig.ag,0.5276,0.0657,,
 401917546,2026-11-26T14:25Z,spread,Pacific -8.5,away,-8.5,-106,LowVig.ag,0.5452,0.0595,,
 401920531,2026-11-26T14:25Z,total,Under 149.5,under,149.5,-110,FanDuel,0.5541,0.0579,,
+401921674,2026-11-26T17:26Z,total,Over 139,over,139.0,-108,LowVig.ag,0.5673,0.0926,,
