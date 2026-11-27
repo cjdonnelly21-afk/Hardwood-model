@@ -643,3 +643,5 @@ game_id,made_at,market,label,side,line,price,book,p,ev,result,units
 401924810,2026-11-27T14:23Z,total,Over 127.5,over,127.5,-108,LowVig.ag,0.5533,0.0657,,
 401920774,2026-11-27T14:23Z,spread,Hofstra -3,home,-3.0,-106,LowVig.ag,0.5532,0.0751,,
 401926783,2026-11-27T14:23Z,total,Over 142.5,over,142.5,-110,FanDuel,0.5553,0.0602,,
+401920542,2026-11-27T18:25Z,total,Over 149,over,149.0,-103,LowVig.ag,0.547,0.078,,
+401921718,2026-11-27T18:25Z,spread,Saint Mary's +7.5,home,7.5,-108,DraftKings,0.5658,0.0896,,
